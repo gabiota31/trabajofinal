@@ -40,7 +40,7 @@ $result=mysqli_query($conexion, $sql);
             <td><?php echo $mostrar['nombre'] ?></td>
             <td><?php echo $mostrar['apellido'] ?></td>
             <td><?php echo $mostrar['correo'] ?></td>
-            <td><?php echo $mostrar['pass'] ?></td>
+            <!-- <td><?php //echo $mostrar['pass'] ?></td> -->
             <td><?php echo $mostrar['telefono'] ?></td>
             <td><?php echo $mostrar['avatar'] ?></td>
         </tr>

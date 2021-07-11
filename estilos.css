@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(141, 120, 155);
+}
+
+.login{
+    margin: 100px auto;
+    width: 275px;
+    border-radius: 10px;
+    background-color: rgb(237, 210, 255);
+    display: flex;
+    justify-content: center;
+    background-image: url(fondo.jpg);
+}
+
+.animate__animated.animate__fadeIn{
+    --animate-duration: 2s;
+}
+
+
+.usuario {
+    margin-top: 40px;
+}
+
+.caja-input {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caja-submit{
+    margin: 40px auto;
+}
+
+input {
+    width: 235px;
+    height: 40px;
+    padding: 7px;
+    border-radius: 7px;
+    border-style: none;
+}
+
+.submit:hover {
+    background-color: black;
+    color: blanchedalmond;
+}
+
