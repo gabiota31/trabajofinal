@@ -1,0 +1,32 @@
+
+Tabla que muestra los usuarios
+
+<?php 
+$sql="select * from usuario";
+$result=mysqli_query($conexion, $sql);
+?>
+
+<table>
+        <tr>
+            <td>nombre</td>
+            <td>apellido</td>
+            <td>correo</td>
+            <td>telefono</td>
+        </tr>
+
+        <?php
+        while($mostrar=mysqli_fetch_array($result)){
+        ?>
+        <tr>
+            <td><?php echo $mostrar['nombre'] ?></td>
+            <td><?php echo $mostrar['apellido'] ?></td>
+            <td><?php echo $mostrar['correo'] ?></td>
+            <!-- <td><?php //echo $mostrar['pass'] ?></td> -->
+            <td><?php echo $mostrar['telefono'] ?></td>
+            <td><?php echo $mostrar['avatar'] ?></td>
+        </tr>
+        <?php
+        }
+        ?>
+
+    </table>    

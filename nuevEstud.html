@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="estilosEdit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <main>
+        <h1>Ingresa los datos del nuevo Estudiante</h1>
+        <div class="contenedor">
+            <form action="insertNuevEstud.php" method="POST">
+                <div class="caja-insert">
+                    <div class="caja-1">
+                        <div class="caja-input">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre">
+                        </div>        
+                    
+                        <div class="caja-input">
+                            <label>Apellido</label> 
+                            <input type="text" name="apellido">
+                        </div>
+                    </div>
+
+                    <div class="caja-1">
+                        <div class="caja-input">
+                            <label>Correo</label>
+                            <input type="text" name="correo">
+                        </div>
+                    
+                        <div class="caja-input">
+                            <label>Telefono</label>
+                            <input type="text" name="tel">
+                        </div>
+                    </div>
+
+                    <div class="caja-2">
+                        <div class="caja-input">
+                            <label>Comentarios</label>
+                            <input type="text" name="coment">
+                        </div>
+                    
+                        <div class="caja-input">
+                            <label >Tema de la clase</label>
+                            <input type="text" name="clase">
+                        </div>
+                    </div>
+                </div>
+                <div class="caja-submit">
+                    <input class="submit" type="submit" value="Listo">
+                </div>
+                
+            </form>
+        </div>
+
+
+
+
+    </main>
+
+
+
+
+
+
+</body>
+</html>
