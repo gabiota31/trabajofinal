@@ -8,6 +8,6 @@ if(mysqli_connect_errno()){
     echo "conecto";
 };
 
-
+echo "esto es la pagina principal 😁";
 
 ?>

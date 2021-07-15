@@ -28,7 +28,7 @@ $sql = "insert into estudiante (nomEstud, apeEstud, correoEstud, telEstud, comen
 
 echo "<br>";
 if (mysqli_query($conexion, $sql)) {
-      echo "se grabo la entrada";
+    header('location: pag_principal.php');
 } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
 }

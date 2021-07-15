@@ -67,6 +67,14 @@ input {
     border-style: none;
 }
 
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:invalid:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+}
+
 .submit {
     width: 150px;
     height: 40px;
