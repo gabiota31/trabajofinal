@@ -22,12 +22,15 @@ var_dump($comentE);
 var_dump($claseE);
 
 
-$sql = "insert into estudiante (nomEstud, apeEstud, correoEstud, telEstud, comentEstud, clase) values ('$nombreE', '$apellidoE', '$correoE', '$telefonoE', '$comentE', '$claseE')";
+$insert = "insert into estudiante (nomEstud, apeEstud, correoEstud, telEstud, comentEstud, clase) values ('$nombreE', '$apellidoE', '$correoE', '$telefonoE', '$comentE', '$claseE')";
 
 //$sql = "INSERT INTO usuario (nombre, apellido, correo) VALUES ('Test', 'Testing', 'Testing@tesing.com')";
 
 echo "<br>";
-if (mysqli_query($conexion, $sql)) {
+
+
+echo "<br>";
+if (mysqli_query($conexion, $insert)) {
     header('location: pag_principal.php');
 } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conexion);

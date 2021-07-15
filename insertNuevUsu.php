@@ -6,6 +6,7 @@ if(mysqli_connect_errno()){
 }else{
     echo "conecto";
 };
+echo "<br>";
 
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
@@ -14,24 +15,61 @@ $pass = $_POST['pass'];
 $telefono = $_POST['tel'];
 $avatar = $_POST['avatar'];
 
-var_dump($nombre);
-var_dump($apellido);
-var_dump($correo);
-var_dump($pass);
-var_dump($telefono);
+// var_dump($nombre);
+// var_dump($apellido);
+// var_dump($correo);
+// var_dump($pass);
+// var_dump($telefono);
+// var_dump($avatar);
+
+$queryCorreo = "select * from usuario where correo=$correo";
+// $queryTel = "select * from usuario where telefono=$telefono";
+$queryAvatar = "select * from usuario where avatar=$avatar ";
+
+$consultaCorreo=mysqli_query($conexion, $queryCorreo);
+// $consultaTel=mysqli_query($conexion, $queryTel);
+$consultaAvatar=mysqli_query($conexion, $queryAvatar);
+
+echo "consulta correo";
+var_dump($consultaCorreo);
+echo "<br>";
+// echo "consulta telefono";
+// var_dump($consultaTel);
+echo "<br>";
+echo "consulta usuario";
+var_dump($consultaAvatar);
+echo "<br>";
 var_dump($avatar);
+echo "<br>";
+echo "el usuario entrante es: ";
+echo "$avatar";
+echo "<br>";
+echo "el usuario consultado es: ";
+echo "<br>";
 
 
-$sql = "insert into usuario (nombre, apellido, correo, pass, telefono, avatar) values ('$nombre', '$apellido', '$correo', '$pass', '$telefono', '$avatar')";
+
+if ($consultaCorreo == TRUE){
+    echo "<br>". "ya existe un usuario con ese correo";
+// } elseif($consultaTel == TRUE){
+//     echo "<br>". "ya existe un usuario con ese telefono";
+} elseif($consultaAvatar == TRUE){
+    echo "<br>". "ya existe un usuario con ese nombre";
+} else{
+    $insert = "insert into usuario (nombre, apellido, correo, pass, telefono, avatar) values ('$nombre', '$apellido', '$correo', '$pass', '$telefono', '$avatar')";
+    echo "<br>";
+    if (mysqli_query($conexion, $insert)) {
+        echo "se grabo la entrada";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
+    }
+}
+
+
 
 //$sql = "INSERT INTO usuario (nombre, apellido, correo) VALUES ('Test', 'Testing', 'Testing@tesing.com')";
 
-echo "<br>";
-if (mysqli_query($conexion, $sql)) {
-      echo "se grabo la entrada";
-} else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
-}
+
 mysqli_close($conexion);
 
 

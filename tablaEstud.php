@@ -1,21 +1,11 @@
 <?php
 
 $conexion = mysqli_connect('localhost','root', '', "trabajofinal");
-
-if(mysqli_connect_errno()){
-    echo "error";
-}else{
-    echo "conecto";
-};
-
-//$consulta1 = mysqli_query($conexion, "select * from usuario");
-
-$sql="select * from estudiante";
+$sql="select * from estudiante where nomEstud='Roberto'";
 $result=mysqli_query($conexion, $sql);
 
+
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,14 +15,8 @@ $result=mysqli_query($conexion, $sql);
     <title>mostrar datos</title>
     <link rel="stylesheet" href="estilos_muestra.css">
 </head>
-<body>
-    <h1>Estudiantes</h1>
 
-    <div>
-        agregar
-    </div>
-
-    <table>
+<table>
         <tr>
             <td class="nom-caterg" >Nombre</td>
             <td class="nom-caterg" >Apellido</td>
@@ -59,23 +43,3 @@ $result=mysqli_query($conexion, $sql);
         ?>
     </table>    
 
-    <div id="v-editar"></div>
-
-<?php 
-
-
-
-?>
-
-
-
-    <script src="editar.js"></script>
-
-
-
-
-    
-
-
-</body>
-</html>
