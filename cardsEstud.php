@@ -1,6 +1,6 @@
 <?php
 
-$conexion = mysqli_connect('localhost','root', '', "trabajofinal");
+include 'conn.php';
 $sql="select * from estudiante";
 $consulta=mysqli_query($conexion, $sql);
 

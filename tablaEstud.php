@@ -15,31 +15,38 @@ $result=mysqli_query($conexion, $sql);
     <title>mostrar datos</title>
     <link rel="stylesheet" href="estilos_muestra.css">
 </head>
+<body>
+    
+    <nav>
+        <?php include 'nav.php' ?>    
+    </nav>
 
-<table>
-        <tr>
-            <td class="nom-caterg" >Nombre</td>
-            <td class="nom-caterg" >Apellido</td>
-            <td class="nom-caterg" >Correo</td>
-            <td class="nom-caterg" >Telefono</td>
-            <td class="nom-caterg" >Comentarios</td>
-            <td>Modificar</td>
-        </tr>
 
-        <?php
-        while($mostrar=mysqli_fetch_array($result)){
-        ?>
-        <tr>
-            <td><?php echo $mostrar['nomEstud'] ?></td>
-            <td><?php echo $mostrar['apeEstud'] ?></td>
-            <td><?php echo $mostrar['correoEstud'] ?></td>
-            <!-- <td><?php //echo $mostrar['pass'] ?></td> -->
-            <td><?php echo $mostrar['telEstud'] ?></td>
-            <td><?php echo $mostrar['comentEstud'] ?></td>
-            <td> <span id="editar" >Editar</span> </td>
-        </tr>
-        <?php
-        }
-        ?>
-    </table>    
+    <table>
+            <tr>
+                <td class="nom-caterg" >Nombre</td>
+                <td class="nom-caterg" >Apellido</td>
+                <td class="nom-caterg" >Correo</td>
+                <td class="nom-caterg" >Telefono</td>
+                <td class="nom-caterg" >Comentarios</td>
+                <td>Modificar</td>
+            </tr>
 
+            <?php
+            while($mostrar=mysqli_fetch_array($result)){
+            ?>
+            <tr>
+                <td><?php echo $mostrar['nomEstud'] ?></td>
+                <td><?php echo $mostrar['apeEstud'] ?></td>
+                <td><?php echo $mostrar['correoEstud'] ?></td>
+                <!-- <td><?php //echo $mostrar['pass'] ?></td> -->
+                <td><?php echo $mostrar['telEstud'] ?></td>
+                <td><?php echo $mostrar['comentEstud'] ?></td>
+                <td> <span id="editar" >Editar</span> </td>
+            </tr>
+            <?php
+            }
+            ?>
+        </table>    
+
+</body>

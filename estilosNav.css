@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    padding: 25px;
+    background-color: rgb(98, 47, 69);
+}
+
+ul {
+    margin: 0 auto;
+    width: max-content;
+}
+
+li{
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.b-nav {
+    padding: 13px;
+    width: max-content;
+    text-align: center;
+    font-size: larger;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(98, 47, 69);
+    background-color: rgb(237, 210, 255);
+}
+
+a:hover {
+    color: rgb(194, 64, 120);
+    transform: translateY(-1.5px) translateX(1.5px);
+}

@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <nav>
+        <?php include 'nav.php' ?>    
+    </nav>
+
     <main>
         <div class="login animate__animated animate__fadeIn">
             <form action="insertNuevUsu.php" method="POST">

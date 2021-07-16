@@ -1,5 +1,5 @@
 <?php 
-$conexion = mysqli_connect('localhost','root', '', "trabajofinal");
+include 'conn.php';
 
 if(mysqli_connect_errno()){
     echo "error";

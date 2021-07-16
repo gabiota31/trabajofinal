@@ -1,6 +1,6 @@
 <?php
 
-$conexion = mysqli_connect('localhost','root', '', "trabajofinal");
+include 'conn.php';
 
 ?>
 
@@ -14,7 +14,13 @@ $conexion = mysqli_connect('localhost','root', '', "trabajofinal");
     <link rel="stylesheet" href="estilosPagPrin.css">
 </head>
 <body>
+    <nav>
+        <?php include 'nav.php' ?>    
+    </nav>
+
     <main>
+        
+
         <div class="botones">
             <div class="boton" id="b-estud"> Estudiantes</div>
             <div class="boton" id="b-clases"> Clases</div>
@@ -33,12 +39,7 @@ $conexion = mysqli_connect('localhost','root', '', "trabajofinal");
             </div>
         </div>
 
-        <section>
-            <a href="nuevEstud.html"> <div>Nuevo estudiante</div></a>
-            <a href="datos.php"> <div>Todos los estudiantes</div> </a>
-            <div>Nueva clase</div>
-            <div>Todas las clases</div>
-        </section>
+        
 
 
     </main>
