@@ -15,6 +15,10 @@ main{
     justify-content: left;
 }
 
+.nom-caterg {
+    margin: 10px 10px;
+}
+
 .nomEstud{
     margin: 10px 10px;
     padding: 5px;
