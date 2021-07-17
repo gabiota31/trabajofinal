@@ -11,15 +11,24 @@ function alerta(){
 function cambiaClases(){
     cardsEstud.style.display = 'none'
     cardsClases.style.display = 'block'
-    bClases.style.backgroundColor= 'black'
+    bClases.style.backgroundColor= 'rgb('+ [215,224,13].join(',') + ')'
+    // bClases.style.border = 'none'
     bEstud.style.backgroundColor= 'white'
+    // bEstud.style.borderStyle = 'solid'
+    // bEstud.style.borderColor = 'olive'
+    // bEstud.style.borderWidth = '1px'
 }
 
 function cambiaEstud(){
     cardsClases.style.display = 'none'
     cardsEstud.style.display = 'block'
-    bEstud.style.backgroundColor= 'black'
+    bEstud.style.backgroundColor= '#d7e00d'
+    // bEstud.style.border = 'none'
     bClases.style.backgroundColor= 'white'
+    // bClases.style.borderStyle = 'solid'
+    // bClases.style.borderColor = 'olive'
+    // bClases.style.borderWidth = '1px'
+
 }
 
 bClases.addEventListener('click',cambiaClases)

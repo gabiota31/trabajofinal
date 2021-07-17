@@ -7,13 +7,8 @@ $consulta=mysqli_query($conexion, $sql);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina principal</title>
+
     <link rel="stylesheet" href="estilosCards.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,29 +16,18 @@ $consulta=mysqli_query($conexion, $sql);
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">  
 </head>
 <body>
-    <main>
-        <div class="nom-caterg">Tus estudiantes</div>
-        <div class="contenedor-data">
+    <div>
+        <div class="contenedor-cards">
             <?php
             while($mostrar=mysqli_fetch_array($consulta)){
             ?>
-                <div id="<?php echo $mostrar['nomEstud'] ?>" class="nomEstud"><?php echo $mostrar['nomEstud'] ?></div>
+                <a class="a-card" href="datosEstud.php?id=<?php echo $mostrar['nomEstud']?>"><div id="<?php echo $mostrar['nomEstud'] ?>" class="nomEstud"><?php echo $mostrar['nomEstud'] ?> </div></a>
             <?php
             }
             ?>
         </div>    
-    </main>
+    </div>
     
-    <script src="">
-        //ACA LO QUE PODRIA HACER (NO SE COMO) ES HACER UN LISTENER PARA QUE TOME EL ID DEL DIV EN VEZ DE HACERLO CON PHP
-        var estu = document.getElementById('<?php echo $mostrar['nomEstud'] ?>')
-
-        function ancla(){
-            alert('deberia ser un ancla')
-        }
-
-        estu.addEventListener('click', ancla)
-    </script>
 
 
 

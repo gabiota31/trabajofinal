@@ -6,67 +6,39 @@
 }
 
 main{
-    margin: 50px auto;
-    width: max-content;
-}
-
-.contenedor-data {
+    padding-top: 50px;
+    padding-left: 12%;
     display: flex;
-    justify-content: left;
+    flex-flow: column;
 }
-
-.nomEstud{
-    margin: 10px 10px;
-    padding: 5px;
-    width: 100px;
-    height: 50px;
-    border: solid 1px;
-    
-}
-
-.nomEstud:hover {
-    transform: translateY(-1.5px) translateX(1.5px);
-    box-shadow: -8px 9px 9px -6px rgba(0,0,0,0.44);
-    -webkit-box-shadow: -8px 9px 9px -6px rgba(0,0,0,0.44);
-    -moz-box-shadow: -8px 9px 9px -6px rgba(0,0,0,0.44);
-}
-
-a{
-    text-decoration: none;
-}
-
 
 .botones {
-    display: flex;
-    justify-items: left;
+    margin: 25px 0;
+}
+
+.boton {
+    border: none;
+    padding: 10px 25px;
+    margin-right: 20px;
+    font-size: 14pt;
 }
 
 #b-clases, #b-estud {
-    width: max-content; 
-    padding:10px 20px; 
-    margin: 30px auto;
     display: inline;
-
+    color: #217f21;
+    border: #217f21 solid 1px; 
+    font-weight: bolder;
 }
 
 #b-clases {
-    color: rgb(145, 21, 21); 
     background-color: white;
 }
 
 #b-estud {
-    color: rgb(145, 21, 21); 
-    background-color: black; 
+    background-color: #d7e00d; 
 }
 
-.boton:hover{
+#b-clases:hover, #b-estud:hover {
     transform: translateY(-1.5px);
 }
 
-#cardsEstud {
-    display: block;
-}
-
-#cardsClases {
-    display: none;
-}

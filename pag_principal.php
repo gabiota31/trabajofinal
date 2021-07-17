@@ -23,11 +23,9 @@ include 'conn.php';
     </nav>
 
     <main>
-        
-
         <div class="botones">
-            <div class="boton" id="b-estud"> Estudiantes</div>
-            <div class="boton" id="b-clases"> Clases</div>
+            <button class="boton" id="b-estud">Tus Estudiantes</button>
+            <button class="boton" id="b-clases">Tus Clases</button>
         </div>
         <div class="contenedor-data">
             <div id="cardsEstud">
@@ -43,11 +41,7 @@ include 'conn.php';
             </div>
         </div>
 
-        
-
-
     </main>
-
 
     <script src='dinamica.js'></script>
 
