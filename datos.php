@@ -17,8 +17,7 @@ $result=mysqli_query($conexion, $sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mostrar datos</title>
-    <link rel="stylesheet" href="estilosDatos.css">
-    <link rel="stylesheet" href="estilosNuev.css">
+    <link rel="stylesheet" href="estilos/estilosDatos.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +55,7 @@ $result=mysqli_query($conexion, $sql);
                         <td class="dato"><?php echo $mostrar['nomEstud'] ." " . $mostrar['apeEstud']; ?></td>
                         <!-- <td class="dato"><?php   ?></td> -->
                         <td class="dato"><?php echo $mostrar['correoEstud'] ?></td>
-                        
+
                         <td class="dato" id="prueba"><?php echo $mostrar['telEstud'] ?></td>
 
                         <!-- <td class="dato"><?php //echo $mostrar['comentEstud'] ?></td>
@@ -119,10 +118,10 @@ $result=mysqli_query($conexion, $sql);
             </div>
         </section>
     </main>
-    <div id="v-editar"></div>
 
 
-    <script src="datos.js"></script>
+
+    <script src="js/datos.js"></script>
 
 
 

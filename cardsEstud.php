@@ -9,7 +9,7 @@ $consulta=mysqli_query($conexion, $sql);
 
 <head>
 
-    <link rel="stylesheet" href="estilosCards.css">
+    <link rel="stylesheet" href="estilos/estilosCards.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

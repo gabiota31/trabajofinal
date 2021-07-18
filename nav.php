@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="estilosNav.css">
+    <link rel="stylesheet" href="estilos/estilosNav.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
