@@ -5,32 +5,29 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-body{
+/* body{
     background-color: rgb(98, 47, 69);
-}
+} */
 
-
-
-h1{
+/* h2{
     color: #f4c1c2 ;
     margin: 50px auto 0;
     width: max-content;
-}
+} */
+
 .contenedor{
-    margin: 70px auto 100px;
+    /* margin: 70px auto 100px; */
     padding: 30px;
-    width: 930px;
+    width: auto;
     border-radius: 10px;
-    background-color: rgb(237, 210, 255);
-    /*background-color: rgb(237, 210, 255);*/
-    background-image: url(fondo-rose.png);
+    background-color: #217f21;
     /*background-image: url(fondo-pastel.jpg);*/
     background-size: 182%;
 }
 
 .caja-1, .caja-2 {
     padding: 10px;
-    background-color: #f4c1c2;
+    background-color: #d7e00d;
     border-radius: 10px;
     display: flex;
     flex-flow: row ;
@@ -67,13 +64,13 @@ input {
     border-style: none;
 }
 
-input:invalid {
+/* input:invalid {
     border: 2px dashed red;
 }
 
 input:invalid:required {
     background-image: linear-gradient(to right, pink, lightgreen);
-}
+} */
 
 .submit {
     width: 150px;

@@ -19,7 +19,7 @@
     </nav>
 
     <main>
-        <h1>Ingresa los datos del nuevo Estudiante</h1>
+        <h2>Ingresa los datos del nuevo Estudiante</h2>
         <div class="contenedor">
             <form action="insertNuevEstud.php" method="POST">
                 <div class="caja-insert">

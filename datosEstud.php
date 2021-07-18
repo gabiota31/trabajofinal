@@ -25,38 +25,38 @@ $mostrar = mysqli_fetch_array($query);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
 </head>
 <body>
     <nav>
             <?php include 'nav.php' ?>    
     </nav>
 
-    <table>
-            <tr>
-                <td class="nom-caterg" >Nombre</td>
-                <td class="nom-caterg" >Apellido</td>
-                <td class="nom-caterg" >Correo</td>
-                <td class="nom-caterg" >Telefono</td>
-                <td class="nom-caterg" >Comentarios</td>
-                <td class="nom-caterg" >Tema de la clase</td>
-                <td></td>
-            </tr>
+    <main>
+        <div class="titulo">
+            <h2> Ficha de <?php echo $mostrar['nomEstud'] ." " . $mostrar['apeEstud']?> </h2>
+        </div>
+        <table>
+                <tr>
+                    <td class="nom-caterg" >Correo</td>
+                    <td class="nom-caterg" >Telefono</td>
+                    <td class="nom-caterg" >Comentarios</td>
+                    <td class="nom-caterg" >Tema de la clase</td>
+                </tr>
 
-            <tr>
-                <td class="dato"><?php echo $mostrar['nomEstud'] ?></td>
-                <td class="dato"><?php echo $mostrar['apeEstud'] ?></td>
-                <td class="dato"><?php echo $mostrar['correoEstud'] ?></td>
-                <td class="dato"><?php echo $mostrar['telEstud'] ?></td>
-                <td class="dato"><?php echo $mostrar['comentEstud'] ?></td>
-                <td class="dato"><?php echo $mostrar['clase'] ?></td>
+                <tr>
+                    <td class="dato"><?php echo $mostrar['correoEstud'] ?></td>
+                    <td class="dato"><?php echo $mostrar['telEstud'] ?></td>
+                    <td class="dato"><?php echo $mostrar['comentEstud'] ?></td>
+                    <td class="dato"><?php echo $mostrar['clase'] ?></td>
+                    
+                    <td class="icono" id="borde"><a class="editar" href="editarEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-edit"></i> </a></td>
+                    <td class="icono"><a id="borrar" href="deleteEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-user-remove"></i> </a></td>
+
+                </tr>
                 
-                <td><a href="editarEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <span id="editar" >Editar</span> </a></td>
-                <td><a href="deleteEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <span id="editar" >Eliminar</span> </a></td>
-
-            </tr>
-            
         </table> 
-
+    </main>
 
 
 

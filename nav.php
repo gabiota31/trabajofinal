@@ -12,8 +12,7 @@
             <img src="logo.png" alt="logo organiza tus clases" class="logo">
         </div>
         <ul>
-            <li><a class="b-nav" href="pag_principal.php">PAGINA PRINCIPAL</a></li>
-            <li><a class="b-nav" href="nuevEstud.php">NUEVO ESTUDIANTE</a></li>
+            <li><a class="b-nav" href="pag_principal.php">INICIO</a></li>
             <li><a class="b-nav" href="datos.php">TODOS LOS ESTUDIANTES</a></li>
             <li><a class="b-nav" href=""> NUEVA CLASE </a></li>
             <li><a class="b-nav" href=""> TODAS LAS CLASES </a></li>
