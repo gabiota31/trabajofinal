@@ -17,7 +17,7 @@ body{
     /*background-color: rgb(237, 210, 255);*/
     display: flex;
     justify-content: center;
-    background-image: url(fondo-rose.png);
+    background-image: url(img/fondo-rose.png);
     /*background-image: url(fondo-pastel.jpg);*/
     background-size: 182%;
 }

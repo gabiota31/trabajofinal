@@ -9,7 +9,7 @@
 <body>
     <div class="contenedor-nav">
         <div>
-            <img src="logo.png" alt="logo organiza tus clases" class="logo">
+            <img src="img/logo.png" alt="logo organiza tus clases" class="logo">
         </div>
         <ul>
             <li><a class="b-nav" href="pag_principal.php">INICIO</a></li>
