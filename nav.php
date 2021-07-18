@@ -14,8 +14,8 @@
         <ul>
             <li><a class="b-nav" href="pag_principal.php">INICIO</a></li>
             <li><a class="b-nav" href="datos.php">TODOS LOS ESTUDIANTES</a></li>
-            <li><a class="b-nav" href=""> NUEVA CLASE </a></li>
-            <li><a class="b-nav" href=""> TODAS LAS CLASES </a></li>
+            <li><a class="b-nav" href="nuevClase.php"> NUEVA CLASE </a></li>
+            <li><a class="b-nav" href="datosClases.php"> TODAS LAS CLASES </a></li>
             <li> <a href="" class="usuario"> <span> U </span> </a></li>
         </ul>
     </div>
