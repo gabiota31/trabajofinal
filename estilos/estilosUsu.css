@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+main{
+    padding-top: 50px;
+    padding-left: 12%;
+    display: flex;
+    flex-flow: column;
+}
+
+.contenedor-usu {
+    display: flex;
+    flex-flow: row;
+    padding: 25px;
+    width: max-content;
+    border-radius: 20px;
+    background-color: rgb(215 224 13 / 42%);
+}
+
+.dato {
+    margin-bottom: 15px;
+}
+
+.dato div {
+    margin-left: 20px;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: rgb(215 224 13 / 70%);
+}
+
+.dato h3{
+    margin-bottom: 5px;
+}
+
+.contenedor-btn{
+    margin-left: 30px;
+}
+
+#editar {
+    font-size: larger;
+    text-decoration: none;
+    color: #217f21;
+}
