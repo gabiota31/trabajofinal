@@ -1,6 +1,11 @@
 <?php
 
 include 'conn.php';
+session_start();
+if(session_status()== php_session_active){
+    print "existe";
+};
+
 
 //$consulta1 = mysqli_query($conexion, "select * from usuario");
 

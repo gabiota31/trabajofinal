@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Nuevo usuario</title>
 
     <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -14,12 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <nav>
-        <?php include 'nav.php' ?>    
-    </nav>
+    <!-- <nav>
+        <?php //include 'nav.php' ?>    
+    </nav> -->
 
     <main>
-        <div class="login animate__animated animate__fadeIn">
+        <div class="contenedor login animate__animated animate__fadeIn">
             <form action="insertNuevUsu.php" method="POST">
                 <div class="usuario">
                     <div class="caja-input animate__animated animate__fadeInLeft ">

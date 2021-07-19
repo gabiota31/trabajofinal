@@ -1,7 +1,11 @@
 <?php
-
 include 'conn.php';
+session_start();
 
+echo $_SESSION['username'];
+?>
+<?php
+if(isset($_SESSION['username'])){
 ?>
 
 <!DOCTYPE html>
@@ -48,3 +52,8 @@ include 'conn.php';
 
 </body>
 </html>
+<?php }  
+else{
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+} ?>
