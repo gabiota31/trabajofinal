@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
 
 
 .contenedor-nav {
@@ -12,7 +18,7 @@
     width: 140px;
 }
 
-ul {
+nav{
     width: max-content;
     display: flex;
     align-items: center;
@@ -23,7 +29,7 @@ li{
     margin: 0px 4px;
 }
 
-.b-nav, .usuario {
+.b-nav{
     padding: 3px 5px;
     text-align: center;
     font-weight: bolder;
@@ -35,7 +41,14 @@ li{
     background-color: #217f21;
 }
 
-.usuario {
+.b-nav:hover {
+    color: #f9ff8f;
+    transform: translateY(-1.5px) translateX(1.5px);
+}
+
+.label label{
+    display: block;
+    padding: 10px;
     border-radius: 100%;
     width: 34px;
     height: 34px;
@@ -48,13 +61,58 @@ li{
     background-color: #f9ff7d;
 }
 
-.b-nav:hover {
+.label label:hover {
     color: #f9ff8f;
-    transform: translateY(-1.5px) translateX(1.5px);
+    transform: none;
+    cursor: pointer;
 }
 
-.usuario:hover {
-    color: #f9ff8f;
+.menu-usu{
+    /* display: none; */
+    /* margin-right: -8%; */
+    position: absolute;
+    top: 58px;
+    right: 5px;
+    border-radius: 5px;
     background-color: #217f21;
-    transform: none;
+}
+
+.menu-usu ul {
+    display: flex;
+    flex-flow: column;
+}
+
+.b-menu {
+    padding: 7px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#b-top {
+    border-bottom: 1px solid cadetblue;
+}
+
+.b-menu:hover {
+    color: crimson;
+    background-color: rgba(255, 255, 255, 0.198);
+}
+
+.menu-usu a {
+    color: #f9ff7d;
+    text-decoration: none;
+}
+
+/* #btn-menu {
+    display: none;
+} */
+
+#btn-menu:not(:checked) ~ .menu-usu {
+    display: none;
+}
+
+#btn-menu:checked ~ .menu-usu {
+    display: block;
+    margin-right: 8px;
+    background-color: chocolate;
 }
