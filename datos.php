@@ -36,7 +36,7 @@ $result=mysqli_query($conexion, $sql);
         <section>
             <div class="titulo">  
                 <h2>TUS ESTUDIANTES</h2>
-                <a class="b-nav" href="nuevEstud.php">NUEVO ESTUDIANTE</a>
+                <a id="b-nuev-estud" class="b-nav" href="">NUEVO ESTUDIANTE</a>
             </div>
 
             <table>
@@ -72,7 +72,7 @@ $result=mysqli_query($conexion, $sql);
 
 
 
-            <div class="contenedor">
+            <div id="contenedor" class="contenedor">
                 <form action="insertNuevEstud.php" method="POST">
                     <div class="caja-insert">
                         <div class="caja-1">
@@ -112,7 +112,7 @@ $result=mysqli_query($conexion, $sql);
                         </div>
                     </div>
                     <div class="caja-submit">
-                        <input class="submit" type="submit" value="Listo">
+                        <input id="submit" class="submit" type="submit" value="Listo">
                     </div>
                     
                 </form>

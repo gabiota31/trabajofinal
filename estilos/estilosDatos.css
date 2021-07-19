@@ -81,6 +81,7 @@ tr {
 
 
 .contenedor{
+    display: none;
     margin-right: 90px;
     padding: 30px;
     width: auto;
