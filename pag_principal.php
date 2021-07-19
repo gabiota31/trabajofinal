@@ -2,7 +2,6 @@
 include 'conn.php';
 session_start();
 
-echo $_SESSION['username'];
 ?>
 <?php
 if(isset($_SESSION['username'])){

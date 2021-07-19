@@ -1,13 +1,13 @@
 <?php
 
 include 'conn.php';
-// session_start();
+session_start();
 
-// $usu =$_SESSION['username'];
+$usu =$_SESSION['username'];
 
-// $sql="select * from usuario where correo ='$usu' ";
+$sql="select * from usuario where correo ='$usu' ";
 
-$sql="select * from usuario where correo ='ayevargas@ggmail.com' ";
+// $sql="select * from usuario where correo ='ayevargas@ggmail.com' ";
 
 $query=mysqli_query($conexion, $sql);
 $array=mysqli_fetch_array($query);
@@ -67,7 +67,7 @@ $array=mysqli_fetch_array($query);
                 <div class="icono" id="borde"><a id="editar" href="editarUsu.php?id=<?php echo $array['nombre']?>"> <i class="fi-rr-edit"></i> </a></div>
                 <!-- <div class="icono"><a id="borrar" href="deleteUsu.php?id=<?php echo $array['nombre']?>"> <i class="fi-rr-user-remove"></i> </a></div> -->
             </div>
-        </section>   
+        </section> 
         
 
     </main>
