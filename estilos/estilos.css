@@ -6,29 +6,42 @@
 }
 
 body{
-    background-color: rgb(98, 47, 69);
+    background-color: #217f21;
 }
 
 .login{
     margin: 100px auto;
-    width: 275px;
+    width: 300px;
     border-radius: 10px;
-    background-color: rgb(237, 210, 255);
-    /*background-color: rgb(237, 210, 255);*/
+    background-color: #d7e00d;
     display: flex;
-    justify-content: center;
-    background-image: url(img/fondo-rose.png);
-    /*background-image: url(fondo-pastel.jpg);*/
-    background-size: 182%;
+    align-items: center;
+    flex-flow: column;
+
+    box-shadow: 10px 10px 25px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 25px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 25px -10px rgba(0,0,0,0.75);
+
 }
+
+.title {
+    margin-top: 30px;
+    color: #217f21;
+}
+
 
 .animate__animated.animate__fadeIn{
     --animate-duration: 2s;
 }
 
 
+.title.animate__animated.animate__fadeIn{
+    --animate-delay: 2s;
+}
+
+
 .usuario {
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .caja-input {
@@ -38,7 +51,11 @@ body{
 }
 
 .caja-submit{
-    margin: 40px auto;
+    margin: 15px 0 30px;
+}
+
+#submit {
+    margin-top: 35px;
 }
 
 input {
@@ -49,8 +66,27 @@ input {
     border-style: none;
 }
 
+.anclas {
+    margin-top: 40px;
+    font-size: small;
+    display: flex;
+    flex-flow: column;
+}
+
+.anclas a {
+    margin-bottom: 5px;
+}
+
+.submit{
+    color: #217f21;
+    background-color: #f9ff8f;
+}
+
+
+
+
 .submit:hover {
-    background-color: black;
+    background-color: #217f21;
     color: blanchedalmond;
 }
 

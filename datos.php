@@ -10,6 +10,9 @@ $result=mysqli_query($conexion, $sql);
 
 ?>
 
+<?php
+// if(isset($_SESSION['username'])){
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,10 +31,9 @@ $result=mysqli_query($conexion, $sql);
 </head>
 <body>
 
-    <nav>
+    <div>
         <?php include 'nav.php' ?>    
-    </nav>
-
+    </div>
     <main>
         <section>
             <div class="titulo">  
@@ -77,36 +79,36 @@ $result=mysqli_query($conexion, $sql);
                     <div class="caja-insert">
                         <div class="caja-1">
                             <div class="caja-input">
-                                <label>Nombre</label>
+                                <label class="etiqueta">Nombre</label>
                                 <input type="text" name="nombre" required="required">
                             </div>        
                         
                             <div class="caja-input">
-                                <label>Apellido</label> 
+                                <label class="etiqueta">Apellido</label> 
                                 <input type="text" name="apellido" required>
                             </div>
                         </div>
 
                         <div class="caja-1">
                             <div class="caja-input">
-                                <label>Correo</label>
+                                <label class="etiqueta">Correo</label>
                                 <input type="email" name="correo" required>
                             </div>
                         
                             <div class="caja-input">
-                                <label>Telefono</label>
+                                <label class="etiqueta">Telefono</label>
                                 <input type="tel" name="tel" required>
                             </div>
                         </div>
 
                         <div class="caja-2">
                             <div class="caja-input">
-                                <label>Comentarios</label>
+                                <label class="etiqueta">Comentarios</label>
                                 <input type="text" name="coment">
                             </div>
                         
                             <div class="caja-input">
-                                <label >Tema de la clase</label>
+                                <label class="etiqueta">Tema de la clase</label>
                                 <input type="text" name="clase" required>
                             </div>
                         </div>
@@ -120,15 +122,16 @@ $result=mysqli_query($conexion, $sql);
         </section>
     </main>
 
+    <?php include 'footer.php' ?>    
 
 
     <script src="js/datos.js"></script>
 
-
-
-
-    
-
-
 </body>
 </html>
+
+<?php //}  
+// else{
+//     echo "no iniciaste sesion, redirigiendo...";
+//     header('refresh:3; url= login.html');
+// } ?>

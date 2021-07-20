@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+?>
+<?php
+// if(isset($_SESSION['username'])){
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,11 +21,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
-</head>
+</head> 
 <body>
-    <nav>
+    <div>
         <?php include 'nav.php' ?>    
-    </nav>
+    </div>
 
     <main>
         <h2>Ingresa los datos de la nueva clase</h2>
@@ -25,25 +34,25 @@
                 <div class="caja-insert">
                     <div class="caja-1">
                         <div class="caja-input">
-                            <label>Tema de la clase</label>
+                            <label class="etiqueta">Tema de la clase</label>
                             <input type="text" name="tema" required>
                         </div>        
                     
                         <div class="caja-input">
-                            <label>Fecha</label> 
+                            <label class="etiqueta">Fecha</label> 
                             <input type="date" name="fecha" required>
                         </div>
                     </div>
 
                     <div class="caja-2">
                         <div class="caja-input">
-                            <label>¿Pago?</label>
+                            <label class="etiqueta">¿Pago?</label>
                             <input type="text" name="pago">
                         </div>
                     
                     
                         <div class="caja-input">
-                            <label>Comentarios</label>
+                            <label class="etiqueta">Comentarios</label>
                             <input type="text" name="coment">
                         </div>
                     
@@ -57,7 +66,14 @@
         </div>
     </main>
        
+    <?php include 'footer.php' ?>    
 
 
 </body>
 </html>
+
+<?php //}  
+// else{
+//     echo "no iniciaste sesion, redirigiendo...";
+//     header('refresh:3; url= login.html');
+// } ?>

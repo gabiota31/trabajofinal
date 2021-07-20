@@ -63,12 +63,13 @@ li{
 
 .label label:hover {
     color: #f9ff8f;
+    background-color: #217f21;
     transform: none;
     cursor: pointer;
 }
 
 .menu-usu{
-    /* display: none; */
+    display: none;
     /* margin-right: -8%; */
     position: absolute;
     top: 58px;
@@ -103,16 +104,19 @@ li{
     text-decoration: none;
 }
 
-/* #btn-menu {
+#btn-menu {
     display: none;
-} */
+} 
 
-#btn-menu:not(:checked) ~ .menu-usu {
+.x {
     display: none;
 }
+
+/* #btn-menu:not(:checked) ~ .menu-usu {
+    display: none;
+} */
 
 #btn-menu:checked ~ .menu-usu {
     display: block;
     margin-right: 8px;
-    background-color: chocolate;
 }

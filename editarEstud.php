@@ -1,6 +1,7 @@
 <?php
 
 include 'conn.php';
+session_start();
 
 $nomEstud = $_GET['id'];
 
@@ -10,7 +11,9 @@ $query = mysqli_query($conexion, $sql);
 $row = mysqli_fetch_array($query);
 
 ?>
-
+<?php
+// if(isset($_SESSION['username'])){
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -26,9 +29,9 @@ $row = mysqli_fetch_array($query);
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <nav>
+    <div>
         <?php include 'nav.php' ?>    
-    </nav>
+    </div>
     <main>
         <h1>Ingresa los datos nuevos</h1>
         <div class="contenedor">
@@ -38,36 +41,36 @@ $row = mysqli_fetch_array($query);
                         <!-- ESTO PARA CUANDO PONGA EL ID EN LA <BASE></BASE> -->
                         <!-- <input type="hidden" name="id" value="<?php //echo $row['id'] ?>"> -->
                         <div class="caja-input">
-                            <label>Nombre</label>
+                            <label class="etiqueta">Nombre</label>
                             <input type="text" name="nombre" value="<?php echo $row['nomEstud'] ?>" required>
                         </div>        
                     
                         <div class="caja-input">
-                            <label>Apellido</label> 
+                            <label class="etiqueta">Apellido</label> 
                             <input type="text" name="apellido" value="<?php echo $row['apeEstud'] ?>" required>
                         </div>
                     </div>
 
                     <div class="caja-1">
                         <div class="caja-input">
-                            <label>Correo</label>
+                            <label class="etiqueta">Correo</label>
                             <input type="email" name="correo" value="<?php echo $row['correoEstud'] ?>" required>
                         </div>
                     
                         <div class="caja-input">
-                            <label>Telefono</label>
+                            <label class="etiqueta">Telefono</label>
                             <input type="tel" name="tel" value="<?php echo $row['telEstud'] ?>" required>
                         </div>
                     </div>
 
                     <div class="caja-2">
                         <div class="caja-input">
-                            <label>Comentarios</label>
+                            <label class="etiqueta">Comentarios</label>
                             <input type="text" name="coment" value="<?php echo $row['comentEstud'] ?>">
                         </div>
                     
                         <div class="caja-input">
-                            <label >Tema de la clase</label>
+                            <label class="etiqueta">Tema de la clase</label>
                             <input type="text" name="clase" value="<?php echo $row['clase'] ?>" required>
                         </div>
                     </div>
@@ -80,7 +83,14 @@ $row = mysqli_fetch_array($query);
         </div>
     </main>
        
+    <?php include 'footer.php' ?>    
 
 
 </body>
 </html>
+
+<?php //}  
+// else{
+//     echo "no iniciaste sesion, redirigiendo...";
+//     header('refresh:3; url= login.html');
+// } ?>

@@ -14,12 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <!-- <nav>
-        <?php //include 'nav.php' ?>    
-    </nav> -->
+    
 
     <main>
         <div class="contenedor login animate__animated animate__fadeIn">
+            <h2 class="title"> Crea un nuevo usuario </h2>
             <form action="insertNuevUsu.php" method="POST">
                 <div class="usuario">
                     <div class="caja-input animate__animated animate__fadeInLeft ">
@@ -47,8 +46,8 @@
                     </div>
 
                 </div>
-                <div class="caja-submit caja-input animate__animated animate__fadeInLeft">
-                    <input class="submit" type="submit" value="Iniciar Sesión">
+                <div id="submit" class="caja-submit caja-input animate__animated animate__fadeInLeft">
+                    <input  class="submit" type="submit" value="Iniciar Sesión">
                 </div>
             </form>
         </div>
@@ -57,9 +56,6 @@
 
 
     </main>
-
-
-
 
 
 

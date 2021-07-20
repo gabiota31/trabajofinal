@@ -1,9 +1,9 @@
 <?php
 
 include 'conn.php';
+session_start();
 
 $nomEstud = $_GET['id'];
-
 
 $sql = "select * from estudiante where nomEstud = '$nomEstud'";
 $query = mysqli_query($conexion, $sql);
@@ -11,6 +11,10 @@ $query = mysqli_query($conexion, $sql);
 $mostrar = mysqli_fetch_array($query);
 
 ?>
+<?php
+// if(isset($_SESSION['username'])){
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,10 +32,9 @@ $mostrar = mysqli_fetch_array($query);
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
 </head>
 <body>
-    <nav>
-            <?php include 'nav.php' ?>    
-    </nav>
-
+    <div>
+        <?php include 'nav.php' ?>    
+    </div>
     <main>
         <section>
             <div class="titulo">
@@ -62,7 +65,13 @@ $mostrar = mysqli_fetch_array($query);
 
     <script src="js/datos.js"></script>
 
+    <?php include 'footer.php' ?>    
 
 </body>
 </html>
 
+<?php //}  
+// else{
+//     echo "no iniciaste sesion, redirigiendo...";
+//     header('refresh:3; url= login.html');
+// } ?>

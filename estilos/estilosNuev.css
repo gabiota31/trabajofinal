@@ -21,8 +21,6 @@
     width: auto;
     border-radius: 10px;
     background-color: #217f21;
-    /*background-image: url(fondo-pastel.jpg);*/
-    background-size: 182%;
 }
 
 .caja-1, .caja-2 {
@@ -38,7 +36,7 @@
     margin-bottom: 20px;
 }
 
-label {
+.etiqueta {
     color: rgb(98, 47, 69);
     font-size: larger;
     font-weight: bold;

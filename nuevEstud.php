@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+?>
+<?php
+// if(isset($_SESSION['username'])){
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,9 +24,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <nav>
+<div>   
         <?php include 'nav.php' ?>    
-    </nav>
+    </div>
 
     <main>
         <h2>Ingresa los datos del nuevo Estudiante</h2>
@@ -67,7 +77,14 @@
         </div>
     </main>
        
+    <?php include 'footer.php' ?>    
 
 
 </body>
 </html>
+
+<?php //}  
+// else{
+//     echo "no iniciaste sesion, redirigiendo...";
+//     header('refresh:3; url= login.html');
+// } ?>

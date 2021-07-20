@@ -21,9 +21,9 @@ if(isset($_SESSION['username'])){
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <nav>
+    <div>
         <?php include 'nav.php' ?>    
-    </nav>
+    </div>
 
     <main>
         <div class="botones">
@@ -45,6 +45,8 @@ if(isset($_SESSION['username'])){
         </div>
 
     </main>
+
+    <?php include 'footer.php' ?>    
 
     <script src='js/dinamica.js'></script>
 

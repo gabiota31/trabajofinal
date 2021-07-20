@@ -17,10 +17,16 @@ main{
     display: flex;
     flex-flow: row;
     padding: 25px;
-    width: max-content;
+    width: 30%;
     border-radius: 20px;
     background-color: rgb(215 224 13 / 42%);
 }
+
+.contenedor-data-usu{
+    width: -moz-available;
+    width: -webkit-fill-available;
+}
+
 
 .dato {
     margin-bottom: 15px;
@@ -45,4 +51,12 @@ main{
     font-size: larger;
     text-decoration: none;
     color: #217f21;
+}
+
+.fi-rr-edit{
+    font-size: larger;
+}
+
+.fi-rr-edit:hover {
+    color: rgba(33, 127, 33, 0.73);
 }

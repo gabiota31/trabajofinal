@@ -1,6 +1,7 @@
 <?php
 
 include 'conn.php';
+session_start();
 
 $nombre = $_GET['id'];
 
@@ -10,7 +11,9 @@ $query = mysqli_query($conexion, $sql);
 $array = mysqli_fetch_array($query);
 
 ?>
-
+<?php
+// if(isset($_SESSION['username'])){
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -26,9 +29,9 @@ $array = mysqli_fetch_array($query);
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <nav>
+    <div>
         <?php include 'nav.php' ?>    
-    </nav>
+    </div>
     <main>
         <h1>Ingresa los datos nuevos</h1>
         <div class="contenedor">
@@ -38,36 +41,36 @@ $array = mysqli_fetch_array($query);
                         <!-- ESTO PARA CUANDO PONGA EL ID EN LA <BASE></BASE> -->
                         <!-- <input type="hidden" name="id" value="<?php //echo $row['id'] ?>"> -->
                         <div class="caja-input">
-                            <label>Nombre</label>
+                            <label class="etiqueta">Nombre</label>
                             <input type="text" name="nombre" value="<?php echo $array['nombre'] ?>" required>
                         </div>        
                     
                         <div class="caja-input">
-                            <label>Apellido</label> 
+                            <label class="etiqueta">Apellido</label> 
                             <input type="text" name="apellido" value="<?php echo $array['apellido'] ?>" required>
                         </div>
                     </div>
 
                     <div class="caja-1">
                         <div class="caja-input">
-                            <label>Correo</label>
+                            <label class="etiqueta">Correo</label>
                             <input type="email" name="correo" value="<?php echo $array['correo'] ?>" required>
                         </div>
                     
                         <div class="caja-input">
-                            <label>Telefono</label>
+                            <label class="etiqueta">Telefono</label>
                             <input type="tel" name="tel" value="<?php echo $array['telefono'] ?>" required>
                         </div>
                     </div>
 
                     <div class="caja-2">
                         <div class="caja-input">
-                            <label>Contraseña</label>
+                            <label class="etiqueta">Contraseña</label>
                             <input type="text" name="pass" value="<?php echo $array['pass'] ?>" required>
                         </div>
                     
                         <div class="caja-input">
-                            <label >avatar</label>
+                            <label class="etiqueta">avatar</label>
                             <input type="text" name="avatar" value="<?php echo $array['avatar'] ?>" required>
                         </div>
                     </div>
@@ -80,7 +83,17 @@ $array = mysqli_fetch_array($query);
         </div>
     </main>
        
+    <?php include 'footer.php' ?>    
 
 
 </body>
 </html>
+
+
+
+
+<?php //}  
+// else{
+//     echo "no iniciaste sesion, redirigiendo...";
+//     header('refresh:3; url= login.html');
+// } ?>

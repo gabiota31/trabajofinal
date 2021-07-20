@@ -104,7 +104,7 @@ tr {
     margin-bottom: 20px;
 }
 
-label {
+.etiqueta {
     color: rgb(98, 47, 69);
     font-size: larger;
     font-weight: bold;

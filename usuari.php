@@ -34,9 +34,9 @@ $array=mysqli_fetch_array($query);
     <script src="https://kit.fontawesome.com/ea0d59954b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
+    <div>
         <?php include 'nav.php' ?>    
-    </nav>
+    </div>
 
     <main>
         <section class="contenedor-usu">
@@ -72,6 +72,8 @@ $array=mysqli_fetch_array($query);
 
     </main>
 
+    
+    <?php include 'footer.php' ?>    
 
 </body>
 </html>

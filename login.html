@@ -13,6 +13,7 @@
     <main>
 
         <div class="login animate__animated animate__fadeIn">
+            <h2 class="title animate__animated animate__fadeIn">Inicia Sesión</h2>
             <form action="verify.php" method="POST">
                 <div class="usuario">
                     <div class="caja-input animate__animated animate__fadeInLeft "> <!--animate__delay-0.5s-->
@@ -23,13 +24,16 @@
                         <input type="password" placeholder="Contraseña" name="pass" required>
                     </div>
                 </div>
+                <div class="anclas animate__animated animate__fadeInLeft">
+                    <a href="iluso.php">¿Olvidaste la contraseña?</a>
+                    <a href="nuevUsu.php">¿No tenes una cuenta? ¡Crea una!</a>
+                </div>
+
                 <div class="caja-submit caja-input animate__animated animate__fadeInLeft">
                     <input class="submit" type="submit" value="Iniciar Sesión">
                 </div>
             </form>
         </div>
-
-        <div style="width: max-content; background-color: bisque;"><a href="nuevUsu.php">Nuevo usuario</a></div>
 
 
 

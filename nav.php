@@ -10,7 +10,7 @@
     <header>
         <div class="contenedor-nav">
             <div>
-                <img src="img/logo.png" alt="logo organiza tus clases" class="logo">
+                <a href="pag_principal.php"> <img src="img/logo.png" alt="logo organiza tus clases" class="logo"> </a>
             </div>
             <nav>
                 <ul>
@@ -22,9 +22,11 @@
                 </ul>
                 
                 <div class="label">
-                    <input type="checkbox" name="" id="btn-menu">
-                    <label for="btn-menu"> <span class="usuario"> U </span> </label>
+                    <label for="btn-menu"> <span class="usuario"> U </span> <span class="x"> X </span>  </label>
+
                 </div>
+                <input type="checkbox" id="btn-menu">
+
                 <div class="menu-usu">
                     <ul>
                         <li class="b-menu" id="b-top"><a class="item-menu" href="usuari.php" >PERFIL</a></li>

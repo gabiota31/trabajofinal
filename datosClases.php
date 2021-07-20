@@ -1,12 +1,16 @@
 <?php
 
 include 'conn.php';
+session_start();
 
 //$consulta1 = mysqli_query($conexion, "select * from usuario");
 
 $sql="select * from clase";
 $result=mysqli_query($conexion, $sql);
 
+?>
+<?php
+// if(isset($_SESSION['username'])){
 ?>
 
 
@@ -27,9 +31,9 @@ $result=mysqli_query($conexion, $sql);
 </head>
 <body>
 
-    <nav>
+    <div>
         <?php include 'nav.php' ?>    
-    </nav>
+    </div>
 
     <main>
         <section>
@@ -121,16 +125,17 @@ $result=mysqli_query($conexion, $sql);
             </div> -->
         </section>
     </main>
+    <?php include 'footer.php' ?>    
 
 
 
     <script src="js/datos.js"></script>
 
-
-
-
-    
-
-
 </body>
 </html>
+
+<?php //}  
+// else{
+//     echo "no iniciaste sesion, redirigiendo...";
+//     header('refresh:3; url= login.html');
+// } ?>
