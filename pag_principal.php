@@ -26,6 +26,7 @@ if(isset($_SESSION['username'])){
     </div>
 
     <main>
+        <h1> Bienvenide <?php echo $_SESSION['nombre']  ?></h1>
         <div class="botones">
             <button class="boton" id="b-estud">Tus Estudiantes</button>
             <button class="boton" id="b-clases">Tus Clases</button>

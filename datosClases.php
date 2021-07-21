@@ -60,7 +60,8 @@ $result=mysqli_query($conexion, $sql);
                     <tr>
                         <td class="dato"><?php echo $mostrar['temaClase'] ?></td>
                         <!-- <td class="dato"><?php   ?></td> -->
-                        <td class="dato"><?php echo $mostrar['fecha'] ?></td>
+                        <td class="dato"><?php $fNueva = date("d/m/Y", strtotime($mostrar['fecha']));
+                    echo $fNueva;?></td>
 
                         <td class="dato" id="prueba"><?php echo $mostrar['pago'] ?></td>
 

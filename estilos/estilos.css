@@ -50,6 +50,16 @@ body{
     margin-right: auto;
 }
 
+#caja-input {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#caja-input label{
+    margin-bottom: 5px;
+}
+
 .caja-submit{
     margin: 15px 0 30px;
 }

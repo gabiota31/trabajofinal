@@ -7,17 +7,29 @@
     margin: 10px 10px;
 }
 
-.nomEstud{
+.nomEstud, .temaClase{
     padding: 12px 17px;
     margin-right: 25px;
     width: 170px;
     height: 100px;
-    border: solid 1px;
-    font-weight: bolder;
-    
+    color: #217f21;
+    background-color: #d7e00d;
+    border: #217f21 solid 1.5px;
+    border-radius: 12px;
+    font-weight: bolder;  
 }
 
-.nomEstud:hover {
+#temaClase {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.fecha {
+    font-size: smaller;
+}
+
+.nomEstud:hover, .temaClase:hover {
     transform: translateY(-1.5px) translateX(1.5px);
     box-shadow: -8px 9px 9px -6px rgba(0,0,0,0.44);
     -webkit-box-shadow: -8px 9px 9px -6px rgba(0,0,0,0.44);

@@ -29,14 +29,14 @@
 
                 <div class="menu-usu">
                     <ul>
-                        <li class="b-menu" id="b-top"><a class="item-menu" href="usuari.php" >PERFIL</a></li>
-                        <li class="b-menu"><a class="item-menu" href="cerrarSesion.php"> CERRAR SESION </a></li>
+                        <a class="b-menu" id="b-top" href="usuari.php" ><li class="item-menu" >PERFIL</li></a>
+                        <a class="b-menu" href="cerrarSesion.php"><li class="item-menu"> CERRAR SESION </li></a>
                     </ul>
                 </div>
 
             </nav>
         </div>
     </header>
-    <!-- -->
+    
 </body>
 </html>
