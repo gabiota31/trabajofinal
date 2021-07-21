@@ -3,8 +3,6 @@
 include 'conn.php';
 session_start();
 
-//$consulta1 = mysqli_query($conexion, "select * from usuario");
-
 $sql="select * from clase";
 $result=mysqli_query($conexion, $sql);
 
@@ -66,10 +64,9 @@ $result=mysqli_query($conexion, $sql);
                         <td class="dato" id="prueba"><?php echo $mostrar['pago'] ?></td>
 
                         <td class="dato"><?php echo $mostrar['comentClase'] ?></td>
-                        
-<!--                         
-                        <td class="icono" id="borde"><a id="editar" href="editarEstud.php?id=<?php //echo $mostrar['nomEstud']?>"> <i class="fi-rr-edit"></i> </a></td>
-                        <td class="icono"><a id="borrar" href="deleteEstud.php?id=<?php //echo $mostrar['nomEstud']?>"> <i class="fi-rr-user-remove"></i> </a></td> -->
+                                             
+                        <td class="icono" id="borde"><a id="editar" href="editarClases.php?id=<?php echo $mostrar['temaClase']?>"> <i class="fi-rr-edit"></i> </a></td>
+                        <td class="icono"><a id="borrar" href="deleteClases.php?id=<?php echo $mostrar['temaClase']?>"> <i class="fi-rr-user-remove"></i> </a></td> 
                     </tr>
                 </tbody>
                 <?php
