@@ -60,6 +60,7 @@ tr {
 }
 
 #editar, #borrar {
+    margin: 0 10px;
     color: #217f21;
     text-decoration: none;
 

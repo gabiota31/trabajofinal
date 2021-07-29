@@ -3,9 +3,12 @@
 include 'conn.php';
 session_start();
 
-$temaClase = $_GET['id'];
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
 
-$sql = "select * from clase where temaClase = '$temaClase'";
+$idClase = $_GET['id'];
+
+$sql = "select * from clase where id_clase = $idClase";
 $query = mysqli_query($conexion, $sql);
 
 $array = mysqli_fetch_array($query);
@@ -38,8 +41,7 @@ $array = mysqli_fetch_array($query);
             <form action="updateClase.php" method="POST">
                 <div class="caja-insert">
                     <div class="caja-1">
-                        <!-- ESTO PARA CUANDO PONGA EL ID EN LA <BASE></BASE> -->
-                        <!-- <input type="hidden" name="id" value="<?php //echo $row['id'] ?>"> -->
+                        <input type="hidden" name="id_clase" value="<?php echo $array['id_clase'] ?>">
                         <div class="caja-input">
                             <label class="etiqueta">Tema de la clase</label>
                             <input type="text" name="temaClase" value="<?php echo $array['temaClase'] ?>" required>

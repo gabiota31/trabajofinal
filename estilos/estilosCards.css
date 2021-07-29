@@ -25,7 +25,8 @@
     justify-content: space-between;
 }
 
-.fecha {
+.fechaYnom div {
+    margin-top: 5px;
     font-size: smaller;
 }
 

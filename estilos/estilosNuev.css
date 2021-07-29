@@ -5,6 +5,10 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* body{
     background-color: rgb(98, 47, 69);
 } */

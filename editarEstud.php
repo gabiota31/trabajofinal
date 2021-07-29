@@ -3,9 +3,12 @@
 include 'conn.php';
 session_start();
 
-$nomEstud = $_GET['id'];
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
 
-$sql = "select * from estudiante where nomEstud = '$nomEstud'";
+$idEstud = $_GET['id'];
+
+$sql = "select * from estudiante where id_estud = '$idEstud'";
 $query = mysqli_query($conexion, $sql);
 
 $row = mysqli_fetch_array($query);
@@ -39,7 +42,7 @@ $row = mysqli_fetch_array($query);
                 <div class="caja-insert">
                     <div class="caja-1">
                         <!-- ESTO PARA CUANDO PONGA EL ID EN LA <BASE></BASE> -->
-                        <!-- <input type="hidden" name="id" value="<?php //echo $row['id'] ?>"> -->
+                        <input type="hidden" name="id_estud" value="<?php echo $row['id_estud'] ?>"> 
                         <div class="caja-input">
                             <label class="etiqueta">Nombre</label>
                             <input type="text" name="nombre" value="<?php echo $row['nomEstud'] ?>" required>

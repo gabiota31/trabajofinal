@@ -1,13 +1,13 @@
 <?php
 
 include 'conn.php';
-$sql="select * from clase order by fecha asc";
-//para que aparezca el nombre de le estudiante en la clase
-// $sql2="select nomEstud from clase order by fecha asc";
 
-$consulta=mysqli_query($conexion, $sql);
-// $consultEstud=mysqli_query($conexion, $sql2);
-$mostrar=mysqli_fetch_array($consulta);
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
+$sqlJoin="select * FROM estudiante INNER JOIN clase ON estudiante.id_estud = clase.estud_id where estudiante.usu_id=$usu_id ";
+
+$consulta=mysqli_query($conexion, $sqlJoin);
+
 ?>
 <head>
     <link rel="stylesheet" href="estilos/estilosCards.css">
@@ -20,20 +20,23 @@ $mostrar=mysqli_fetch_array($consulta);
     <div>
         <div class="contenedor-cards">
             <?php
-            while($mostrar=mysqli_fetch_array($consulta)/* && $arrayEstud=mysqli_fetch_array($consultEstud)*/){
+            while($mostrar=mysqli_fetch_array($consulta)){
             ?>
                 <div class="temaClase" id="temaClase">
                     <div><?php echo $mostrar['temaClase']; ?></div>
 
-                    <div class="fecha">
-                    <?php
-                    $fNueva = date("d/m/Y", strtotime($mostrar['fecha']));
-                    echo $fNueva;
-                    ?>
-                    </div>
+                    <div class="fechaYnom">
+                        <div>
+                        <?php
+                        $fNueva = date("d/m/Y", strtotime($mostrar['fecha']));
+                        echo $fNueva;
+                        ?>
+                        </div>
 
-                    <!-- <div> <?php //echo $arrayEstud['nomEstud']; ?> </div> -->
-                    
+                        <div>
+                            (con <?php echo $mostrar['nomEstud']; ?>)
+                        </div> 
+                    </div>
                 </div>
                 
 

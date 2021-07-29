@@ -5,6 +5,10 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 main{
     padding-top: 50px;
     padding-left: 12%;

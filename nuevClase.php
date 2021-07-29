@@ -1,6 +1,16 @@
 <?php
 
+include 'conn.php';
+
 session_start();
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
+
+$sql = "select * from estudiante where usu_id = $usu_id";
+$query = mysqli_query($conexion, $sql);
+
+// $array = mysqli_fetch_array($query);
+
 
 ?>
 <?php
@@ -30,7 +40,20 @@ session_start();
     <main>
         <h2>Ingresa los datos de la nueva clase</h2>
         <div class="contenedor">
-            <form action="insertNuevClase.php" method="POST">
+            
+            <form action="insertNuevClase.php" method="GET">
+            <input type="hidden" name="usu_id" value="<?php echo $usu_id ?>">
+            <select name="nomEstud">
+                <option>selecione un estudiante</option>
+                <?php
+                $i=1;
+                while($array=mysqli_fetch_array($query)){
+                ?>
+                <option value="<?php $array['nomEstud'] ?>"> <?php echo $array['nomEstud'];$i=$i+1 ?> </option>
+                <?php
+                }
+                ?>
+            </select>
                 <div class="caja-insert">
                     <div class="caja-1">
                         <div class="caja-input">

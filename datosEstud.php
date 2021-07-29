@@ -3,12 +3,19 @@
 include 'conn.php';
 session_start();
 
-$nomEstud = $_GET['id'];
+$idEstud = $_GET['id'];
 
-$sql = "select * from estudiante where nomEstud = '$nomEstud'";
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
+// $sql="select * FROM estudiante INNER JOIN clase ON estudiante.id_estud = clase.estud_id where estudiante.usu_id=$usu_id AND estudiante.id_estud = $idEstud";
+$sql = "select * from estudiante where estudiante.usu_id=$usu_id AND estudiante.id_estud = $idEstud";
+$sqlClases = "select * from clase where estud_id = $idEstud";
+
 $query = mysqli_query($conexion, $sql);
+$queryClases = mysqli_query($conexion, $sqlClases);
 
 $mostrar = mysqli_fetch_array($query);
+$arrayClases = mysqli_fetch_array($queryClases);
 
 ?>
 <?php
@@ -38,27 +45,62 @@ $mostrar = mysqli_fetch_array($query);
     <main>
         <section>
             <div class="titulo">
-                <h2> Ficha de <?php echo $mostrar['nomEstud'] ." " . $mostrar['apeEstud']?> </h2>
+                <h2> Ficha de contacto de <?php echo $mostrar['nomEstud'] . " " . $mostrar['apeEstud']?> </h2>
             </div>
             <table>
                     <tr>
                         <td class="nom-caterg" >Correo</td>
                         <td class="nom-caterg" >Telefono</td>
                         <td class="nom-caterg" >Comentarios</td>
-                        <td class="nom-caterg" >Tema de la clase</td>
                     </tr>
 
                     <tr>
                         <td class="dato"><?php echo $mostrar['correoEstud'] ?></td>
                         <td class="dato"><?php echo $mostrar['telEstud'] ?></td>
                         <td class="dato"><?php echo $mostrar['comentEstud'] ?></td>
-                        <td class="dato"><?php echo $mostrar['clase'] ?></td>
                         
                         <td class="icono" id="borde"><a id="editar" href="editarEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-edit"></i> </a></td>
                         <td class="icono"><a id="borrar" href="deleteEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-user-remove"></i> </a></td>
 
                     </tr>
                     
+            </table> 
+        </section>
+        <section>
+            <div class="titulo">
+                <h2> Clases programadas con <?php echo $mostrar['nomEstud'] . " " . $mostrar['apeEstud']?> </h2>
+            </div>
+            <table>
+                    <tr>
+                        <td class="nom-caterg" >Tema de la clase</td>
+                        <td class="nom-caterg" >Fecha</td>
+                        <td class="nom-caterg" >¿pago?</td>
+                        <td class="nom-caterg" >Cometarios sobre esta clase</td>
+
+                    </tr>
+                    <?php
+                    while($arrayClases=mysqli_fetch_array($queryClases)){
+                        echo "<pre>";
+                        // var_dump($arrayClases);
+                        echo "</pre>";
+
+                    ?>
+                    <tbody>
+                        <tr>
+
+                            <td class="dato"><?php echo $arrayClases['temaClase'] ?></td>
+                            <td class="dato"><?php echo $arrayClases['fecha'] ?></td>
+                            <td class="dato"><?php echo $arrayClases['pago'] ?></td>
+                            <td class="dato"><?php echo $arrayClases['comentClase'] ?></td>
+                            
+                            <td class="icono" id="borde"><a id="editar" href="editarClases.php?id=<?php echo $mostrar['id_estud']?>"> <i class="fi-rr-edit"></i> </a></td>
+                            <td class="icono"><a id="borrar" href="deleteClases.php?id=<?php echo $mostrar['id_estud']?>"> <i class="fi-rr-user-remove"></i> </a></td>
+
+                        </tr>
+                    </tbody>
+                    <?php
+                    }
+                    ?>
             </table> 
         </section>
     </main>

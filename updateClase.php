@@ -1,14 +1,14 @@
 <?php 
 include 'conn.php';
 
-// $idE = $_POST['id']
+$idC = $_POST['id_clase'];
 $clase = $_POST['temaClase'];
 $fecha = date('y-m-d', strtotime($_POST['fecha']));
 $pago = $_POST['pago'];
 $comentC = $_POST['coment'];
 
-$upd = "update clase set temaClase ='$clase', fecha = '$fecha', pago = '$pago', comentClase = '$comentC' where temaClase = '$clase' ";
-// $upd = "update estudiante set nomEstud ='$nombreE', apeEstud = '$apellidoE', correoEstud ='$correoE', telEstud = '$telefonoE', comentEstud = '$comentE', clase = '$claseE'" where id = '$id' ;
+$upd = "update clase set temaClase ='$clase', fecha = '$fecha', pago = '$pago', comentClase = '$comentC' where id_clase = $idC ";
+
 
 if (mysqli_query($conexion, $upd)) {
     header('location: datosClases.php');

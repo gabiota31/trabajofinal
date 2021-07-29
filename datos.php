@@ -3,9 +3,12 @@
 include 'conn.php';
 session_start();
 
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
+
 //$consulta1 = mysqli_query($conexion, "select * from usuario");
 
-$sql="select * from estudiante";
+$sql="select * from estudiante where estudiante.usu_id = $usu_id";
 $result=mysqli_query($conexion, $sql);
 
 ?>
@@ -46,6 +49,7 @@ $result=mysqli_query($conexion, $sql);
                     <td class="nom-caterg" >Nombre</td>
                     <td class="nom-caterg" >Correo</td>
                     <td class="nom-caterg" >Telefono</td>
+                    <td class="nom-caterg" ></td>
                     <!-- <td class="nom-caterg" >Comentarios</td>
                     <td class="nom-caterg" >Tema de la clase</td> -->
                 </tr>
@@ -58,13 +62,14 @@ $result=mysqli_query($conexion, $sql);
                         <td class="dato"><?php echo $mostrar['nomEstud'] ." " . $mostrar['apeEstud']; ?></td>
                         <!-- <td class="dato"><?php   ?></td> -->
                         <td class="dato"><?php echo $mostrar['correoEstud'] ?></td>
-
                         <td class="dato" id="prueba"><?php echo $mostrar['telEstud'] ?></td>
+                        <td class="dato">VER TODAS LAS CLASES CON <?php echo $mostrar['nomEstud'] ?></td>
+
 
                         <!-- <td class="dato"><?php //echo $mostrar['comentEstud'] ?></td>
                         <td class="dato"><?php// echo $mostrar['clase'] ?></td> -->
-                        <td class="icono" id="borde"><a id="editar" href="editarEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-edit"></i> </a></td>
-                        <td class="icono"><a id="borrar" href="deleteEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-user-remove"></i> </a></td>
+                        <td class="icono" id="borde"><a id="editar" href="editarEstud.php?id=<?php echo $mostrar['id_estud']?>"> <i class="fi-rr-edit"></i> </a></td>
+                        <td class="icono"><a id="borrar" href="deleteEstud.php?id=<?php echo $mostrar['id_estud']?>"> <i class="fi-rr-user-remove"></i> </a></td>
                     </tr>
                 </tbody>
                 <?php

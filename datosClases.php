@@ -3,7 +3,12 @@
 include 'conn.php';
 session_start();
 
-$sql="select * from clase";
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
+
+$sql = "select * FROM clase INNER JOIN estudiante ON clase.estud_id = estudiante.id_estud where estudiante.usu_id=$usu_id order by fecha asc";
+
+// $sql1="select * from clase where clase.usu_id= $usu_id";
 $result=mysqli_query($conexion, $sql);
 
 ?>
@@ -46,6 +51,8 @@ $result=mysqli_query($conexion, $sql);
                     <td class="nom-caterg" >Fecha</td>
                     <td class="nom-caterg" >¿pago?</td>
                     <td class="nom-caterg" >Comentarios sobre la clase</td>
+                    <td class="nom-caterg" >Estudiante</td>
+
 
                     <!-- <td class="nom-caterg" >Comentarios</td>
                     <td class="nom-caterg" >Tema de la clase</td> -->
@@ -59,14 +66,14 @@ $result=mysqli_query($conexion, $sql);
                         <td class="dato"><?php echo $mostrar['temaClase'] ?></td>
                         <!-- <td class="dato"><?php   ?></td> -->
                         <td class="dato"><?php $fNueva = date("d/m/Y", strtotime($mostrar['fecha']));
-                    echo $fNueva;?></td>
-
+                        echo $fNueva;?></td>
                         <td class="dato" id="prueba"><?php echo $mostrar['pago'] ?></td>
-
                         <td class="dato"><?php echo $mostrar['comentClase'] ?></td>
+                        <td class="dato"><?php echo $mostrar['nomEstud'] ?></td>
+
                                              
-                        <td class="icono" id="borde"><a id="editar" href="editarClases.php?id=<?php echo $mostrar['temaClase']?>"> <i class="fi-rr-edit"></i> </a></td>
-                        <td class="icono"><a id="borrar" href="deleteClases.php?id=<?php echo $mostrar['temaClase']?>"> <i class="fi-rr-user-remove"></i> </a></td> 
+                        <td class="icono" id="borde"><a id="editar" href="editarClases.php?id=<?php echo $mostrar['id_clase']?>"> <i class="fi-rr-edit"></i> </a></td>
+                        <td class="icono"><a id="borrar" href="deleteClases.php?id=<?php echo $mostrar['id_clase']?>"> <i class="fi-rr-user-remove"></i> </a></td> 
                     </tr>
                 </tbody>
                 <?php

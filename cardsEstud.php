@@ -1,12 +1,14 @@
 <?php
 
 include 'conn.php';
-$sql="select * from estudiante";
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
+$sql="select id_estud, nomEstud from estudiante where usu_id = $usu_id ";
 $consulta=mysqli_query($conexion, $sql);
 
 
-?>
 
+?>
 <head>
 
     <link rel="stylesheet" href="estilos/estilosCards.css">
@@ -21,15 +23,30 @@ $consulta=mysqli_query($conexion, $sql);
             <?php
             while($mostrar=mysqli_fetch_array($consulta)){
             ?>
-                <a class="a-card" href="datosEstud.php?id=<?php echo $mostrar['nomEstud']?>"><div id="<?php echo $mostrar['nomEstud'] ?>" class="nomEstud"><?php echo $mostrar['nomEstud'] ?> </div></a>
+                <a class="a-card" href="datosEstud.php?id=<?php echo $mostrar['id_estud']?>"><div id="<?php echo $mostrar['nomEstud'] ?>" class="nomEstud"><?php echo $mostrar['nomEstud'] ?> </div></a>
             <?php
-            }
+            };
             ?>
         </div>    
     </div>
-    
-
-
-
 </body>
-</html>
+
+<?php
+// $array=mysqli_fetch_array($consulta);
+// echo "<pre>";
+// var_dump($consulta);
+// echo "</pre>";
+// echo "<pre>";
+// var_dump($array);
+// echo "</pre>";
+// echo "<pre>";
+// var_dump($array['nomEstud']);
+// echo "</pre>";
+// if($array == NULL){
+//     echo "vacio";
+// } else {
+//     echo "no vacio";
+// };
+
+
+?>
