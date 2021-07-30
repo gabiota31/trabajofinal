@@ -4,7 +4,7 @@ include 'conn.php';
 
 // $usu_id = $_SESSION['userId'];
 $usu_id = 2;
-$sqlJoin="select * FROM estudiante INNER JOIN clase ON estudiante.id_estud = clase.estud_id where estudiante.usu_id=$usu_id ";
+$sqlJoin="select * FROM estudiante INNER JOIN clase ON estudiante.id_estud = clase.estud_id where estudiante.usu_id=$usu_id order by fecha asc";
 
 $consulta=mysqli_query($conexion, $sqlJoin);
 

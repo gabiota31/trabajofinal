@@ -73,7 +73,7 @@ $result=mysqli_query($conexion, $sql);
 
                                              
                         <td class="icono" id="borde"><a id="editar" href="editarClases.php?id=<?php echo $mostrar['id_clase']?>"> <i class="fi-rr-edit"></i> </a></td>
-                        <td class="icono"><a id="borrar" href="deleteClases.php?id=<?php echo $mostrar['id_clase']?>"> <i class="fi-rr-user-remove"></i> </a></td> 
+                        <td class="icono"><a id="borrar" href="deleteClase.php?id=<?php echo $mostrar['id_clase']?>"> <i class="fi-rr-file-delete"></i> </a></td> 
                     </tr>
                 </tbody>
                 <?php

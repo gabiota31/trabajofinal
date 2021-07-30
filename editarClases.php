@@ -61,7 +61,7 @@ $array = mysqli_fetch_array($query);
                     
                         <div class="caja-input">
                             <label class="etiqueta">Comentarios</label>
-                            <input type="text" name="coment" value="<?php echo $array['comentClase'] ?>" required>
+                            <input type="text" name="coment" value="<?php echo $array['comentClase'] ?>">
                         </div>
                     </div>
 

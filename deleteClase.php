@@ -2,14 +2,14 @@
 
 include 'conn.php';
 
-$idEstud = $_GET['id'];
+$idClase = $_GET['id'];
 
-$sql = "delete from estudiante where id_estud = '$idEstud' ";
+$sql = "delete from clase where id_clase = '$idClase' ";
 
 $query = mysqli_query($conexion, $sql);
 
 if($query){
-    header('location: datos.php');
+    header('location: datosClases.php');
 } else {
     echo "Error: " . $upd . "<br>" . mysqli_error($conexion);
 };

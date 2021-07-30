@@ -2,7 +2,6 @@
 include 'conn.php';
 
 $idE = $_POST['id_estud'];
-echo $idE;
 $nombreE = $_POST['nombre'];
 $apellidoE = $_POST['apellido'];
 $correoE = $_POST['correo'];
