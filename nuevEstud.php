@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+// $usu_id = $_SESSION['userId'];
+$usu_id = 2;
+
 
 ?>
 <?php
@@ -32,11 +35,13 @@ session_start();
         <h2>Ingresa los datos del nuevo Estudiante</h2>
         <div class="contenedor">
             <form action="insertNuevEstud.php" method="POST">
+            <input type="text" name="usu_id" value="<?php echo $usu_id ?>">
+
                 <div class="caja-insert">
                     <div class="caja-1">
                         <div class="caja-input">
                             <label>Nombre</label>
-                            <input type="text" name="nombre" required="required">
+                            <input type="text" name="nombre" required>
                         </div>        
                     
                         <div class="caja-input">
@@ -64,8 +69,8 @@ session_start();
                         </div>
                     
                         <div class="caja-input">
-                            <label >Tema de la clase</label>
-                            <input type="text" name="clase" required>
+                            <label >Precio de la clase </label>
+                            <input type="number" name="precio" required>
                         </div>
                     </div>
                 </div>

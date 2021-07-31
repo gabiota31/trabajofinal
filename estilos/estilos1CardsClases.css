@@ -1,0 +1,152 @@
+.proximas-clases {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+/* ---------cards proximas clases------------ */
+
+.cards-clase {
+    margin: 20px 0px 30px;
+    margin-right: 160px;
+    width: 400px;
+    height: max-content;
+}
+
+.cards-clase a{
+    text-decoration: none;
+}
+
+.card-n{
+    margin: 0px 0px 30px;
+    padding: 10px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    background-color: #f9ff8f;
+    border-radius: 10px;
+    box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -moz-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+}
+
+.card-n:hover{
+    transform: translateY(-1.5px) translateX(1.5px);
+}
+
+.card-inicial{
+    background-color: #d7e00d;
+    border-radius: 6px;
+    padding: 1px 12px;;
+    font-size: xx-large;
+    text-align: center;
+    font-weight: bold;
+    color: #217f21;
+
+}
+
+.card-central{
+    margin-left: 10px;
+    display: flex;
+    flex-flow: column;
+    color: #217f21;
+}
+
+.card-nombreEstud {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.card-info{
+    font-size: small;
+}
+
+.card-fecha {
+    margin-left: 57px;
+    color: #217f21;
+    
+    font-weight: bolder;
+    font-size: x-large;
+    margin-right: 0px;
+}
+
+
+/* --------------contenedor deslizante------------- */
+
+
+.desliz{
+    margin-bottom: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(179, 243, 179);
+    display: flex;
+    flex-flow: row;
+    justify-content: right;
+    color: #217f21;
+    box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -moz-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+}
+
+.desliz-info div {
+    margin-bottom: 5px;
+
+}
+
+.cruz {
+    margin-top: 5px;
+    width: 10px;
+}
+
+.cruz a:hover {
+    background-color: lightslategrey;
+    color: rgb(179, 243, 179);
+}
+
+.cruz a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #217f21;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: right;
+    background-color: #f2a847;
+    border-radius: 0px 10px 10px 0px;
+    padding: 5px;
+}
+
+.desliz-titulo {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.desliz-notas{
+    margin-top: 20px;
+}
+.desliz-coment {
+    padding: 8px;
+    height: 90px;
+    border-radius: 10px;
+    background-color: #217f21;
+    color: rgb(179, 243, 179);
+}
+
+.ultimo-renglon{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row;
+}
+
+.pago{
+    margin-right: 20px;
+}
+
+.pagoBD {
+    padding: 1px 5px;
+    width: 31px;
+    text-align: center;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #217f21;
+    color: rgb(179, 243, 179);
+}

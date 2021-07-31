@@ -12,8 +12,13 @@ html {
 main{
     padding-top: 50px;
     padding-left: 12%;
+    padding-right: 12%;
     display: flex;
     flex-flow: column;
+}
+
+h2{
+    margin-top: 40px;
 }
 
 .botones {

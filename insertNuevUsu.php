@@ -51,15 +51,14 @@ echo "<br>";
 
 if ($consultaCorreo == TRUE){
     echo "<br>". "ya existe un usuario con ese correo";
-// } elseif($consultaTel == TRUE){
-//     echo "<br>". "ya existe un usuario con ese telefono";
 } elseif($consultaAvatar == TRUE){
     echo "<br>". "ya existe un usuario con ese nombre";
 } else{
     $insert = "insert into usuario (nombre, apellido, correo, pass, telefono, avatar) values ('$nombre', '$apellido', '$correo', '$pass', '$telefono', '$avatar')";
     echo "<br>";
     if (mysqli_query($conexion, $insert)) {
-        echo "se grabo la entrada";
+        echo "¡Cuenta creada!";
+        header('refresh:2; url = login.html');
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
     }

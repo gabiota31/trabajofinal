@@ -2,6 +2,8 @@
 include 'conn.php';
 session_start();
 
+$_SESSION['nombre']="Marilia";
+
 ?>
 <?php
 // if(isset($_SESSION['username'])){
@@ -26,24 +28,60 @@ session_start();
     </div>
 
     <main>
-        <h1> Bienvenide <?php echo $_SESSION['nombre']  ?></h1>
-        <div class="botones">
+        <h1> Bienvenida <?php echo $_SESSION['nombre']  ?></h1>
+
+        <h2>Proximas Clases </h2>
+
+        <div class="cont-cards-clases">
+            <?php
+            include '1cardsClases.php'
+            ?>
+        </div>
+
+        <h2>Tus Estudiantes</h2>
+
+        <div class="cont-cards-estud">
+            <?php
+            include '1cardsEstud.php'
+            ?>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="botones">
             <button class="boton" id="b-estud">Tus Estudiantes</button>
             <button class="boton" id="b-clases">Tus Clases</button>
         </div>
         <div class="contenedor-data">
             <div id="cardsEstud">
             <?php
-            include 'cardsEstud.php';
+            //include 'cardsEstud.php';
             ?>
             </div>
 
             <div id="cardsClases">
             <?php
-            include 'cardsClases.php';
+            //include 'cardsClases.php';
             ?>
             </div>
-        </div>
+        </div> -->
 
     </main>
 
