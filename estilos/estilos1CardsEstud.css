@@ -1,20 +1,19 @@
-.proximas-clases {
+.tus-estudiantes {
     display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
 }
 
 /* ---------cards proximas clases------------ */
 
-.cards-clase {
-    margin: 20px 0px 30px;
+.cards-e {
     margin-right: 160px;
     width: 400px;
     height: max-content;
 }
 
-.cards-clase a{
+.cards-e a{
     text-decoration: none;
+    color: #217f21;
+
 }
 
 .card-n-e{
@@ -23,7 +22,7 @@
     display: flex;
     flex-flow: row;
     align-items: center;
-    background-color: #f9ff8f;
+    background-color: rgb(225, 255, 225);
     border-radius: 10px;
     box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
     -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
@@ -46,7 +45,6 @@
     margin-left: 10px;
     display: flex;
     flex-flow: column;
-    color: #217f21;
 }
 
 .card-nombreEstud-e {
@@ -62,48 +60,41 @@
 
 .card-count {
     margin-left: 57px;
-    color: #217f21;
-    
     font-weight: bolder;
-    /* font-size: ; */
     margin-right: 0px;
 }
 
 
 /* --------------contenedor deslizante------------- */
 
-
-.desliz{
-    margin-bottom: 5px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgb(179, 243, 179);
+.cont-desliz-e{
     display: flex;
     flex-flow: row;
-    justify-content: right;
+}
+
+.desliz-e{
+    padding: 20px 20px 10px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: rgb(225, 255, 225);
     color: #217f21;
+
+    justify-content: right;
     box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
     -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
     -moz-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
 }
 
-.desliz-info div {
-    margin-bottom: 5px;
-
+.cruz-e {
+    margin-top: 20px;
 }
 
-.cruz {
-    margin-top: 5px;
-    width: 10px;
-}
-
-.cruz a:hover {
+.cruz-e a:hover {
     background-color: lightslategrey;
-    color: rgb(179, 243, 179);
+    color: rgb(225, 255, 225);
 }
 
-.cruz a {
-    margin-left: 30px;
+.cruz-e a {
     text-decoration: none;
     color: #217f21;
     font-size: larger;
@@ -119,33 +110,76 @@
     font-weight: bolder;
 }
 
-.desliz-notas{
+.desliz-notas-e{
     margin-top: 20px;
-}
-.desliz-coment {
-    padding: 8px;
-    height: 90px;
-    border-radius: 10px;
-    background-color: #217f21;
-    color: rgb(179, 243, 179);
 }
 
-.ultimo-renglon{
-    margin-top: 20px;
+.desliz-clases-btns-e{
+    display: flex;
+    flex-flow: column;
+}
+
+.cant-clases{
+    margin-bottom: 10px;
+}
+.desliz-clase {
+    padding: 8px;
+    height: max-content;
+    border-radius: 10px;
+    font-weight: bolder;
+    background-color: rgb(179, 243, 179);
+    color: #217f21;
+}
+
+.desliz-clase-renglon{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.desliz-clase-renglon span:nth-child(2){
+    margin-right: 5px;
+}
+
+.renglon-pago{
     display: flex;
     flex-flow: row;
+    font-size: small;
 }
 
-.pago{
-    margin-right: 20px;
-}
-
-.pagoBD {
+.pagoBD-e {
     padding: 1px 5px;
     width: 31px;
     text-align: center;
-    height: 30px;
-    border-radius: 10px;
-    background-color: #217f21;
-    color: rgb(179, 243, 179);
+}
+
+.desliz-btns-e{
+    margin-bottom: 7px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: end; 
+}
+
+.deliz-icono a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bolder;
+    font-size: large;
+}
+.fi-rr-edit:hover {    
+    color: #103b10;
+
+}
+
+.fi-rr-file-delete:hover {
+    color: red;
+}
+
+.deliz-icono:nth-child(1) {
+    margin-right: 50px;
+    margin-left: 40px;
+}
+
+.deliz-icono:nth-child(2) {
+    margin-right: 5px;
 }

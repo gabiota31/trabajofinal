@@ -21,6 +21,8 @@ $_SESSION['nombre']="Marilia";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+
 </head>
 <body>
     <div>
@@ -45,11 +47,6 @@ $_SESSION['nombre']="Marilia";
             include '1cardsEstud.php'
             ?>
         </div>
-
-
-
-
-
 
 
 

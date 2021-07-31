@@ -1,20 +1,22 @@
 .proximas-clases {
     display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
+    align-items: baseline;
 }
 
 /* ---------cards proximas clases------------ */
 
 .cards-clase {
-    margin: 20px 0px 30px;
     margin-right: 160px;
     width: 400px;
     height: max-content;
+
 }
+
+
 
 .cards-clase a{
     text-decoration: none;
+    color: #217f21;
 }
 
 .card-n{
@@ -23,6 +25,8 @@
     display: flex;
     flex-flow: row;
     align-items: center;
+    justify-content: space-between;
+
     background-color: #f9ff8f;
     border-radius: 10px;
     box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
@@ -34,22 +38,25 @@
     transform: translateY(-1.5px) translateX(1.5px);
 }
 
+.cards-cont-izq {
+    display: flex;
+    flex-flow: inherit;
+}
+
+
 .card-inicial{
-    background-color: #d7e00d;
+    background-color: #eaf227;
     border-radius: 6px;
     padding: 1px 12px;;
     font-size: xx-large;
     text-align: center;
     font-weight: bold;
-    color: #217f21;
-
 }
 
 .card-central{
     margin-left: 10px;
     display: flex;
     flex-flow: column;
-    color: #217f21;
 }
 
 .card-nombreEstud {
@@ -63,8 +70,6 @@
 
 .card-fecha {
     margin-left: 57px;
-    color: #217f21;
-    
     font-weight: bolder;
     font-size: x-large;
     margin-right: 0px;
@@ -73,16 +78,18 @@
 
 /* --------------contenedor deslizante------------- */
 
-
-.desliz{
-    margin-bottom: 5px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgb(179, 243, 179);
+.cont-desliz{
     display: flex;
     flex-flow: row;
-    justify-content: right;
+}
+
+.desliz{
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #f9ff8f;
     color: #217f21;
+
     box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
     -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
     -moz-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
@@ -94,17 +101,18 @@
 }
 
 .cruz {
-    margin-top: 5px;
-    width: 10px;
+    margin-top: 20px;
+
 }
 
 .cruz a:hover {
     background-color: lightslategrey;
-    color: rgb(179, 243, 179);
+    color: #eaf227;
+    /* color: rgb(179, 243, 179); */
+
 }
 
 .cruz a {
-    margin-left: 30px;
     text-decoration: none;
     color: #217f21;
     font-size: larger;
@@ -125,28 +133,38 @@
 }
 .desliz-coment {
     padding: 8px;
-    height: 90px;
+    min-height: 90px;
+    height: max-content;
     border-radius: 10px;
-    background-color: #217f21;
-    color: rgb(179, 243, 179);
+    /* background-color: #217f21;
+    color: rgb(179, 243, 179); */
+
+    background-color: #eaf227;
 }
 
 .ultimo-renglon{
     margin-top: 20px;
     display: flex;
     flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.pago{
-    margin-right: 20px;
+.pagoBD span:nth-child(1){
+    margin-right: 11px;
 }
 
-.pagoBD {
+.pagoBD span:nth-child(2) {
     padding: 1px 5px;
     width: 31px;
     text-align: center;
     height: 30px;
     border-radius: 10px;
-    background-color: #217f21;
-    color: rgb(179, 243, 179);
+    background-color: #eaf227;
+    display: inline-block;
+}
+
+.desliz-btns{
+    display: flex;
+    justify-content: end; 
 }
