@@ -31,6 +31,13 @@ $_SESSION['nombre']="Marilia";
 
     <main>
         <h1> Bienvenida <?php echo $_SESSION['nombre']  ?></h1>
+        
+        <div class="cont-cards-clases">
+            <?php
+            include 'opciones.php'
+            ?>
+        </div>
+
 
         <h2>Proximas Clases </h2>
 

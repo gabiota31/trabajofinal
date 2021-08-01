@@ -41,7 +41,6 @@ $result=mysqli_query($conexion, $sql);
         <section>
             <div class="titulo">  
                 <h2>TUS ESTUDIANTES</h2>
-                <a id="b-nuev-estud" class="b-nav" href="">NUEVO ESTUDIANTE</a>
             </div>
 
             <table>
@@ -63,7 +62,6 @@ $result=mysqli_query($conexion, $sql);
                         <!-- <td class="dato"><?php   ?></td> -->
                         <td class="dato"><?php echo $mostrar['correoEstud'] ?></td>
                         <td class="dato" id="prueba"><?php echo $mostrar['telEstud'] ?></td>
-                        <td class="dato">VER TODAS LAS CLASES CON <?php echo $mostrar['nomEstud'] ?></td>
 
 
                         <!-- <td class="dato"><?php //echo $mostrar['comentEstud'] ?></td>

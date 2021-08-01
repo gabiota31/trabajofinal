@@ -9,6 +9,15 @@ html {
     scroll-behavior: smooth;
 }
 
+main{
+    padding-top: 50px;
+    padding-left: 12%;
+    padding-right: 12%;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 1000px;
+}
+
 /* body{
     background-color: rgb(98, 47, 69);
 } */
@@ -24,24 +33,45 @@ html {
     padding: 30px;
     width: auto;
     border-radius: 10px;
-    background-color: #217f21;
+    /* background-color: #217f21; */
 }
 
-.caja-1, .caja-2 {
-    padding: 10px;
-    background-color: #d7e00d;
-    border-radius: 10px;
+.select {
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: #eaf227;
+    border-style: solid;
+    border-color: #217f21;
+    border-radius: 5px;
+    font-size: large;
+
+}
+
+.caja-1, .caja-2, .caja-3 {
     display: flex;
     flex-flow: row ;
     justify-content: space-between;
 }
 
-.caja-1 {
+.caja-1, .caja-2 {
     margin-bottom: 20px;
 }
 
+.dos1, .dos2, .dos3 {
+    margin-right: 15px;
+}
+
+.caja-3{
+    width: 100%;
+}
+
+.caja-3 .caja-input{
+    width: 100%;
+    
+}
+
 .etiqueta {
-    color: rgb(98, 47, 69);
+    color: #217f21;
     font-size: larger;
     font-weight: bold;
     margin-bottom: 5px;
@@ -50,6 +80,10 @@ html {
 .caja-input {
     display: flex;
     flex-flow: column;
+    width: 47%;
+    padding: 10px;
+    background-color: #eaf227;
+    border-radius: 10px;
 }
 
 .caja-submit{
@@ -59,11 +93,18 @@ html {
 }
 
 input {
-    width: 400px;
     height: 60px;
     padding: 7px;
     border-radius: 7px;
     border-style: none;
+}
+
+.coment{
+    width: 100%;
+}
+
+.coment input{
+    height: 100px;
 }
 
 /* input:invalid {
@@ -77,12 +118,12 @@ input:invalid:required {
 .submit {
     width: 150px;
     height: 40px;
-    background-color: rgb(98, 47, 69);
+    background-color:  #217f21;
     color: blanchedalmond;
 }
 
 .submit:hover {
-    transform: translateY(1.5px) translateX(1.5px);
+    transform: translateY(-1.8px);
 
 }
 

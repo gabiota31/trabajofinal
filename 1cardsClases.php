@@ -4,7 +4,7 @@ include 'conn.php';
 // $usu_id = $_SESSION['userId'];
 $usu_id = 2;
 
-$sql="select * from estudiante inner join clase where estudiante.id_estud = clase.estud_id and clase.usu_id = $usu_id";
+$sql="select * from estudiante inner join clase where estudiante.id_estud = clase.estud_id and clase.usu_id = $usu_id limit 5";
 $consulta=mysqli_query($conexion, $sql);
 
 

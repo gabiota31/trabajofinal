@@ -41,7 +41,7 @@ $query = mysqli_query($conexion, $sql);
             
             <form action="insertNuevClase.php" method="POST">
                 <input type="hidden" name="usu_id" value="<?php echo $usu_id ?>">
-                <select name="id_estud">
+                <select class="select" name="id_estud">
                     <option>selecione un estudiante</option>
                     <?php
                     while($array=mysqli_fetch_array($query)){
@@ -56,26 +56,34 @@ $query = mysqli_query($conexion, $sql);
                         <div class="caja-input">
                             <label class="etiqueta">Tema de la clase</label>
                             <input type="text" name="tema" required>
-                        </div>        
-                    
-                        <div class="caja-input">
-                            <label class="etiqueta">Fecha</label> 
-                            <input type="date" name="fecha" required>
                         </div>
                     </div>
 
                     <div class="caja-2">
+                        <div class="caja-input dos1">
+                            <label class="etiqueta">Fecha</label> 
+                            <input type="date" name="fecha" required>
+                        </div>
+
+                        <div class="caja-input dos2">
+                            <label class="etiqueta">Hora</label>
+                            <input type="time" name="hora" required>
+                        </div>
+                    
+                        <div class="caja-input dos3">
+                            <label class="etiqueta">Precio</label>
+                            <input type="number" name="precio">
+                        </div>
                         <div class="caja-input">
                             <label class="etiqueta">¿Pago?</label>
                             <input type="text" name="pago">
                         </div>
-                    
-                    
+                    </div>
+                    <div class="caja-3">
                         <div class="caja-input">
                             <label class="etiqueta">Comentarios</label>
                             <input type="text" name="coment">
                         </div>
-                    
                     </div>
                 </div>
                 <div class="caja-submit">

@@ -1,0 +1,48 @@
+.cajas {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cajas a {
+    text-decoration: none;
+}
+
+.caja-ancla{
+    margin-right: 5px;
+    padding: 20px;
+    /* height: 130px;
+    width: 148px; */
+
+    height: 109px;
+    width: 110px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    border-radius: 10px;
+
+    background-color: #eaf227;
+    border: solid #eaf227 2px;
+    color: #217f21;
+}
+
+.caja-ancla:hover {
+    transform: scale(1.05);
+}
+
+.caja-ancla i {
+    font-size: xx-large;
+}
+
+.caja-ancla div{
+    font-size: small;
+    font-weight: bold;
+}
+
+#largo {
+    width: min-content;
+}

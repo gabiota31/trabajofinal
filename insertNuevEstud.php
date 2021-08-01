@@ -7,7 +7,6 @@ $apellidoE = $_POST['apellido'];
 $correoE = $_POST['correo'];
 $telefonoE = $_POST['tel'];
 $comentE = $_POST['coment'];
-$precio = $_POST['precio'];
 
 if(isset($_POST['usu_id'])){
     $sqlCuenta = "select COUNT(id_estud) from estudiante where estudiante.usu_id = $usuId";
@@ -24,7 +23,7 @@ if(isset($_POST['usu_id'])){
 };
 
 
-$insert = "insert into estudiante (id_estud, nomEstud, apeEstud, correoEstud, telEstud, comentEstud, precioClase ) values ( '$idEstud', '$nombreE', '$apellidoE', '$correoE', '$telefonoE', '$comentE', '$precio')";
+$insert = "insert into estudiante (id_estud, nomEstud, apeEstud, correoEstud, telEstud, comentEstud, usu_id) values ( $idEstud, '$nombreE', '$apellidoE', '$correoE', $telefonoE, '$comentE', $usuId)";
 
 
 echo "<br>";
@@ -33,7 +32,7 @@ echo "<br>";
 echo "<br>";
 if (mysqli_query($conexion, $insert)) {
     echo "se inserto";
-    // header('location: datos.php');
+    header('location: datos.php');
 } else {
       echo "Error: " . $insert . "<br>" . mysqli_error($conexion);
 }

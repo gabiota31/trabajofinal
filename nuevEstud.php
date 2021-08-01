@@ -35,43 +35,36 @@ $usu_id = 2;
         <h2>Ingresa los datos del nuevo Estudiante</h2>
         <div class="contenedor">
             <form action="insertNuevEstud.php" method="POST">
-            <input type="text" name="usu_id" value="<?php echo $usu_id ?>">
+            <input type="hidden" name="usu_id" value="<?php echo $usu_id ?>">
 
                 <div class="caja-insert">
                     <div class="caja-1">
                         <div class="caja-input">
-                            <label>Nombre</label>
+                            <label class="etiqueta">Nombre</label>
                             <input type="text" name="nombre" required>
                         </div>        
                     
                         <div class="caja-input">
-                            <label>Apellido</label> 
+                            <label class="etiqueta">Apellido</label> 
                             <input type="text" name="apellido" required>
                         </div>
                     </div>
 
                     <div class="caja-1">
                         <div class="caja-input">
-                            <label>Correo</label>
+                            <label class="etiqueta">Correo</label>
                             <input type="email" name="correo" required>
                         </div>
                     
                         <div class="caja-input">
-                            <label>Telefono</label>
+                            <label class="etiqueta">Telefono</label>
                             <input type="tel" name="tel" required>
                         </div>
                     </div>
 
-                    <div class="caja-2">
-                        <div class="caja-input">
-                            <label>Comentarios</label>
-                            <input type="text" name="coment">
-                        </div>
-                    
-                        <div class="caja-input">
-                            <label >Precio de la clase </label>
-                            <input type="number" name="precio" required>
-                        </div>
+                    <div class="caja-input coment">
+                        <label class="etiqueta">Comentarios</label>
+                        <input type="textarea" name="coment">
                     </div>
                 </div>
                 <div class="caja-submit">
@@ -79,7 +72,15 @@ $usu_id = 2;
                 </div>
                 
             </form>
+
+            <!-- <div class="caja-input">
+                <label >Precio de la clase </label>
+                <input type="number" name="precio" required>
+            </div> -->
         </div>
+
+
+        
     </main>
        
     <?php include 'footer.php' ?>    

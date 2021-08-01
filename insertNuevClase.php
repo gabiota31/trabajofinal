@@ -4,6 +4,8 @@ include 'conn.php';
 $usuId = $_POST['usu_id'];
 $temaC = $_POST['tema'];
 $fecha = date('y-m-d', strtotime($_POST['fecha']));
+$hora = $_POST['hora'];
+$precio = $_POST['precio'];
 $pago = $_POST['pago'];
 $comentC = $_POST['coment'];
 
@@ -23,7 +25,7 @@ if(isset($_POST['id_estud'])){
     echo "error tomando los id";
 };
 
-$insert = "insert into clase (id_clase, temaClase, fecha, pago, comentClase, usu_id, estud_id) values ('$idClase', '$temaC', '$fecha', '$pago', '$comentC', '$usuId', '$estudId')";
+$insert = "insert into clase (id_clase, temaClase, fecha, hora, precioClase, pago, comentClase, usu_id, estud_id) values ('$idClase', '$temaC', '$fecha', '$hora', '$precio', '$pago', '$comentC', '$usuId', '$estudId')";
 
 
 echo "<br>";
