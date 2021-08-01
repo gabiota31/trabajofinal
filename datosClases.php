@@ -42,7 +42,6 @@ $result=mysqli_query($conexion, $sql);
         <section>
             <div class="titulo">  
                 <h2>TUS CLASES</h2>
-                <a class="b-nav" href="nuevClase.php">NUEVA CLASE</a>
             </div>
 
             <table>

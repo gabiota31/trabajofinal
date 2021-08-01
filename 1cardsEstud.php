@@ -57,7 +57,13 @@ $consulta=mysqli_query($conexion, $sql);
             <div class="desliz-e">
                 <div class="desliz-info-e">
                     <div class="desliz-titulo">
-                            <?php echo $mostrar2['nomEstud'] . " ". $mostrar2['apeEstud'] ?> <span style="font-size: small;"> ver toda la info de: </span>
+                        <?php echo $mostrar2['nomEstud'] . " ". $mostrar2['apeEstud'] ?>
+                    </div>
+                    <div>
+                        Correo: <?php echo $mostrar2['correoEstud'] ?>
+                    </div>
+                    <div>
+                        Telefono: <?php echo $mostrar2['telEstud'] ?>
                     </div>
                     <div class="desliz-notas-e">
                         <div class="cant-clases">
@@ -93,7 +99,7 @@ $consulta=mysqli_query($conexion, $sql);
                                 </div>
                             </div>
                             <div class="desliz-btns-e">
-                                <div class="deliz-icono"><a id="borrar" href="deleteEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-file-delete"></i> </a></div>
+                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?id=<?php echo $mostrar3['id_clase'] ?>"> <i class="fi-rr-file-delete"></i> </a></div>
                             </div>
                         </div>
                         <?php

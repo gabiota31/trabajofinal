@@ -60,12 +60,13 @@
 }
 
 .card-nombreEstud {
-    font-size: larger;
+    /* font-size: larger; */
     font-weight: bold;
 }
 
 .card-info{
-    font-size: small;
+    /* font-size: small; */
+    font-size: 85%;
 }
 
 .card-fecha {
@@ -93,11 +94,6 @@
     box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
     -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
     -moz-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
-}
-
-.desliz-info div {
-    margin-bottom: 5px;
-
 }
 
 .cruz {
@@ -145,9 +141,8 @@
 .ultimo-renglon{
     margin-top: 20px;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: space-between;
-    align-items: center;
 }
 
 .pago{
@@ -176,8 +171,17 @@
 
 .desliz-btns{
     display: flex;
-    justify-content: end; 
+    justify-content: flex-end; 
 }
+
+#editar-btn {
+    margin-right: 30px;
+}
+
+.fi-rr-edit:hover {
+    color: rgb(53, 255, 36);
+}
+
 
 /* -----------------Contenedor inputs edit------------------ */
 

@@ -4,7 +4,7 @@ include 'conn.php';
 // $usu_id = $_SESSION['userId'];
 $usu_id = 2;
 
-$sql="select * from estudiante inner join clase where estudiante.id_estud = clase.estud_id and clase.usu_id = $usu_id limit 5";
+$sql="select * from estudiante inner join clase where estudiante.id_estud = clase.estud_id and clase.usu_id = $usu_id order by fecha asc limit 5 ";
 $consulta=mysqli_query($conexion, $sql);
 
 
@@ -21,6 +21,7 @@ $consulta=mysqli_query($conexion, $sql);
             while($mostrar=mysqli_fetch_array($consulta)){
             ?>
             <a href="pag_principal.php?id=<?php echo $mostrar['id_clase']?>">
+                
                 <div class="card-n " id="<?php echo $mostrar['id_clase']?>">
                     <div class="cards-cont-izq">
                         <div class="card-inicial">
@@ -46,7 +47,9 @@ $consulta=mysqli_query($conexion, $sql);
             <?php
             };
             ?>
-        </div> <!--cierre "cards-clase"-->
+        </div> <!--cierre "cards-clase" y del while-->
+
+        <!-- ----------------------------- contenedor tarjetas deslizantes--------------------------- -->
 
         <div class="cont-desliz  animate__animated animate__fadeInRight">
             <?php 
@@ -83,23 +86,23 @@ $consulta=mysqli_query($conexion, $sql);
                         </div>
 
                         <div class="desliz-btns">
-                            <div class="deliz-icono" id="borde"><a id="editar" href="pag_principal.php?idEdit=<?php echo $idClase?>"> <i class="fi-rr-edit"></i> </a></div>
-                            <div class="deliz-icono"><a id="borrar" href="deleteClase.php?id=<?php echo $idClase?>"> <i class="fi-rr-file-delete"></i> </a></div>
+                            <div class="deliz-icono" id="borde"><a id="editar-btn" href="pag_principal.php?idEdit=<?php echo $idClase?>"> <i class="fi-rr-edit"></i> </a></div>
+                            <div class="deliz-icono"><a id="borrar" href="deleteClase.php?id=<?php echo $idClase?>"><i class="fi-rr-file-delete"></i> </a></div>
                         </div>
                     </div>
-                </div> <!--cierre "desliz-info" cobre el que se ejecuta el while-->
-            </div>
+                </div> <!--cierre "desliz-info" -->
+            </div> <!--cierre "desliz" -->
             <div class="cruz">
                 <a href="pag_principal.php">X</a>
             </div>
         <?php
         } };
         ?>
-        </div> <!--cierre "cont-desliz-->
+        </div> <!--cierre "cont-desliz y del while-->
+
 
 
         <!-- ---------------- a partir de aca el contenedor con los inputs para editar ------------------ -->
-
 
         <div class="cont-editar">
         <?php 
@@ -112,7 +115,7 @@ $consulta=mysqli_query($conexion, $sql);
             <div class="edit">
                 <div class="editar-info">
                     <form action="updateClase.php" method="POST">
-                        <input type="text" name="id_clase" value="<?php echo $arrayEdit['id_clase'] ?>">
+                        <input type="hidden" name="id_clase" value="<?php echo $arrayEdit['id_clase'] ?>">
 
                         <div class="editar-fecha">
                             Cambie la fecha de la clase: <input type="date" name="fecha" value="<?php echo $arrayEdit['fecha'] ?>" required>
@@ -140,8 +143,8 @@ $consulta=mysqli_query($conexion, $sql);
                             <input class="submit" type="submit" value="Listo">
                         </div>
                     </form>
-                </div> <!--cierre "desliz-info" cobre el que se ejecuta el while-->
-            </div>
+                </div> <!--cierre "editar-info" -->
+            </div> <!--cierre "editar" -->
             <div class="cruz">
                 <a href="pag_principal.php">X</a>
             </div>
@@ -159,12 +162,6 @@ $consulta=mysqli_query($conexion, $sql);
 
 
     </section>
-
-
-<script src="js/dinam1Cards.js">
-var cardClases = document.getElementById('')
-
-
 
 
 </script>

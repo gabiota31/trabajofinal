@@ -41,7 +41,6 @@ $row = mysqli_fetch_array($query);
             <form action="updateEstud.php" method="POST">
                 <div class="caja-insert">
                     <div class="caja-1">
-                        <!-- ESTO PARA CUANDO PONGA EL ID EN LA <BASE></BASE> -->
                         <input type="hidden" name="id_estud" value="<?php echo $row['id_estud'] ?>"> 
                         <div class="caja-input">
                             <label class="etiqueta">Nombre</label>
@@ -71,11 +70,7 @@ $row = mysqli_fetch_array($query);
                             <label class="etiqueta">Comentarios</label>
                             <input type="text" name="coment" value="<?php echo $row['comentEstud'] ?>">
                         </div>
-                    
-                        <div class="caja-input">
-                            <label class="etiqueta">Tema de la clase</label>
-                            <input type="text" name="clase" value="<?php echo $row['clase'] ?>" required>
-                        </div>
+                
                     </div>
                 </div>
                 <div class="caja-submit">
