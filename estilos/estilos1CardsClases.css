@@ -150,6 +150,16 @@
     align-items: center;
 }
 
+.pago{
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+}
+
+.pago div:nth-child(1){
+    margin-right: 20px;
+}
+
 .pagoBD span:nth-child(1){
     margin-right: 11px;
 }
@@ -167,4 +177,102 @@
 .desliz-btns{
     display: flex;
     justify-content: end; 
+}
+
+/* -----------------Contenedor inputs edit------------------ */
+
+.cont-editar{
+    display: flex;
+    flex-flow: row;
+}
+
+.cont-editar input {
+    border-style: none;
+    border-color: black;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 6px;
+        
+}
+
+.edit{
+    padding: 20px;
+    padding-bottom: 16px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #eaf227;
+    color: #217f21;
+
+    box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -moz-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+}
+
+.editar-nom input{
+    font-size: large;
+    height: max-content;
+    width: -moz-available;
+}
+
+.editar-notas{
+    margin-top: 7px;
+}
+
+.editar-tema input {
+    margin: 0;
+}
+
+.editar-coment {
+    padding: 8px;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    min-height: 90px;
+    height: max-content;
+    border-radius: 10px;
+}
+
+.editar-pagoBD span:nth-child(1){
+    margin-right: 11px;
+}
+
+.editar-pagoBD input {
+    margin-bottom: 0;
+    padding: 1px 5px;
+    width: 31px;
+    text-align: center;
+    height: 30px;
+    border-radius: 10px;
+    background-color: white;
+    display: inline-block;
+}
+
+.precio{
+    margin-right: 20px;
+}
+
+.precio input {
+    width: 65px;
+}
+
+.caja-submit {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.caja-submit input{
+    margin-bottom: 0;
+    padding: 6px;
+    width: 100px;
+    background-color: #2b8526;
+    color: #f9ff8f;
+    font-weight: bold;
+}
+
+.caja-submit input:hover{
+    background-color: #f9ff8f;
+    color: #2b8526;
+    transform: translateY(-1.5px) translateX(1.5px);
+
 }

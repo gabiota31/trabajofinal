@@ -34,9 +34,7 @@ $consulta=mysqli_query($conexion, $sql);
                         </div>
                     </div>
                     <div class="card-count">
-                        <?php
-                            // 
-                        ?>
+                        ver mas - Todas las clases
                     </div>
                 </div> <!-- cierre "card-n"-->
             </a>
@@ -59,7 +57,7 @@ $consulta=mysqli_query($conexion, $sql);
             <div class="desliz-e">
                 <div class="desliz-info-e">
                     <div class="desliz-titulo">
-                            <?php echo $mostrar2['nomEstud'] . " ". $mostrar2['apeEstud'] ?> 
+                            <?php echo $mostrar2['nomEstud'] . " ". $mostrar2['apeEstud'] ?> <span style="font-size: small;"> ver toda la info de: </span>
                     </div>
                     <div class="desliz-notas-e">
                         <div class="cant-clases">
@@ -80,19 +78,21 @@ $consulta=mysqli_query($conexion, $sql);
                         <div class="desliz-clases-btns-e">
                             <div class="desliz-clase">
                                 <div class="desliz-clase-renglon">
-                                    <span><?php echo date("d/m", strtotime($mostrar3['fecha'])) ?> - <?php echo $mostrar3['hora'] ?></span> <span><?php echo $mostrar3['temaClase'] ?></span>
+                                    <span><?php echo date("d/m", strtotime($mostrar3['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3['hora'])) ?></span> <span><?php echo $mostrar3['temaClase'] ?></span>
                                 </div>
                                 <div class="renglon-pago">
                                     <div class="pago-e">
-                                        ¿paga?
+                                        Precio: $<?php echo $mostrar3['precioClase'] ?>
                                     </div>
                                     <div class="pagoBD-e">
-                                        <?php echo $mostrar3['pago'] ?>
+                                        ¿paga? <?php echo $mostrar3['pago'] ?>
                                     </div>
-                                </div>    
+                                </div>
+                                <div class="coment-clase">
+                                    <span> Comentarios: </span><?php echo $mostrar3['comentClase'] ?>
+                                </div>
                             </div>
                             <div class="desliz-btns-e">
-                                <div class="deliz-icono" id="borde"><a id="editar" href="editarEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-edit"></i> </a></div>
                                 <div class="deliz-icono"><a id="borrar" href="deleteEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-file-delete"></i> </a></div>
                             </div>
                         </div>

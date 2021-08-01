@@ -143,21 +143,33 @@
 
 .renglon-pago{
     display: flex;
+    align-items: center;
     flex-flow: row;
     font-size: small;
 }
 
+.pago-e{
+    margin-right: 10px;
+}
+
 .pagoBD-e {
-    padding: 1px 5px;
-    width: 31px;
     text-align: center;
+}
+
+.coment-clase {
+    margin-top: 10px;
+    font-size: small;
+}
+
+.coment-clase span{
+    color: #1a441a;
 }
 
 .desliz-btns-e{
     margin-bottom: 7px;
     margin-top: 5px;
     display: flex;
-    justify-content: end; 
+    justify-content: flex-end; 
 }
 
 .deliz-icono a {
@@ -166,20 +178,12 @@
     font-weight: bolder;
     font-size: large;
 }
-.fi-rr-edit:hover {    
-    color: #103b10;
 
-}
 
 .fi-rr-file-delete:hover {
     color: red;
 }
 
 .deliz-icono:nth-child(1) {
-    margin-right: 50px;
-    margin-left: 40px;
-}
-
-.deliz-icono:nth-child(2) {
     margin-right: 5px;
 }
