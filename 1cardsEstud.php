@@ -52,7 +52,7 @@ $consulta=mysqli_query($conexion, $sql);
                 $idEstud =  $_GET['id'];
                 $sql2="select * from estudiante where estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud " ;
                 $consulta2=mysqli_query($conexion, $sql2);
-                while($mostrar2=mysqli_fetch_array($consulta2)){
+                $mostrar2=mysqli_fetch_array($consulta2)
             ?>
             <div class="desliz-e">
                 <div class="desliz-info-e">
@@ -95,7 +95,7 @@ $consulta=mysqli_query($conexion, $sql);
                                     </div>
                                 </div>
                                 <div class="coment-clase">
-                                    <span> Comentarios: </span><?php echo $mostrar3['comentClase'] ?>
+                                    <span> Notas sobre la clase: </span><?php echo $mostrar3['comentClase'] ?>
                                 </div>
                             </div>
                             <div class="desliz-btns-e">
@@ -103,21 +103,16 @@ $consulta=mysqli_query($conexion, $sql);
                             </div>
                         </div>
                         <?php
-                        }
+                        } //cierre del while que pone todas las clases del estudiante
                         ?>
-                    </div>
-
-                    
-                    
-                </div> <!--cierre "desliz-info" cobre el que se ejecuta el while-->
-                
-            </div>
+                    </div> <!-- "cierre desliz-notas-e" -->   
+                </div> <!--cierre "desliz-info-e"-->
+            </div> <!-- cierre "desliz-e" -->
             <div class="cruz-e">
                 <a href="pag_principal.php">X</a>
             </div>
         <?php
-        }
-      };
+        } //cierre del if(isset) que pone la tarjeta en pantalla
         ?>
         </div> <!--cierre "cont-desliz-e"-->
 

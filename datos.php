@@ -38,91 +38,89 @@ $result=mysqli_query($conexion, $sql);
         <?php include 'nav.php' ?>    
     </div>
     <main>
+
+
         <section>
             <div class="titulo">  
                 <h2>TUS ESTUDIANTES</h2>
             </div>
-
-            <table>
-                <tr>
-                    <td class="nom-caterg" >Nombre</td>
-                    <td class="nom-caterg" >Correo</td>
-                    <td class="nom-caterg" >Telefono</td>
-                    <td class="nom-caterg" ></td>
-                    <!-- <td class="nom-caterg" >Comentarios</td>
-                    <td class="nom-caterg" >Tema de la clase</td> -->
-                </tr>
-
-                <?php
-                while($mostrar=mysqli_fetch_array($result)){
-                ?>
-                <tbody>
-                    <tr>
-                        <td class="dato"><?php echo $mostrar['nomEstud'] ." " . $mostrar['apeEstud']; ?></td>
-                        <!-- <td class="dato"><?php   ?></td> -->
-                        <td class="dato"><?php echo $mostrar['correoEstud'] ?></td>
-                        <td class="dato" id="prueba"><?php echo $mostrar['telEstud'] ?></td>
-
-
-                        <!-- <td class="dato"><?php //echo $mostrar['comentEstud'] ?></td>
-                        <td class="dato"><?php// echo $mostrar['clase'] ?></td> -->
-                        <td class="icono" id="borde"><a id="editar" href="editarEstud.php?id=<?php echo $mostrar['id_estud']?>"> <i class="fi-rr-edit"></i> </a></td>
-                        <td class="icono"><a id="borrar" href="deleteEstud.php?id=<?php echo $mostrar['id_estud']?>"> <i class="fi-rr-user-remove"></i> </a></td>
-                    </tr>
-                </tbody>
-                <?php
-                }
-                ?>
-            </table>
-
-
-
-            <div id="contenedor" class="contenedor">
-                <form action="insertNuevEstud.php" method="POST">
-                    <div class="caja-insert">
-                        <div class="caja-1">
-                            <div class="caja-input">
-                                <label class="etiqueta">Nombre</label>
-                                <input type="text" name="nombre" required="required">
-                            </div>        
-                        
-                            <div class="caja-input">
-                                <label class="etiqueta">Apellido</label> 
-                                <input type="text" name="apellido" required>
-                            </div>
+            <?php
+                while($mostrar2=mysqli_fetch_array($result)){
+            ?>
+            <div class="desliz-titulo">
+                <?php echo $mostrar2['nomEstud'] . " ". $mostrar2['apeEstud'] ?>
+                <span>
+                    <a href="editarEstud.php?idEstud=<?php echo $mostrar2['id_estud'] ?>"><i class="fas fa-user-edit"></i></a>
+                </span>
+                <span>
+                    <a id="btn-borrar" href="deleteEstud.php?id=<?php echo $mostrar2['id_estud'] ?>"><i class="fas fa-user-times"></i></a>
+                </span>
+            </div>
+            <div class="desliz-e">    
+                <div class="desliz-info-e">
+                    <div class="info-contacto">
+                        <div>
+                            Correo: <?php echo $mostrar2['correoEstud'] ?>
                         </div>
-
-                        <div class="caja-1">
-                            <div class="caja-input">
-                                <label class="etiqueta">Correo</label>
-                                <input type="email" name="correo" required>
-                            </div>
-                        
-                            <div class="caja-input">
-                                <label class="etiqueta">Telefono</label>
-                                <input type="tel" name="tel" required>
-                            </div>
+                        <div>
+                            Telefono: <?php echo $mostrar2['telEstud'] ?>
                         </div>
-
-                        <div class="caja-2">
-                            <div class="caja-input">
-                                <label class="etiqueta">Comentarios</label>
-                                <input type="text" name="coment">
-                            </div>
-                        
-                            <div class="caja-input">
-                                <label class="etiqueta">Tema de la clase</label>
-                                <input type="text" name="clase" required>
-                            </div>
+                        <div>
+                            <?php echo $mostrar2['comentEstud'] ?>
                         </div>
-                    </div>
-                    <div class="caja-submit">
-                        <input id="submit" class="submit" type="submit" value="Listo">
                     </div>
                     
-                </form>
-            </div>
+                    <div class="cant-clases">
+                        Clases agendadas:
+                        <?php //esto cuenta la cantidad de clases totales y las pone en un numero
+                        $idEstud = $mostrar2['id_estud'];
+                        $sqlCuenta = "select count(*) FROM clase where usu_id = $usu_id and estud_id = $idEstud";
+                        $queryCuenta = mysqli_query($conexion,$sqlCuenta);
+                        $arrayCuenta = mysqli_fetch_array($queryCuenta);
+                        $cuenta = $arrayCuenta[0];
+                        echo " " . " " .$cuenta;
+                        ?>
+                    </div>
+                    <div class="desliz-notas-e">
+                        
+                        <?php //esto hace que parezcan las clases listadas dentro del contenedor 
+                        $sql3 = "select * FROM estudiante INNER JOIN clase WHERE estudiante.id_estud = clase.estud_id and estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud order by fecha";
+                        $consulta3 = mysqli_query($conexion, $sql3);
+                        while($mostrar3 = mysqli_fetch_array($consulta3)){
+                        ?>
+                        <div class="desliz-clases-btns-e">
+                            <div class="desliz-clase">
+                                <div class="desliz-clase-renglon">
+                                    <span><?php echo date("d/m", strtotime($mostrar3['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3['hora'])) ?></span> <span><?php echo $mostrar3['temaClase'] ?></span>
+                                </div>
+                                <div class="renglon-pago">
+                                    <div class="pago-e">
+                                        Precio: $<?php echo $mostrar3['precioClase'] ?>
+                                    </div>
+                                    <div class="pagoBD-e">
+                                        ¿paga? <?php echo $mostrar3['pago'] ?>
+                                    </div>
+                                </div>
+                                <div class="coment-clase">
+                                    <span> Notas sobre la clase: </span><?php echo $mostrar3['comentClase'] ?>
+                                </div>
+                            </div>
+                            <div class="desliz-btns-e">
+                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?idDelete=<?php echo $mostrar3['id_clase'] ?>"> <i class="fi-rr-file-delete"></i> </a></div>
+                            </div>
+                        </div>
+                        <?php
+                        } //cierre del while que pone todas las clases del estudiante
+                        ?>
+                    </div> <!-- "cierre desliz-notas-e" -->   
+                </div> <!--cierre "desliz-info-e"-->
+            </div> <!-- cierre "desliz-e" -->
+            <?php
+            } //cierre del while que pone a todos los estudiantes
+            ?>
         </section>
+
+        
     </main>
 
     <?php include 'footer.php' ?>    

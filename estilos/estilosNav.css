@@ -37,12 +37,12 @@ li{
     border-radius: 4px;
     display: inline-block;
     text-decoration: none;
-    color: #d7e00d;
+    color: #e1ffe1;
     background-color: #217f21;
 }
 
 .b-nav:hover {
-    color: #f9ff8f;
+    color: #eaf227;
     transform: translateY(-1.5px) translateX(1.5px);
 }
 

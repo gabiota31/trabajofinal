@@ -24,6 +24,187 @@ h2 {
 
 }
 
+/* ----------------- cosas nuevas -------------------------- */
+
+.cont-desliz-e{
+    display: flex;
+    flex-flow: row;
+}
+
+.desliz-titulo {
+    margin-bottom: 10px;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.desliz-titulo span {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.desliz-titulo a {
+    text-decoration: none;
+    color: #217f21;
+}
+
+.desliz-titulo a:hover {
+    color: #00ff40;
+}
+
+#btn-borrar:hover {
+    color: red;
+}
+
+.info-contacto div, .cant-clases {
+    font-weight: bolder;
+}
+
+.info-contacto div:nth-child(3) {
+    margin-top: 7px;
+}
+
+
+.desliz-e{
+    margin-bottom: 50px;
+    padding: 20px 20px 10px;
+    border-radius: 10px;
+    background-color: rgb(225, 255, 225);
+    color: #217f21;
+
+    justify-content: right;
+    box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -moz-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+}
+
+.cruz-e {
+    margin-top: 20px;
+}
+
+.cruz-e a:hover {
+    background-color: lightslategrey;
+    color: rgb(225, 255, 225);
+}
+
+.cruz-e a {
+    text-decoration: none;
+    color: #217f21;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: right;
+    background-color: #f2a847;
+    border-radius: 0px 10px 10px 0px;
+    padding: 5px;
+}
+
+.desliz-notas-e{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.desliz-clases-btns-e{
+    margin-right: 10px;
+    width: 23%;
+    display: flex;
+    flex-flow: column;
+}
+
+.cant-clases{
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+.desliz-clase {
+    padding: 8px;
+    min-height: fit-content;
+    height: 85%;
+    border-radius: 10px;
+    font-weight: bolder;
+    background-color: rgb(179, 243, 179);
+    color: #217f21;
+}
+
+.desliz-clase-renglon{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.desliz-clase-renglon span:nth-child(2){
+    margin-right: 5px;
+}
+
+.renglon-pago{
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    font-size: small;
+}
+
+.pago-e{
+    margin-right: 10px;
+}
+
+.pagoBD-e {
+    text-align: center;
+}
+
+.coment-clase {
+    margin-top: 10px;
+    font-size: small;
+}
+
+.coment-clase span{
+    color: #1a441a;
+}
+
+.desliz-btns-e{
+    margin-bottom: 7px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.deliz-icono a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bolder;
+    font-size: large;
+}
+
+
+.fi-rr-file-delete:hover {
+    color: red;
+}
+
+.deliz-icono:nth-child(1) {
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------ Tabla vieja ------------------ */
+
 table {
     table-layout: fixed;
     border-collapse: collapse;

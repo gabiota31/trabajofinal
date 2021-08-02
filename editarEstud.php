@@ -6,7 +6,11 @@ session_start();
 // $usu_id = $_SESSION['userId'];
 $usu_id = 2;
 
-$idEstud = $_GET['id'];
+if(isset($_GET['id'])){
+    $idEstud = $_GET['id'];
+} elseif(isset($_GET['idEstud'])){
+    $idEstud = $_GET['idEstud'];
+}
 
 $sql = "select * from estudiante where id_estud = '$idEstud'";
 $query = mysqli_query($conexion, $sql);
@@ -39,6 +43,14 @@ $row = mysqli_fetch_array($query);
         <h1>Ingresa los datos nuevos</h1>
         <div class="contenedor">
             <form action="updateEstud.php" method="POST">
+                <?php
+                if(isset($_GET['id'])){ ?>
+                    <input type="text" name="deLaPagPrin" value="deLaPagPrin">
+                <?php } elseif(isset($_GET['idEstud'])){ ?>
+                    <input type="text" name="deTodosEstud" value="deTodosEstud">
+                <?php
+                }
+                ?>
                 <div class="caja-insert">
                     <div class="caja-1">
                         <input type="hidden" name="id_estud" value="<?php echo $row['id_estud'] ?>"> 

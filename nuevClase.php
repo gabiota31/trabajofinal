@@ -41,7 +41,7 @@ $query = mysqli_query($conexion, $sql);
             
             <form action="insertNuevClase.php" method="POST">
                 <input type="hidden" name="usu_id" value="<?php echo $usu_id ?>">
-                <select class="select" name="id_estud">
+                <select class="select" name="id_estud" require>
                     <option>selecione un estudiante</option>
                     <?php
                     while($array=mysqli_fetch_array($query)){
