@@ -110,6 +110,14 @@
     font-weight: bolder;
 }
 
+.desliz-titulo > a:nth-child(1) {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #ea6e13;
+    font-size: initial;
+
+}
+
 .desliz-notas-e{
     margin-top: 20px;
 }

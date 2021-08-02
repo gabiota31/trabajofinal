@@ -21,7 +21,7 @@ $query = mysqli_query($conexion, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Estudiante</title>
+    <title>Nueva Clase</title>
 
     <link rel="stylesheet" href="estilos/estilosNuev.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -85,7 +85,7 @@ $query = mysqli_query($conexion, $sql);
                             <input type="text" name="coment">
                         </div>
                     </div>
-                </div>
+                </div> <!-- cierre "caja-insert" -->
                 <div class="caja-submit">
                     <input class="submit" type="submit" value="Listo">
                 </div>

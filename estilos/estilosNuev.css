@@ -15,7 +15,7 @@ main{
     padding-right: 12%;
     display: flex;
     flex-flow: column;
-    margin-bottom: 1000px;
+    margin-bottom: 200px;
 }
 
 /* body{
@@ -53,8 +53,25 @@ main{
     justify-content: space-between;
 }
 
-.caja-1, .caja-2 {
+.caja-1edit {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+}
+
+.caja-1, .caja-1edit, .caja-2 {
     margin-bottom: 20px;
+}
+
+.nomsedit {
+    display: flex;
+    margin-right: 50%;
+    margin-bottom: 20px;
+}
+
+.nomsedit > div:nth-child(1) {
+    margin-right: 10px;
 }
 
 .dos1, .dos2, .dos3 {

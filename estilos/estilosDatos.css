@@ -5,10 +5,16 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    margin-bottom: 200px;
+}
+
 main section{
     padding: 50px 12% 0 12%;
-    display: flex;
-    flex-flow: column;
 }
 
 .titulo{

@@ -84,7 +84,7 @@ $result=mysqli_query($conexion, $sql);
                     <div class="desliz-notas-e">
                         
                         <?php //esto hace que parezcan las clases listadas dentro del contenedor 
-                        $sql3 = "select * FROM estudiante INNER JOIN clase WHERE estudiante.id_estud = clase.estud_id and estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud order by fecha";
+                        $sql3 = "select * FROM estudiante INNER JOIN clase WHERE estudiante.id_estud = clase.estud_id and estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud order by fecha asc";
                         $consulta3 = mysqli_query($conexion, $sql3);
                         while($mostrar3 = mysqli_fetch_array($consulta3)){
                         ?>

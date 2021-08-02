@@ -30,11 +30,10 @@ $consulta=mysqli_query($conexion, $sql);
                             <?php echo $mostrar['nomEstud'] ?>
                         </div>
                         <div class="card-coment-e">
-                        <?php echo $mostrar['comentEstud'] . " "?>
+                            <?php echo $mostrar['comentEstud'] . " "?>
                         </div>
                     </div>
                     <div class="card-count">
-                        ver mas - Todas las clases
                     </div>
                 </div> <!-- cierre "card-n"-->
             </a>
@@ -50,20 +49,24 @@ $consulta=mysqli_query($conexion, $sql);
             <?php //esto, si se hizo click en alguna de las tarjetas anteriores, trae el id y muestra la información correspondiente a ese estudiante
             if(isset($_GET['id'])){
                 $idEstud =  $_GET['id'];
-                $sql2="select * from estudiante where estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud " ;
-                $consulta2=mysqli_query($conexion, $sql2);
-                $mostrar2=mysqli_fetch_array($consulta2)
+                $sql2E="select * from estudiante where estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud " ;
+                $consulta2E=mysqli_query($conexion, $sql2E);
+                $mostrar2E=mysqli_fetch_array($consulta2E)
             ?>
             <div class="desliz-e">
                 <div class="desliz-info-e">
                     <div class="desliz-titulo">
-                        <?php echo $mostrar2['nomEstud'] . " ". $mostrar2['apeEstud'] ?>
+                        <?php echo $mostrar2E['nomEstud'] . " ". $mostrar2E['apeEstud'] ?>
+                        <a href="datosEstud.php?id=<?php echo $idEstud ?>"> <i class="fas fa-external-link-alt"></i> </a>
                     </div>
                     <div>
-                        Correo: <?php echo $mostrar2['correoEstud'] ?>
+                        Correo: <?php echo $mostrar2E['correoEstud'] ?>
                     </div>
                     <div>
-                        Telefono: <?php echo $mostrar2['telEstud'] ?>
+                        Telefono: <?php echo $mostrar2E['telEstud'] ?>
+                    </div>
+                    <div>
+                        <?php echo $mostrar2E['comentEstud'] ?>
                     </div>
                     <div class="desliz-notas-e">
                         <div class="cant-clases">
@@ -77,29 +80,29 @@ $consulta=mysqli_query($conexion, $sql);
                             ?>
                         </div>
                         <?php //esto hace que parezcan las clases listadas dentro del contenedor 
-                        $sql3 = "select * FROM estudiante INNER JOIN clase WHERE estudiante.id_estud = clase.estud_id and estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud Limit 5";
-                        $consulta3 = mysqli_query($conexion, $sql3);
-                        while($mostrar3 = mysqli_fetch_array($consulta3)){
+                        $sql3E = "select * FROM estudiante INNER JOIN clase WHERE estudiante.id_estud = clase.estud_id and estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud order by fecha asc Limit 5";
+                        $consulta3E = mysqli_query($conexion, $sql3E);
+                        while($mostrar3E = mysqli_fetch_array($consulta3E)){
                         ?>
                         <div class="desliz-clases-btns-e">
                             <div class="desliz-clase">
                                 <div class="desliz-clase-renglon">
-                                    <span><?php echo date("d/m", strtotime($mostrar3['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3['hora'])) ?></span> <span><?php echo $mostrar3['temaClase'] ?></span>
+                                    <span><?php echo date("d/m", strtotime($mostrar3E['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3E['hora'])) ?></span> <span><?php echo $mostrar3E['temaClase'] ?></span>
                                 </div>
                                 <div class="renglon-pago">
                                     <div class="pago-e">
-                                        Precio: $<?php echo $mostrar3['precioClase'] ?>
+                                        Precio: $<?php echo $mostrar3E['precioClase'] ?>
                                     </div>
                                     <div class="pagoBD-e">
-                                        ¿paga? <?php echo $mostrar3['pago'] ?>
+                                        ¿paga? <?php echo $mostrar3E['pago'] ?>
                                     </div>
                                 </div>
                                 <div class="coment-clase">
-                                    <span> Notas sobre la clase: </span><?php echo $mostrar3['comentClase'] ?>
+                                    <span> Notas sobre la clase: </span><?php echo $mostrar3E['comentClase'] ?>
                                 </div>
                             </div>
                             <div class="desliz-btns-e">
-                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?id=<?php echo $mostrar3['id_clase'] ?>"> <i class="fi-rr-file-delete"></i> </a></div>
+                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?id=<?php echo $mostrar3E['id_clase'] ?>"> <i class="fi-rr-file-delete"></i> </a></div>
                             </div>
                         </div>
                         <?php
@@ -108,8 +111,8 @@ $consulta=mysqli_query($conexion, $sql);
                     </div> <!-- "cierre desliz-notas-e" -->   
                 </div> <!--cierre "desliz-info-e"-->
             </div> <!-- cierre "desliz-e" -->
-            <div class="cruz-e">
-                <a href="pag_principal.php">X</a>
+            <div id="cruz-e" class="cruz-e">
+                <a href="">X</a>
             </div>
         <?php
         } //cierre del if(isset) que pone la tarjeta en pantalla
@@ -119,10 +122,9 @@ $consulta=mysqli_query($conexion, $sql);
     </section>
 
 
-
-
-
 </script>
 
 </body>
 </html>
+
+<!-- $_GET['id'] = NULL -->

@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    margin-bottom: 200px;
+}
+
+main section{
+    padding: 50px 12% 0 12%;
+
+}
+
+.titulo{
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #217f21;
+
+}
+
+
+/* --------------contenedores clases------------- */
+
+.contenedor-clases{
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.desliz{
+    margin-right: 1%;
+    margin-bottom: 1%;
+
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: #f9ff8f;
+    color: #217f21;
+
+    box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -webkit-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+    -moz-box-shadow: 1px 8px 14px -7px rgba(0,0,0,0.38);
+}
+
+.desliz-titulo {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.desliz-notas{
+    margin-top: 20px;
+}
+.desliz-coment {
+    padding: 8px;
+    min-height: 90px;
+    height: max-content;
+    border-radius: 10px;
+    /* background-color: #217f21;
+    color: rgb(179, 243, 179); */
+
+    background-color: #eaf227;
+}
+
+.ultimo-renglon{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.pago{
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+}
+
+.pago div:nth-child(1){
+    margin-right: 20px;
+}
+
+.pagoBD span:nth-child(1){
+    margin-right: 11px;
+}
+
+.pagoBD span:nth-child(2) {
+    padding: 1px 5px;
+    width: 31px;
+    text-align: center;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #eaf227;
+    display: inline-block;
+}
+
+.desliz-btns{
+    display: flex;
+    justify-content: flex-end; 
+}
+
+#editar-btn {
+    margin-right: 30px;
+}
+
+.fi-rr-edit:hover {
+    color: rgb(53, 255, 36);
+}
+
+.deliz-icono a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bolder;
+    font-size: large;
+}
+
+
+.fi-rr-file-delete:hover {
+    color: red;
+}
+
+.deliz-icono:nth-child(1) {
+    margin-right: 5px;
+}

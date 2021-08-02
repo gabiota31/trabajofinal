@@ -12,10 +12,7 @@ $sql = "select * from estudiante where estudiante.usu_id=$usu_id AND estudiante.
 $sqlClases = "select * from clase where estud_id = $idEstud";
 
 $query = mysqli_query($conexion, $sql);
-$queryClases = mysqli_query($conexion, $sqlClases);
-
-$mostrar = mysqli_fetch_array($query);
-$arrayClases = mysqli_fetch_array($queryClases);
+$mostrar2 = mysqli_fetch_array($query);
 
 ?>
 <?php
@@ -44,65 +41,76 @@ $arrayClases = mysqli_fetch_array($queryClases);
     </div>
     <main>
         <section>
-            <div class="titulo">
-                <h2> Ficha de contacto de <?php echo $mostrar['nomEstud'] . " " . $mostrar['apeEstud']?> </h2>
+        <div class="desliz-titulo">
+                <?php echo $mostrar2['nomEstud'] . " ". $mostrar2['apeEstud'] ?>
+                <span>
+                    <a href="editarEstud.php?idEstud=<?php echo $mostrar2['id_estud'] ?>"><i class="fas fa-user-edit"></i></a>
+                </span>
+                <span>
+                    <a id="btn-borrar" href="deleteEstud.php?id=<?php echo $mostrar2['id_estud'] ?>"><i class="fas fa-user-times"></i></a>
+                </span>
             </div>
-            <table>
-                    <tr>
-                        <td class="nom-caterg" >Correo</td>
-                        <td class="nom-caterg" >Telefono</td>
-                        <td class="nom-caterg" >Comentarios</td>
-                    </tr>
-
-                    <tr>
-                        <td class="dato"><?php echo $mostrar['correoEstud'] ?></td>
-                        <td class="dato"><?php echo $mostrar['telEstud'] ?></td>
-                        <td class="dato"><?php echo $mostrar['comentEstud'] ?></td>
-                        
-                        <td class="icono" id="borde"><a id="editar" href="editarEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-edit"></i> </a></td>
-                        <td class="icono"><a id="borrar" href="deleteEstud.php?id=<?php echo $mostrar['nomEstud']?>"> <i class="fi-rr-user-remove"></i> </a></td>
-
-                    </tr>
+            <div class="desliz-e">    
+                <div class="desliz-info-e">
+                    <div class="info-contacto">
+                        <div>
+                            Correo: <?php echo $mostrar2['correoEstud'] ?>
+                        </div>
+                        <div>
+                            Telefono: <?php echo $mostrar2['telEstud'] ?>
+                        </div>
+                        <div>
+                            <?php echo $mostrar2['comentEstud'] ?>
+                        </div>
+                    </div>
                     
-            </table> 
+                    <div class="cant-clases">
+                        Clases agendadas:
+                        <?php //esto cuenta la cantidad de clases totales y las pone en un numero
+                        $idEstud = $mostrar2['id_estud'];
+                        $sqlCuenta = "select count(*) FROM clase where usu_id = $usu_id and estud_id = $idEstud";
+                        $queryCuenta = mysqli_query($conexion,$sqlCuenta);
+                        $arrayCuenta = mysqli_fetch_array($queryCuenta);
+                        $cuenta = $arrayCuenta[0];
+                        echo " " . " " .$cuenta;
+                        ?>
+                    </div>
+                    <div class="desliz-notas-e">
+                        
+                        <?php //esto hace que parezcan las clases listadas dentro del contenedor 
+                        $sql3 = "select * FROM estudiante INNER JOIN clase WHERE estudiante.id_estud = clase.estud_id and estudiante.usu_id = $usu_id and estudiante.id_estud = $idEstud order by fecha asc";
+                        $consulta3 = mysqli_query($conexion, $sql3);
+                        while($mostrar3 = mysqli_fetch_array($consulta3)){
+                        ?>
+                        <div class="desliz-clases-btns-e">
+                            <div class="desliz-clase">
+                                <div class="desliz-clase-renglon">
+                                    <span><?php echo date("d/m", strtotime($mostrar3['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3['hora'])) ?></span> <span><?php echo $mostrar3['temaClase'] ?></span>
+                                </div>
+                                <div class="renglon-pago">
+                                    <div class="pago-e">
+                                        Precio: $<?php echo $mostrar3['precioClase'] ?>
+                                    </div>
+                                    <div class="pagoBD-e">
+                                        ¿paga? <?php echo $mostrar3['pago'] ?>
+                                    </div>
+                                </div>
+                                <div class="coment-clase">
+                                    <span> Notas sobre la clase: </span><?php echo $mostrar3['comentClase'] ?>
+                                </div>
+                            </div>
+                            <div class="desliz-btns-e">
+                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?idDelete=<?php echo $mostrar3['id_clase'] ?>"> <i class="fi-rr-file-delete"></i> </a></div>
+                            </div>
+                        </div>
+                        <?php
+                        } //cierre del while que pone todas las clases del estudiante
+                        ?>
+                    </div> <!-- "cierre desliz-notas-e" -->   
+                </div> <!--cierre "desliz-info-e"-->
+            </div> <!-- cierre "desliz-e" -->
         </section>
-        <section>
-            <div class="titulo">
-                <h2> Clases programadas con <?php echo $mostrar['nomEstud'] . " " . $mostrar['apeEstud']?> </h2>
-            </div>
-            <table>
-                    <tr>
-                        <td class="nom-caterg" >Tema de la clase</td>
-                        <td class="nom-caterg" >Fecha</td>
-                        <td class="nom-caterg" >¿pago?</td>
-                        <td class="nom-caterg" >Cometarios sobre esta clase</td>
-
-                    </tr>
-                    <?php
-                    while($arrayClases=mysqli_fetch_array($queryClases)){
-                        echo "<pre>";
-                        // var_dump($arrayClases);
-                        echo "</pre>";
-
-                    ?>
-                    <tbody>
-                        <tr>
-
-                            <td class="dato"><?php echo $arrayClases['temaClase'] ?></td>
-                            <td class="dato"><?php echo $arrayClases['fecha'] ?></td>
-                            <td class="dato"><?php echo $arrayClases['pago'] ?></td>
-                            <td class="dato"><?php echo $arrayClases['comentClase'] ?></td>
-                            
-                            <td class="icono" id="borde"><a id="editar" href="editarClases.php?id=<?php echo $mostrar['id_estud']?>"> <i class="fi-rr-edit"></i> </a></td>
-                            <td class="icono"><a id="borrar" href="deleteClases.php?id=<?php echo $mostrar['id_estud']?>"> <i class="fi-rr-user-remove"></i> </a></td>
-
-                        </tr>
-                    </tbody>
-                    <?php
-                    }
-                    ?>
-            </table> 
-        </section>
+        
     </main>
 
     <script src="js/datos.js"></script>

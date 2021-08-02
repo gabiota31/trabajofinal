@@ -18,7 +18,7 @@
                     <li><a class="b-nav" href="nuevEstud.php"> NUEVO ESTUDIANTE </a></li>
                     <li><a class="b-nav" href="nuevClase.php"> NUEVA CLASE </a></li>
                     <li><a class="b-nav" href="datos.php">TODOS TUS ESTUDIANTES</a></li>
-                    <li><a class="b-nav" href="datosClases.php"> TODAS LAS CLASES </a></li>
+                    <li><a class="b-nav" href="datosClases.php"> TODAS TUS CLASES </a></li>
                     
                 </ul>
                 

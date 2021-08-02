@@ -4,7 +4,7 @@ include 'conn.php';
 // $usu_id = $_SESSION['userId'];
 $usu_id = 2;
 
-$sql="select * from estudiante inner join clase where estudiante.id_estud = clase.estud_id and clase.usu_id = $usu_id order by fecha asc limit 5 ";
+$sql="select * from estudiante inner join clase where estudiante.id_estud = clase.estud_id and clase.usu_id = $usu_id order by fecha,hora asc limit 5 ";
 $consulta=mysqli_query($conexion, $sql);
 
 
@@ -115,6 +115,8 @@ $consulta=mysqli_query($conexion, $sql);
             <div class="edit">
                 <div class="editar-info">
                     <form action="updateClase.php" method="POST">
+                        <input type="hidden" name="deLaPagPrin" value="deLaPagPrin">
+
                         <input type="hidden" name="id_clase" value="<?php echo $arrayEdit['id_clase'] ?>">
 
                         <div class="editar-fecha">

@@ -8,7 +8,7 @@ $usu_id = 2;
 
 $idClase = $_GET['id'];
 
-$sql = "select * from clase where id_clase = $idClase";
+$sql = "select * from clase INNER JOIN estudiante where estudiante.id_estud = clase.estud_id and clase.usu_id = $usu_id and id_clase = $idClase";
 $query = mysqli_query($conexion, $sql);
 
 $array = mysqli_fetch_array($query);
@@ -24,7 +24,7 @@ $array = mysqli_fetch_array($query);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Estudiante</title>
+    <title>Editar Clase</title>
 
     <link rel="stylesheet" href="estilos/estilosNuev.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,33 +39,53 @@ $array = mysqli_fetch_array($query);
         <h1>Ingresa los datos nuevos</h1>
         <div class="contenedor">
             <form action="updateClase.php" method="POST">
+                <input type="hidden" name="deTodasClases" value="deTodasClases">
                 <div class="caja-insert">
-                    <div class="caja-1">
-                        <input type="hidden" name="id_clase" value="<?php echo $array['id_clase'] ?>">
+                    <input type="hidden" name="id_clase" value="<?php echo $array['id_clase'] ?>">
+                    <!-- <div class="caja-1">
+                        
+
+                    </div> -->
+
+                    <div class="caja-1edit">
+                        <div class="nomsedit">
+                            <div class="caja-input">
+                                <input type="text" name="nomEstud" value="<?php echo $array['nomEstud'] ?>" required>
+                            </div>
+                            <div class="caja-input">
+                                <input type="text" name="apeEstud" value="<?php echo $array['apeEstud'] ?>" required>
+                            </div>
+                        </div>
                         <div class="caja-input">
                             <label class="etiqueta">Tema de la clase</label>
                             <input type="text" name="temaClase" value="<?php echo $array['temaClase'] ?>" required>
                         </div>        
-                    
-                        <div class="caja-input">
+                    </div>
+                    <div class="caja-2">
+                        <div class="caja-input dos1">
                             <label class="etiqueta">Fecha</label> 
                             <input type="date" name="fecha" value="<?php echo $array['fecha'] ?>" required>
                         </div>
-                    </div>
-
-                    <div class="caja-1">
-                        <div class="caja-input">
+                        <div class="caja-input dos2">
+                            <label class="etiqueta">Hora</label>
+                            <input type="time" name="hora" value="<?php echo date("H:i", strtotime($array['hora'])) ?>" required>
+                        </div>
+                        <div class="caja-input dos3">
+                            <label class="etiqueta">Precio</label>
+                            <input type="text" name="precioC" value="<?php echo $array['precioClase'] ?>">
+                        </div>
+                        <div class="caja-input dos4">
                             <label class="etiqueta">¿Pago?</label>
                             <input type="text" name="pago" value="<?php echo $array['pago'] ?>">
-                        </div>
-                    
+                        </div>                        
+                    </div>
+                    <div class="caja-3">
                         <div class="caja-input">
                             <label class="etiqueta">Comentarios</label>
-                            <input type="text" name="coment" value="<?php echo $array['comentClase'] ?>">
+                            <input type="text" name="comentC" value="<?php echo $array['comentClase'] ?>">
                         </div>
                     </div>
-
-                   
+                  
                 </div>
                 <div class="caja-submit">
                     <input class="submit" type="submit" value="Listo">
