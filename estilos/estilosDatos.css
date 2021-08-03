@@ -187,154 +187,39 @@ h2 {
 }
 
 
+/* -----------ventana de alerta de borrado--------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ------------------ Tabla vieja ------------------ */
-
-table {
-    table-layout: fixed;
-    border-collapse: collapse;
-    margin-bottom: 25px;
-}
-
-.nom-caterg {
-    text-align: left;
-    color: #f9ff7d;
-    background-color: rgb(54, 54, 54);
-    padding: 10px 20px;
-}
-
-.dato {
-    padding: 10px 20px;
-}
-
-tr {
-    background-color: #f9ff7d;
-    border-bottom: #217f21 solid 1px;
-}
-
-/* td:nth-child(2) {
-    background-color: blue;
-} */
-
-.icono {
+.alerta {
+    padding-bottom: 4px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-right: 15px;
     text-align: center;
+    border: solid white 3px;
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+    width: max-content;
 
+    position: fixed;
+    left: 30%;
+    top: 27%;
 }
 
-#borde {
-    border-left: #217f21 solid 1px;
+.alerta p{
+    margin: 20px auto;
 }
 
-#editar, #borrar {
-    margin: 0 10px;
-    color: #217f21;
+.alerta a{
     text-decoration: none;
-
-}
-
-.fi-rr-edit:hover, .fi-rr-user-remove:hover {
-    color: black;
-    transform: translateY(-1.5px) translateX(1.5px);
-}
-
-/* #edit-valor {
-    display: block;
-} */
-
-
-
-
-/* Estilos editor de tabla */
-
-
-.contenedor{
-    display: none;
-    margin-right: 90px;
-    padding: 30px;
-    width: auto;
-    border-radius: 10px;
+    padding: 5px;
+    size: 100%;
+    color: white;
     background-color: #217f21;
-    /*background-image: url(fondo-pastel.jpg);*/
-    background-size: 182%;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
-.caja-1, .caja-2 {
-    padding: 10px;
-    background-color: #d7e00d;
-    border-radius: 10px;
-    display: flex;
-    flex-flow: row ;
-    justify-content: space-between;
-}
 
-.caja-1 {
-    margin-bottom: 20px;
-}
-
-.etiqueta {
-    color: rgb(98, 47, 69);
-    font-size: larger;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.caja-input {
-    display: flex;
-    flex-flow: column;
-}
-
-.caja-submit{
-    margin-top: 40px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-input {
-    margin-left: 20px;
-    height: 60px;
-    padding: 7px;
-    border-radius: 7px;
-    border-style: none;
-}
-
-/* input:invalid {
-    border: 2px dashed red;
-}
-
-input:invalid:required {
-    background-image: linear-gradient(to right, pink, lightgreen);
-} */
-
-.submit {
-    width: 150px;
-    height: 40px;
-    background-color: rgb(98, 47, 69);
-    color: blanchedalmond;
-}
-
-.submit:hover {
-    transform: translateY(1.5px) translateX(1.5px);
-
-}
 

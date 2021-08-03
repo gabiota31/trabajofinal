@@ -53,9 +53,21 @@ $result=mysqli_query($conexion, $sql);
                     <a href="editarEstud.php?idEstud=<?php echo $mostrar2['id_estud'] ?>"><i class="fas fa-user-edit"></i></a>
                 </span>
                 <span>
-                    <a id="btn-borrar" href="deleteEstud.php?id=<?php echo $mostrar2['id_estud'] ?>"><i class="fas fa-user-times"></i></a>
+                    <!-- <a id="btn-borrar" href="deleteEstud.php?id=<?php //echo $mostrar2['id_estud'] ?>"><i class="fas fa-user-times"></i></a> -->
+                    <a id="btn-borrar" href="datos.php?idVB=<?php echo $mostrar2['id_estud'] ?>"><i class="fas fa-user-times"></i></a>
                 </span>
             </div>
+                <?php
+                if(isset($_GET['idVB'])){
+                ?>
+                <div class="alerta">
+                    <p>¿seguro que quiere borrar esta entrada?</p>
+                    <p><a href="deleteEstud.php?id=<?php echo $_GET['idVB']?>">Si</a> <a href="datos.php">No</a></p>
+                </div>
+                <?php
+                }
+                ?>
+            
             <div class="desliz-e">    
                 <div class="desliz-info-e">
                     <div class="info-contacto">
@@ -106,8 +118,20 @@ $result=mysqli_query($conexion, $sql);
                                 </div>
                             </div>
                             <div class="desliz-btns-e">
-                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?idDelete=<?php echo $mostrar3['id_clase'] ?>"> <i class="fi-rr-file-delete"></i> </a></div>
+                                <!-- <div class="deliz-icono"><a id="borrar" href="deleteClase.php?idDelete=<?php echo $mostrar3['id_clase'] ?>"> <i class="fi-rr-file-delete"></i> </a></div> -->
+                                <div class="deliz-icono"><a id="borrar" href="datos.php?idVBC=<?php echo $mostrar3['id_clase'] ?>"> <i class="fi-rr-file-delete"></i> </a></div>
                             </div>
+
+                            <?php
+                            if(isset($_GET['idVBC'])){
+                            ?>
+                            <div class="alerta">
+                                <p>¿seguro que quiere borrar esta entrada?</p>
+                                <p><a href="deleteClase.php?id=<?php echo $_GET['idVBC']?>">Si</a> <a href="datos.php">No</a></p>
+                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                         <?php
                         } //cierre del while que pone todas las clases del estudiante
@@ -115,6 +139,8 @@ $result=mysqli_query($conexion, $sql);
                     </div> <!-- "cierre desliz-notas-e" -->   
                 </div> <!--cierre "desliz-info-e"-->
             </div> <!-- cierre "desliz-e" -->
+
+
             <?php
             } //cierre del while que pone a todos los estudiantes
             ?>

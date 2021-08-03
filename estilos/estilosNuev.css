@@ -18,16 +18,6 @@ main{
     margin-bottom: 200px;
 }
 
-/* body{
-    background-color: rgb(98, 47, 69);
-} */
-
-/* h2{
-    color: #f4c1c2 ;
-    margin: 50px auto 0;
-    width: max-content;
-} */
-
 .contenedor{
     /* margin: 70px auto 100px; */
     padding: 30px;
@@ -82,7 +72,7 @@ main{
     width: 100%;
 }
 
-.caja-3 .caja-input{
+.caja-3 .grupo{
     width: 100%;
     
 }
@@ -94,7 +84,7 @@ main{
     margin-bottom: 5px;
 }
 
-.caja-input {
+.grupo {
     display: flex;
     flex-flow: column;
     width: 47%;
@@ -103,17 +93,62 @@ main{
     border-radius: 10px;
 }
 
+.grupo-input {
+    height: 60px;
+    /* border-radius: 7px;
+    border-style: none; */
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    border-radius: 7px;
+    border-style: none;
+}
+
+.validacion-estado {
+    font-size: large;
+    position: relative;
+    left: 93%;
+    bottom: 42px;
+    z-index: 100;
+    opacity: 0;
+
+}
+
+.input-error{
+    display: none;
+    font-size: small;
+    margin-top: 5px ;
+}
+
+.input-error-activo{
+    display: block;
+}
+
+.msjError{
+    display: none;
+    margin-top: 40px;
+    padding: 20px;
+    width: auto;
+    color: white;
+    background-color: #e40834c9;
+    border-radius: 10px;
+}
+
+.msjError-activo{
+    display: block;
+}
+
+.msjError i {
+    margin-right: 20px;
+}
+
 .caja-submit{
     margin-top: 40px;
     display: flex;
     justify-content: flex-end;
-}
-
-input {
-    height: 60px;
-    padding: 7px;
-    border-radius: 7px;
-    border-style: none;
 }
 
 .coment{
@@ -124,17 +159,13 @@ input {
     height: 100px;
 }
 
-/* input:invalid {
-    border: 2px dashed red;
-}
-
-input:invalid:required {
-    background-image: linear-gradient(to right, pink, lightgreen);
-} */
-
 .submit {
+    padding: 7px;
+    border-radius: 7px;
+    border-style: none;
     width: 150px;
     height: 40px;
+    font-weight: bold;
     background-color:  #217f21;
     color: blanchedalmond;
 }
@@ -144,3 +175,33 @@ input:invalid:required {
 
 }
 
+/* ----Estilos validacion------ */
+
+.grupo-correcto .validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.grupo-incorrecto .etiqueta{
+    color: #fd1010;
+    opacity: 1;
+}
+
+.grupo-incorrecto .validacion-estado{
+    color: #fd1010;
+    opacity: 1;
+}
+
+.grupo-incorrecto .input {
+    border: 3px solid #fd1010;
+}
+
+/* esto es de un validar de formulario mas facil, se puede ver abajo de todo de validate.js */
+
+/* #warnings {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: rgb(0, 255, 21);
+    padding-top: 20px;
+} */
