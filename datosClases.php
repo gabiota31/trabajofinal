@@ -75,7 +75,7 @@ $result=mysqli_query($conexion, $sql);
 
                             <div class="desliz-btns">
                                 <div class="deliz-icono"><a id="editar-btn" href="editarClase.php?id=<?php echo $mostrar2['id_clase']?>"> <i class="fi-rr-edit"></i> </a></div>
-                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?idDC=<?php echo $mostrar2['id_clase']?>"><i class="fi-rr-file-delete"></i> </a></div>
+                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?idDatosClase=<?php echo $mostrar2['id_clase']?>"><i class="fi-rr-file-delete"></i> </a></div>
                             </div>
                         </div>
                     </div> <!--cierre "desliz-info" -->

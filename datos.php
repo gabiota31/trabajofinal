@@ -62,7 +62,7 @@ $result=mysqli_query($conexion, $sql);
                 ?>
                 <div class="alerta">
                     <p>¿seguro que quiere borrar esta entrada?</p>
-                    <p><a href="deleteEstud.php?id=<?php echo $_GET['idVB']?>">Si</a> <a href="datos.php">No</a></p>
+                    <p><a href="deleteEstud.php?idDatos=<?php echo $_GET['idVB']?>">Si</a> <a href="datos.php">No</a></p>
                 </div>
                 <?php
                 }
@@ -127,7 +127,7 @@ $result=mysqli_query($conexion, $sql);
                             ?>
                             <div class="alerta">
                                 <p>¿seguro que quiere borrar esta entrada?</p>
-                                <p><a href="deleteClase.php?id=<?php echo $_GET['idVBC']?>">Si</a> <a href="datos.php">No</a></p>
+                                <p><a href="deleteClase.php?idDatos=<?php echo $_GET['idVBC']?>">Si</a> <a href="datos.php">No</a></p>
                             </div>
                             <?php
                             }

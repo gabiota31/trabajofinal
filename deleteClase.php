@@ -14,8 +14,8 @@ if(isset($_GET['id'])){
     } else {
         echo "Error: " . $upd . "<br>" . mysqli_error($conexion);
     };
-} elseif(isset($_GET['idDelete'])) {
-    $idClase = $_GET['idDelete'];
+} elseif(isset($_GET['idDatos'])) {
+    $idClase = $_GET['idDatos'];
 
     $sql = "delete from clase where id_clase = '$idClase' ";
 
@@ -26,8 +26,8 @@ if(isset($_GET['id'])){
     } else {
         echo "Error: " . $upd . "<br>" . mysqli_error($conexion);
     };
-} elseif(isset($_GET['idDC'])){
-    $idClase = $_GET['idDC'];
+} elseif(isset($_GET['idDatosClase'])){
+    $idClase = $_GET['idDatosClase'];
 
     $sql = "delete from clase where id_clase = '$idClase' ";
 
