@@ -30,13 +30,14 @@ $array = mysqli_fetch_array($query);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div>
         <?php include 'nav.php' ?>    
     </div>
     <main>
-        <h1>Ingresa los datos nuevos</h1>
+        <h2>Ingresa los datos nuevos</h2>
         <div class="contenedor">
             <form action="updateClase.php" method="POST">
                 <input type="hidden" name="deTodasClases" value="deTodasClases">
@@ -49,40 +50,52 @@ $array = mysqli_fetch_array($query);
 
                     <div class="caja-1edit">
                         <div class="nomsedit">
-                            <div class="caja-input">
+                            <div class="grupo">
                                 <input type="text" name="nomEstud" value="<?php echo $array['nomEstud'] ?>" required>
                             </div>
-                            <div class="caja-input">
+                            <div class="grupo">
                                 <input type="text" name="apeEstud" value="<?php echo $array['apeEstud'] ?>" required>
                             </div>
                         </div>
-                        <div class="caja-input">
+                        <div class="grupo">
                             <label class="etiqueta">Tema de la clase</label>
-                            <input type="text" name="temaClase" value="<?php echo $array['temaClase'] ?>" required>
+                            <div class="grupo-input">
+                                <input type="text" name="temaClase" value="<?php echo $array['temaClase'] ?>" required>
+                            </div>
                         </div>        
                     </div>
                     <div class="caja-2">
-                        <div class="caja-input dos1">
-                            <label class="etiqueta">Fecha</label> 
-                            <input type="date" name="fecha" value="<?php echo $array['fecha'] ?>" required>
+                        <div class="grupo dos1">
+                            <label class="etiqueta">Fecha</label>
+                            <div class="grupo-input">
+                                <input type="date" name="fecha" value="<?php echo $array['fecha'] ?>" required>
+                            </div>
                         </div>
-                        <div class="caja-input dos2">
+                        <div class="grupo dos2">
                             <label class="etiqueta">Hora</label>
-                            <input type="time" name="hora" value="<?php echo date("H:i", strtotime($array['hora'])) ?>" required>
+                            <div class="grupo-input">
+                                <input type="time" name="hora" value="<?php echo date("H:i", strtotime($array['hora'])) ?>" required>
+                            </div>
                         </div>
-                        <div class="caja-input dos3">
+                        <div class="grupo dos3">
                             <label class="etiqueta">Precio</label>
-                            <input type="text" name="precioC" value="<?php echo $array['precioClase'] ?>">
+                            <div class="grupo-input">
+                                <input type="text" name="precioC" value="<?php echo $array['precioClase'] ?>">
+                            </div>
                         </div>
-                        <div class="caja-input dos4">
+                        <div class="grupo caja dos4">
                             <label class="etiqueta">¿Pago?</label>
-                            <input type="text" name="pago" value="<?php echo $array['pago'] ?>">
+                            <div class="grupo-input">
+                                <input type="text" name="pago" value="<?php echo $array['pago'] ?>">
+                            </div>
                         </div>                        
                     </div>
                     <div class="caja-3">
-                        <div class="caja-input">
+                        <div class="grupo">
                             <label class="etiqueta">Comentarios</label>
-                            <input type="text" name="comentC" value="<?php echo $array['comentClase'] ?>">
+                            <div class="grupo-input">
+                                <input type="text" name="comentC" value="<?php echo $array['comentClase'] ?>">
+                            </div>
                         </div>
                     </div>
                   

@@ -25,9 +25,12 @@ main section{
     align-items: center;
 }
 
-h2 {
-    color: #217f21;
+h2{
+    font-family: 'Nunito', sans-serif;
+    font-size: xx-large;
 
+    color: #1c00a2;
+    /* color: #4b29ee; */
 }
 
 /* ----------------- cosas nuevas -------------------------- */

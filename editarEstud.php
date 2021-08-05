@@ -34,51 +34,52 @@ $row = mysqli_fetch_array($query);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div>
         <?php include 'nav.php' ?>    
     </div>
     <main>
-        <h1>Ingresa los datos nuevos</h1>
+        <h2>Ingresa los datos nuevos</h2>
         <div class="contenedor">
             <form action="updateEstud.php" method="POST">
                 <?php
                 if(isset($_GET['id'])){ ?>
-                    <input type="text" name="deLaPagPrin" value="deLaPagPrin">
+                    <input type="hidden" name="deLaPagPrin" value="deLaPagPrin">
                 <?php } elseif(isset($_GET['idEstud'])){ ?>
-                    <input type="text" name="deTodosEstud" value="deTodosEstud">
+                    <input type="hidden" name="deTodosEstud" value="deTodosEstud">
                 <?php
                 }
                 ?>
                 <div class="caja-insert">
                     <div class="caja-1">
                         <input type="hidden" name="id_estud" value="<?php echo $row['id_estud'] ?>"> 
-                        <div class="caja-input">
+                        <div class="grupo">
                             <label class="etiqueta">Nombre</label>
                             <input type="text" name="nombre" value="<?php echo $row['nomEstud'] ?>" required>
                         </div>        
                     
-                        <div class="caja-input">
+                        <div class="grupo">
                             <label class="etiqueta">Apellido</label> 
                             <input type="text" name="apellido" value="<?php echo $row['apeEstud'] ?>" required>
                         </div>
                     </div>
 
                     <div class="caja-1">
-                        <div class="caja-input">
+                        <div class="grupo">
                             <label class="etiqueta">Correo</label>
                             <input type="email" name="correo" value="<?php echo $row['correoEstud'] ?>" required>
                         </div>
                     
-                        <div class="caja-input">
+                        <div class="grupo">
                             <label class="etiqueta">Telefono</label>
                             <input type="tel" name="tel" value="<?php echo $row['telEstud'] ?>" required>
                         </div>
                     </div>
 
-                    <div class="caja-2">
-                        <div class="caja-input">
+                    <div class="caja-3">
+                        <div class="grupo">
                             <label class="etiqueta">Comentarios</label>
                             <input type="text" name="coment" value="<?php echo $row['comentEstud'] ?>">
                         </div>

@@ -24,25 +24,28 @@ $query = mysqli_query($conexion, $sql);
     <title>Nueva Clase</title>
 
     <link rel="stylesheet" href="estilos/estilosNuev.css">
+    <script src="https://kit.fontawesome.com/ea0d59954b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet"> 
+
 </head> 
 <body>
-    <div>
+    <header>
         <?php include 'nav.php' ?>    
-    </div>
+    </header>
 
     <main>
         <h2>Ingresa los datos de la nueva clase</h2>
         <div class="contenedor">
             
-            <form action="insertNuevClase.php" method="POST">
+            <form action="insertNuevClase.php" id="form" method="POST">
                 <input type="hidden" name="usu_id" value="<?php echo $usu_id ?>">
-                <select class="select" name="id_estud" require>
-                    <option>selecione un estudiante</option>
+                <select class="input select" name="id_estud" id="id_estud" require>
+                    <option value="0">selecione un estudiante*</option>
                     <?php
                     while($array=mysqli_fetch_array($query)){
                     ?>
@@ -51,41 +54,65 @@ $query = mysqli_query($conexion, $sql);
                     }
                     ?>
                 </select>
-                <div class="caja-insert">
-                    <div class="caja-1">
-                        <div class="caja-input">
-                            <label class="etiqueta">Tema de la clase</label>
-                            <input type="text" name="tema" required>
+                <div class="caja-insert"> <!-- caja con todos los inputs-->
+                    <div class="caja-1"> <!-- primer renglon -->
+                        <div class="grupo " id="grupo__tema">
+                            <label class="etiqueta">Tema de la clase*</label>
+                            <div class="grupo-input">
+                                <input type="text" class="input" id="tema" name="tema">
+                                <i class="validacion-estado far fa-times-circle"></i>
+                            </div>
+                            <p class="input-error">Este campo no puede estar vacio</p>
                         </div>
                     </div>
 
                     <div class="caja-2">
-                        <div class="caja-input dos1">
-                            <label class="etiqueta">Fecha</label> 
-                            <input type="date" name="fecha" required>
+                        <div class="grupo dos1" id="grupo__fecha">
+                            <label class="etiqueta">Fecha*</label>
+                            <div class="grupo-input">   
+                                <input type="date" class="input" id="fecha" name="fecha" require>
+                                <i class="validacion-estado far fa-times-circle"></i>
+                            </div>
+                            <p class="input-error">Ingrese una fecha</p>
                         </div>
 
-                        <div class="caja-input dos2">
-                            <label class="etiqueta">Hora</label>
-                            <input type="time" name="hora" required>
+                        <div class="grupo dos2" id="grupo__hora">
+                            <label class="etiqueta">Hora*</label>
+                            <div class="grupo-input">
+                                <input type="time" class="input" id="hora" name="hora" require>
+                            </div>
+                            <p class="input-error">Ingrese una hora válido</p>
                         </div>
                     
-                        <div class="caja-input dos3">
-                            <label class="etiqueta">Precio</label>
-                            <input type="number" name="precio">
+                        <div class="grupo dos3" id="grupo__precio">
+                            <label class="etiqueta">Precio*</label>
+                            <div class="grupo-input">
+                                <input type="number" class="input" id="precio" name="precio">
+
+                            </div>
+                            <p class="input-error">Ingrese un numero</p>
                         </div>
-                        <div class="caja-input">
+                        <div class="grupo" >
                             <label class="etiqueta">¿Pago?</label>
-                            <input type="text" name="pago">
+                            <div class="grupo-input">
+                                <input type="text" class="input" name="pago">
+                            </div>
                         </div>
                     </div>
                     <div class="caja-3">
-                        <div class="caja-input">
+                        <div class="grupo" >
                             <label class="etiqueta">Comentarios</label>
-                            <input type="text" name="coment">
+                            <div class="grupo-input">
+                                <input type="textarea" name="coment">
+                            </div>
                         </div>
                     </div>
+                    * campos obligatorios
                 </div> <!-- cierre "caja-insert" -->
+
+                <div class="msjError" id="msjError">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b> Error: Por favor llena el formulario correctamente </b> </p>
+                </div>
                 <div class="caja-submit">
                     <input class="submit" type="submit" value="Listo">
                 </div>
@@ -96,6 +123,8 @@ $query = mysqli_query($conexion, $sql);
        
     <?php include 'footer.php' ?>    
 
+    <!-- <script src="js/validateNuevClase.js"></script> -->
+ 
 
 </body>
 </html>

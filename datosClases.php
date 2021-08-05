@@ -23,12 +23,13 @@ $result=mysqli_query($conexion, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mostrar datos</title>
+    <title>Todas tus clases</title>
     <link rel="stylesheet" href="estilos/estilosDatosClases.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
     <script src="https://kit.fontawesome.com/ea0d59954b.js" crossorigin="anonymous"></script>
 </head>
@@ -41,7 +42,7 @@ $result=mysqli_query($conexion, $sql);
     <main>
         <section>
             <div class="titulo">  
-                <h2>TUS CLASES</h2>
+                <h2>Tus clases</h2>
             </div>
             <div class="contenedor-clases">
                 <?php
@@ -75,8 +76,18 @@ $result=mysqli_query($conexion, $sql);
 
                             <div class="desliz-btns">
                                 <div class="deliz-icono"><a id="editar-btn" href="editarClase.php?id=<?php echo $mostrar2['id_clase']?>"> <i class="fi-rr-edit"></i> </a></div>
-                                <div class="deliz-icono"><a id="borrar" href="deleteClase.php?idDatosClase=<?php echo $mostrar2['id_clase']?>"><i class="fi-rr-file-delete"></i> </a></div>
+                                <div class="deliz-icono"><a id="borrar" href="datosClases.php?idVBC=<?php echo $mostrar2['id_clase']?>"><i class="fi-rr-file-delete"></i> </a></div>
                             </div>
+                            <?php
+                            if(isset($_GET['idVBC'])){
+                            ?>
+                            <div class="alerta">
+                                <p>¿seguro que quiere borrar esta entrada?</p>
+                                <p><a href="deleteClase.php?idDatosClase=<?php echo $_GET['idVBC']?>">Si</a> <a href="datosClases.php">No</a></p>
+                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div> <!--cierre "desliz-info" -->
                 </div> <!--cierre "desliz" -->

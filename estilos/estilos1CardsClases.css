@@ -1,17 +1,22 @@
 .proximas-clases {
     display: flex;
     align-items: baseline;
+    /* margin-right: 60px; */
 }
 
 /* ---------cards proximas clases------------ */
 
 .cards-clase {
-    margin-right: 160px;
+    margin-right: 30px;
     width: 400px;
     height: max-content;
 
 }
 
+h2{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
 
 
 .cards-clase a{
@@ -80,13 +85,14 @@
 /* --------------contenedor deslizante------------- */
 
 .cont-desliz{
+    margin-right: 30px;
     display: flex;
     flex-flow: row;
 }
 
 .desliz{
     padding: 20px;
-    width: 400px;
+    width: 360px;
     border-radius: 10px;
     background-color: #f9ff8f;
     color: #217f21;

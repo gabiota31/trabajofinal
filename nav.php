@@ -7,11 +7,11 @@
 
 </head>
 <body>
-    <header>
-        <div class="contenedor-nav">
-            <div>
-                <a href="pag_principal.php"> <img src="img/logo.png" alt="logo organiza tus clases" class="logo"> </a>
-            </div>
+    
+    <div class="contenedor-nav">
+        <div>
+            <a href="pag_principal.php"> <img src="img/logo.png" alt="logo organiza tus clases" class="logo"> </a>
+        </div>
             <nav>
                 <ul>
                     <li><a class="b-nav" href="pag_principal.php">INICIO</a></li>
@@ -22,22 +22,21 @@
                     
                 </ul>
                 
-                <div class="label">
-                    <label for="btn-menu"> <span class="usuario"> U </span> <span class="x"> X </span>  </label>
+            <div class="label">
+                <label for="btn-menu"> <span class="usuario"> U </span> <span class="x"> X </span>  </label>
 
-                </div>
+            </div>
                 <input type="checkbox" id="btn-menu">
 
-                <div class="menu-usu">
-                    <ul>
-                        <a class="b-menu" id="b-top" href="usuari.php" ><li class="item-menu" >PERFIL</li></a>
-                        <a class="b-menu" href="cerrarSesion.php"><li class="item-menu"> CERRAR SESION </li></a>
-                    </ul>
-                </div>
+            <div class="menu-usu">
+                <ul>
+                    <a class="b-menu" id="b-top" href="usuari.php" ><li class="item-menu" >PERFIL</li></a>
+                    <a class="b-menu" href="cerrarSesion.php"><li class="item-menu"> CERRAR SESION </li></a>
+                </ul>
+            </div>
 
             </nav>
-        </div>
-    </header>
+    </div>
     
 </body>
 </html>

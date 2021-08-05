@@ -11,17 +11,45 @@ html {
 
 main{
     padding-top: 50px;
-    padding-left: 12%;
-    padding-right: 12%;
+    padding-left: 6%;
+    padding-right: 6%;
     display: flex;
     flex-flow: column;
     margin-bottom: 200px;
 }
 
+h1{
+    font-family: 'Nunito', sans-serif;
+    font-size: xxx-large;
+    margin-bottom: 20px;
+    color: #1c00a2;
+    /* color: #4b29ee; */
+
+}
+
 h2{
+    font-family: 'Nunito', sans-serif;
+
     margin-top: 40px;
     margin-bottom: 20px;
+    color: #1c00a2;
+    /* color: #4b29ee; */
 }
+
+.cont-ambas-cards{
+    display: flex;
+    flex-flow: row;
+}
+
+
+
+
+
+
+
+
+
+/* 
 
 .botones {
     margin: 25px 0;
@@ -55,4 +83,4 @@ h2{
 #b-clases:hover, #b-estud:hover {
     transform: translateY(-1.5px);
 }
-
+ */

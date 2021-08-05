@@ -28,18 +28,19 @@ $usu_id = 2;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet"> 
 </head>
 <body>
-<div>   
+    <header>   
         <?php include 'nav.php' ?>    
-    </div>
+    </header>
 
     <main>
         <h2>Ingresa los datos del nuevo Estudiante</h2>
         <div class="contenedor">
-            <form id="form" action="insertNuevEstud.php" method="POST">
-            <input type="hidden" name="usu_id" value="<?php echo $usu_id ?>">
 
+            <form id="form" action="insertNuevEstud.php" method="POST">
+                <input type="hidden" name="usu_id" value="<?php echo $usu_id ?>">
                 <div class="caja-insert">
                     <div class="caja-1">
                         <div class="grupo " id="grupo__nombre">
@@ -111,7 +112,7 @@ $usu_id = 2;
        
     <?php include 'footer.php' ?>    
 
-    <script src="js/validate.js"></script>
+    <script src="js/validateNuevEstud.js"></script>
 
 </body>
 </html>

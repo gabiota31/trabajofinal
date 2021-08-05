@@ -15,12 +15,13 @@ $consulta=mysqli_query($conexion, $sql);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <h2>Proximas Clases </h2>
     <section class="proximas-clases">
         <div class="cards-clase">
             <?php
             while($mostrar=mysqli_fetch_array($consulta)){
             ?>
-            <a href="pag_principal.php?id=<?php echo $mostrar['id_clase']?>">
+            <a href="pag_principal.php?idCardsClases=<?php echo $mostrar['id_clase']?>">
                 
                 <div class="card-n " id="<?php echo $mostrar['id_clase']?>">
                     <div class="cards-cont-izq">
@@ -53,8 +54,8 @@ $consulta=mysqli_query($conexion, $sql);
 
         <div class="cont-desliz  animate__animated animate__fadeInRight">
             <?php 
-            if(isset($_GET['id'])){
-                $idClase =  $_GET['id'];
+            if(isset($_GET['idCardsClases'])){
+                $idClase =  $_GET['idCardsClases'];
                 $sql2="select * from estudiante inner join clase where estudiante.id_estud = clase.estud_id and clase.usu_id = $usu_id and id_clase = $idClase" ;
                 $consulta2=mysqli_query($conexion, $sql2);
                 while($mostrar2=mysqli_fetch_array($consulta2)){

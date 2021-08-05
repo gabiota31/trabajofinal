@@ -18,6 +18,16 @@ main{
     margin-bottom: 200px;
 }
 
+h2{
+    font-family: 'Nunito', sans-serif;
+    font-size: xx-large;
+
+    color: #1c00a2;
+    /* color: #4b29ee; */
+}
+
+
+
 .contenedor{
     /* margin: 70px auto 100px; */
     padding: 30px;
@@ -195,6 +205,20 @@ input {
 .grupo-incorrecto .input {
     border: 3px solid #fd1010;
 }
+
+/* solo para editarClase.php */
+
+.caja-edit-usu{
+    display: flex;
+    flex-flow: column;
+}
+
+.grupo-usu {
+    margin-bottom: 20px;
+    width: 30%;
+}
+
+
 
 /* esto es de un validar de formulario mas facil, se puede ver abajo de todo de validate.js */
 

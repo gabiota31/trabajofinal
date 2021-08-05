@@ -21,16 +21,18 @@ $_SESSION['nombre']="Marilia";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+
 
 </head>
 <body>
-    <div>
+    <header>
         <?php include 'nav.php' ?>    
-    </div>
+    </header>
 
     <main>
-        <h1> Bienvenida <?php echo $_SESSION['nombre']  ?></h1>
+        <h1> Bienvenidx <?php echo $_SESSION['nombre']  ?></h1>
         
         <div class="cont-cards-clases">
             <?php
@@ -38,22 +40,21 @@ $_SESSION['nombre']="Marilia";
             ?>
         </div>
 
+        <section class="cont-ambas-cards">
 
-        <h2>Proximas Clases </h2>
+            <div class="cont-cards-clases">
+                <?php
+                include '1cardsClases.php'
+                ?>
+            </div>
 
-        <div class="cont-cards-clases">
-            <?php
-            include '1cardsClases.php'
-            ?>
-        </div>
 
-        <h2>Tus Estudiantes</h2>
-
-        <div class="cont-cards-estud">
-            <?php
-            include '1cardsEstud.php'
-            ?>
-        </div>
+            <div class="cont-cards-estud">
+                <?php
+                include '1cardsEstud.php'
+                ?>
+            </div>
+        </section>
 
 
 

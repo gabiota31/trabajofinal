@@ -15,6 +15,7 @@ $consulta=mysqli_query($conexion, $sql);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+    <h2>Tus Estudiantes</h2>
     <section class="tus-estudiantes">
         <div class="cards-e">
             <?php
@@ -87,7 +88,12 @@ $consulta=mysqli_query($conexion, $sql);
                         <div class="desliz-clases-btns-e">
                             <div class="desliz-clase">
                                 <div class="desliz-clase-renglon">
-                                    <span><?php echo date("d/m", strtotime($mostrar3E['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3E['hora'])) ?></span> <span><?php echo $mostrar3E['temaClase'] ?></span>
+                                    <div>
+                                        <?php echo date("d/m", strtotime($mostrar3E['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3E['hora'])) ?>
+                                    </div>
+                                    <div>
+                                        <?php echo $mostrar3E['temaClase'] ?>
+                                    </div>
                                 </div>
                                 <div class="renglon-pago">
                                     <div class="pago-e">
@@ -112,7 +118,7 @@ $consulta=mysqli_query($conexion, $sql);
                 </div> <!--cierre "desliz-info-e"-->
             </div> <!-- cierre "desliz-e" -->
             <div id="cruz-e" class="cruz-e">
-                <a href="">X</a>
+                <a href="pag_principal.php">X</a>
             </div>
         <?php
         } //cierre del if(isset) que pone la tarjeta en pantalla

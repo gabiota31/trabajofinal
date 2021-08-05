@@ -23,12 +23,13 @@ $result=mysqli_query($conexion, $sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mostrar datos</title>
+    <title>Todos tus estudiantes</title>
     <link rel="stylesheet" href="estilos/estilosDatos.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
     <script src="https://kit.fontawesome.com/ea0d59954b.js" crossorigin="anonymous"></script>
 </head>
@@ -42,7 +43,7 @@ $result=mysqli_query($conexion, $sql);
 
         <section>
             <div class="titulo">  
-                <h2>TUS ESTUDIANTES</h2>
+                <h2>Tus estudiantes</h2>
             </div>
             <?php
                 while($mostrar2=mysqli_fetch_array($result)){
