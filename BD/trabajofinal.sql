@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-08-2021 a las 02:15:11
+-- Tiempo de generación: 06-08-2021 a las 16:54:32
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -46,11 +46,13 @@ CREATE TABLE `clase` (
 INSERT INTO `clase` (`id_clase`, `temaClase`, `fecha`, `hora`, `precioClase`, `pago`, `comentClase`, `usu_id`, `estud_id`) VALUES
 (111, 'MRU', '2021-07-23', '00:00:00', 0, 'no', 'usuarie 1 estudiante 1 clase 1', 1, 11),
 (121, 'MRUV', '2021-07-27', '00:00:00', 0, 'si', 'usuarie 1 estudiante 2  la clase 1 ', 1, 12),
-(211, 'dinamica', '2021-07-20', '10:01:00', 750, 'no', 'preparar diagrama de cuerpo libre y de leyes de N', 2, 21),
+(211, 'dinamica', '2021-08-10', '10:01:00', 750, 'no', 'preparar diagrama de cuerpo libre y de leyes de N', 2, 21),
 (215, 'mruv', '2021-08-10', '15:30:00', 700, 'si', 'dos horas', 2, 21),
 (222, 'Circuitos', '2021-08-10', '17:00:00', 750, 'no', 'llevar modelo', 2, 22),
 (231, 'Historia de la cienc', '2021-08-20', '00:00:00', 800, 'no', 'preparar apuntes, confirmar un dia antes', 2, 23),
-(233, 'epistemología', '2021-08-23', '09:30:00', 800, 'si', '', 2, 23);
+(233, 'epistemología', '2021-08-23', '09:30:00', 800, 'si', '', 2, 23),
+(242, 'mru', '2021-09-01', '20:47:00', 1, '', '', 2, 24),
+(243, 'dasda', '2021-08-26', '12:38:00', 1, '', '', 2, 24);
 
 -- --------------------------------------------------------
 
@@ -75,10 +77,10 @@ CREATE TABLE `estudiante` (
 INSERT INTO `estudiante` (`id_estud`, `nomEstud`, `apeEstud`, `correoEstud`, `telEstud`, `comentEstud`, `usu_id`) VALUES
 (11, 'Bernardita', 'Janneti', 'berni@yahoo.com.ar', 1134435663, 'usuarie 1 estudiante 1', 1),
 (12, 'Felix', 'Elias', 'fe@gmail.com', 1123786544, 'usuarie 1 estudiante 2', 1),
-(21, 'Roberto', 'Piazza', 'piazza@hotmail.com', 11234533, '', 2),
+(21, 'Roberto', 'Piazza ', 'piazza@hotmail.com', 112345333, '', 2),
 (22, 'Miranda', 'Pritsley ', 'mp@gmail.com', 44444444, 'muy trabajadora', 2),
 (23, 'Robin', 'Pluchenko ', 'rp@gmail.com', 3333333, 'por ahora nada', 2),
-(24, 'Carlos', 'Miterio', 'cm@gmail.com', 1234564, '', 2),
+(24, 'Carlos', 'Miterio', 'cm@gmail.com', 1234564, 'debe 2000 pesos, no olvidar mandarle mensaje', 2),
 (71, 'Petra', 'Santa', 'ps@gmail.com', 4444444, 'usuarie 7 estudiante 1', 7),
 (72, 'fgh', 'ghf', 'gf', 66666, '', 7);
 
@@ -104,7 +106,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usu`, `nombre`, `apellido`, `correo`, `pass`, `telefono`, `avatar`) VALUES
 (1, 'Gabo', 'peluche', 'gp@gmail.com', '1234', 888888, 'gm123'),
-(2, 'Martin', 'Borges', 'mb@hotmail.com', '1123', 1178765423, '555'),
+(2, 'Test', 'Testin', 'test@correo.com', 'test123', 1178765423, '555'),
 (3, 'Facundo', 'Menea', 'mf@gmail.com', '1123', 1177654562, '123'),
 (4, 'Ayelen', 'Vargas', 'ayevargas@ggmail.com', '1123', 1178655434, '334'),
 (5, 'MArta', 'Salazar', 'dsaas@gmail.com', '1123', 123312, 'marta123'),
