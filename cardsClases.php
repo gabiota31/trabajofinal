@@ -82,7 +82,7 @@ $consulta=mysqli_query($conexion, $sql);
                                 Precio: $<?php echo $mostrar2['precioClase'] ?>
                             </div>
                             <div class="pagoBD">
-                                <span> ¿paga?  </span> <span><?php echo $mostrar2['pago'] ?></span>
+                                <span> ¿clase abonada?:  </span> <span><?php echo $mostrar2['pago'] ?></span>
                             </div>
                         </div>
 

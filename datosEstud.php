@@ -9,9 +9,8 @@ if(isset($_GET['id'])){
     $idEstud = $_GET['idVB'];
 };
 
-// $usu_id = $_SESSION['userId'];
-$usu_id = 2;
-// $sql="select * FROM estudiante INNER JOIN clase ON estudiante.id_estud = clase.estud_id where estudiante.usu_id=$usu_id AND estudiante.id_estud = $idEstud";
+$usu_id = $_SESSION['userId'];
+
 $sql = "select * from estudiante where estudiante.usu_id=$usu_id AND estudiante.id_estud = $idEstud";
 $sqlClases = "select * from clase where clases.estud_id = $idEstud";
 
@@ -20,7 +19,7 @@ $mostrar2 = mysqli_fetch_array($query);
 
 ?>
 <?php
-// if(isset($_SESSION['username'])){
+if(isset($_SESSION['userId'])){
 ?>
 
 
@@ -41,9 +40,9 @@ $mostrar2 = mysqli_fetch_array($query);
     <script src="https://kit.fontawesome.com/ea0d59954b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div>
+    <header>
         <?php include 'nav.php' ?>    
-    </div>
+    </header>
     <main>
         <section>
         <div class="desliz-titulo">
@@ -109,7 +108,7 @@ $mostrar2 = mysqli_fetch_array($query);
                                         Precio: $<?php echo $mostrar3['precioClase'] ?>
                                     </div>
                                     <div class="pagoBD-e">
-                                        ¿paga? <?php echo $mostrar3['pago'] ?>
+                                    ¿clase abonada?: <?php echo $mostrar3['pago'] ?>
                                     </div>
                                 </div>
                                 <div class="coment-clase">
@@ -149,8 +148,8 @@ $mostrar2 = mysqli_fetch_array($query);
 </body>
 </html>
 
-<?php //}  
-// else{
-//     echo "no iniciaste sesion, redirigiendo...";
-//     header('refresh:3; url= login.html');
-// } ?>
+<?php }  
+else{
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+} ?>

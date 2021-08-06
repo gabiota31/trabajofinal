@@ -3,11 +3,9 @@
 include 'conn.php';
 session_start();
 
-$usu =$_SESSION['username'];
+$usu_id = $_SESSION['userId'];
 
-$sql="select * from usuario where correo ='$usu' ";
-
-// $sql="select * from usuario where correo ='ayevargas@ggmail.com' ";
+$sql="select * from usuario where id_usu ='$usu_id' ";
 
 $query=mysqli_query($conexion, $sql);
 $array=mysqli_fetch_array($query);
@@ -15,7 +13,7 @@ $array=mysqli_fetch_array($query);
 
 ?>
 <?php
-// if(isset($_SESSION['username'])){
+if(isset($_SESSION['userId'])){
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +22,10 @@ $array=mysqli_fetch_array($query);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    
+    <title>Perfil de <?php echo $array['nombre'] ?></title>
+    
     <link rel="stylesheet" href="estilos/estilosUsu.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
@@ -77,8 +76,8 @@ $array=mysqli_fetch_array($query);
 
 </body>
 </html>
-<?php //}  
-// else{
-//     echo "no iniciaste sesion, redirigiendo...";
-//     header('refresh:3; url= login.html');
-// } ?>
+<?php }  
+else{
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+} ?>

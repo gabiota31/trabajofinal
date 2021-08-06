@@ -3,17 +3,15 @@
 include 'conn.php';
 session_start();
 
-// $usu_id = $_SESSION['userId'];
-$usu_id = 2;
+$usu_id = $_SESSION['userId'];
 
 $sql = "select * FROM clase INNER JOIN estudiante ON clase.estud_id = estudiante.id_estud where estudiante.usu_id=$usu_id order by fecha,hora asc";
 
-// $sql1="select * from clase where clase.usu_id= $usu_id";
 $result=mysqli_query($conexion, $sql);
 
 ?>
 <?php
-// if(isset($_SESSION['username'])){
+if(isset($_SESSION['userId'])){
 ?>
 
 
@@ -70,7 +68,7 @@ $result=mysqli_query($conexion, $sql);
                                     Precio: $<?php echo $mostrar2['precioClase'] ?>
                                 </div>
                                 <div class="pagoBD">
-                                    <span> ¿paga?  </span> <span><?php echo $mostrar2['pago'] ?></span>
+                                    <span> ¿clase abonada?:  </span> <span><?php echo $mostrar2['pago'] ?></span>
                                 </div>
                             </div>
 
@@ -106,8 +104,8 @@ $result=mysqli_query($conexion, $sql);
 </body>
 </html>
 
-<?php //}  
-// else{
-//     echo "no iniciaste sesion, redirigiendo...";
-//     header('refresh:3; url= login.html');
-// } ?>
+<?php }  
+else{
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+} ?>

@@ -14,6 +14,7 @@ main{
     padding-left: 12%;
     display: flex;
     flex-flow: column;
+    min-height: 89vh;
 }
 
 .contenedor-usu {
@@ -21,6 +22,8 @@ main{
     flex-flow: row;
     padding: 25px;
     width: 30%;
+    min-width: 280px;
+
     border-radius: 20px;
     background-color: rgb(215 224 13 / 42%);
 }

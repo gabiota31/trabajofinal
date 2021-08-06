@@ -100,7 +100,7 @@ $consulta=mysqli_query($conexion, $sql);
                                         Precio: $<?php echo $mostrar3E['precioClase'] ?>
                                     </div>
                                     <div class="pagoBD-e">
-                                        ¿paga? <?php echo $mostrar3E['pago'] ?>
+                                        ¿clase abonada?: <?php echo $mostrar3E['pago'] ?>
                                     </div>
                                 </div>
                                 <div class="coment-clase">

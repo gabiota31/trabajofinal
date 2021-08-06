@@ -3,16 +3,14 @@
 include 'conn.php';
 
 session_start();
-// $usu_id = $_SESSION['userId'];
-$usu_id = 2;
-
+$usu_id = $_SESSION['userId'];
 
 $sql = "select * from estudiante where estudiante.usu_id = $usu_id";
 $query = mysqli_query($conexion, $sql);
 
 ?>
 <?php
-// if(isset($_SESSION['username'])){
+if(isset($_SESSION['userId'])){
 ?>
 
 <!DOCTYPE html>
@@ -129,8 +127,8 @@ $query = mysqli_query($conexion, $sql);
 </body>
 </html>
 
-<?php //}  
-// else{
-//     echo "no iniciaste sesion, redirigiendo...";
-//     header('refresh:3; url= login.html');
-// } ?>
+<?php }  
+else{
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+} ?>

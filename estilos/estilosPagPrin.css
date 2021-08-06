@@ -15,7 +15,8 @@ main{
     padding-right: 6%;
     display: flex;
     flex-flow: column;
-    margin-bottom: 200px;
+    /* margin-bottom: 200px; */
+    min-height: 89vh;
 }
 
 h1{
@@ -39,48 +40,6 @@ h2{
 .cont-ambas-cards{
     display: flex;
     flex-flow: row;
+    flex-wrap: wrap;
 }
 
-
-
-
-
-
-
-
-
-/* 
-
-.botones {
-    margin: 25px 0;
-}
-
-.boton {
-    border: none;
-    padding: 10px 25px;
-    margin-right: 20px;
-    font-size: 14pt;
-}
-
-#b-clases, #b-estud {
-    display: inline;
-    color: #217f21;
-    border: #217f21 solid 1px; 
-    font-weight: bolder;
-}
-
-#b-clases {
-    background-color: white;
-    border-width: 1px;
-}
-
-#b-estud {
-    background-color: #d7e00d; 
-    border-width: 1.5px;
-
-}
-
-#b-clases:hover, #b-estud:hover {
-    transform: translateY(-1.5px);
-}
- */

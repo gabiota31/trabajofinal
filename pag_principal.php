@@ -2,11 +2,9 @@
 include 'conn.php';
 session_start();
 
-$_SESSION['nombre']="Marilia";
-
 ?>
 <?php
-// if(isset($_SESSION['username'])){
+if(isset($_SESSION['userId'])){
 ?>
 
 <!DOCTYPE html>
@@ -57,48 +55,14 @@ $_SESSION['nombre']="Marilia";
         </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- <div class="botones">
-            <button class="boton" id="b-estud">Tus Estudiantes</button>
-            <button class="boton" id="b-clases">Tus Clases</button>
-        </div>
-        <div class="contenedor-data">
-            <div id="cardsEstud">
-            <?php
-            //include 'cardsEstud.php';
-            ?>
-            </div>
-
-            <div id="cardsClases">
-            <?php
-            //include 'cardsClases.php';
-            ?>
-            </div>
-        </div> -->
-
     </main>
 
     <?php include 'footer.php' ?>    
 
-    <script src='js/dinamica.js'></script>
-
-
 </body>
 </html>
-<?php // }  
-// else{
-//     echo "no iniciaste sesion, redirigiendo...";
-//     header('refresh:3; url= login.html');
-//} ?>
+<?php  }  
+else{
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+} ?>

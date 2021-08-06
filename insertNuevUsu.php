@@ -22,19 +22,15 @@ $avatar = $_POST['usuario'];
 // var_dump($telefono);
 // var_dump($avatar);
 
-$queryCorreo = "select * from usuario where correo=$correo";
-// $queryTel = "select * from usuario where telefono=$telefono";
-$queryAvatar = "select * from usuario where avatar=$avatar ";
+$queryCorreo = "select correo from usuario where correo=$correo";
+$queryAvatar = "select avatar from usuario where avatar=$avatar ";
 
 $consultaCorreo=mysqli_query($conexion, $queryCorreo);
-// $consultaTel=mysqli_query($conexion, $queryTel);
 $consultaAvatar=mysqli_query($conexion, $queryAvatar);
 
 echo "consulta correo";
 var_dump($consultaCorreo);
 echo "<br>";
-// echo "consulta telefono";
-// var_dump($consultaTel);
 echo "<br>";
 echo "consulta usuario";
 var_dump($consultaAvatar);
@@ -63,10 +59,6 @@ if ($consultaCorreo == TRUE){
         echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
     }
 }
-
-
-
-//$sql = "INSERT INTO usuario (nombre, apellido, correo) VALUES ('Test', 'Testing', 'Testing@tesing.com')";
 
 
 mysqli_close($conexion);

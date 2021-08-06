@@ -11,19 +11,13 @@ session_start();
 $correo = $_POST['correo'];
 $pass = $_POST['pass'];
 
-
-// $nom_usu = mysqli_query($conexion, "select nombre from usuario where correo = '$usu' ");
-// $array = mysqli_fetch_array($nom_usu);
-// $_SESSION['nombre'] = $array['nombre'];
-// echo $_SESSION['nombre'] ;
-
 //verifica que $usu y $pass existan y no estén vacios, si se cumple, busca coincidencias en la BD, 
-if(isset($correo) && !empty($correo && isset($pass) && !empty($pass)){
+if( isset($correo) && !empty($correo) && isset($pass) && !empty($pass)){
     $select = mysqli_query($conexion, "select id_usu, nombre, correo, pass from usuario where correo = '$correo'");
     $sesion = mysqli_fetch_array($select);
     // si el correo es correcto, se hace la consulta en la BD entonces $sesion existe
     if($sesion){
-        //si la contraseña ingresada es correcta:
+        //para comprobar la contreaseña:
         if($pass == $sesion['pass']){
             $_SESSION['correo'] = $correo;
             $_SESSION['nombre'] = $sesion['nombre'];

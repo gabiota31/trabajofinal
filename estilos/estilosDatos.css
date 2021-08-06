@@ -10,11 +10,13 @@ html {
 }
 
 main {
-    margin-bottom: 200px;
+    min-height: 89vh;
 }
 
 main section{
     padding: 50px 12% 0 12%;
+    margin-bottom: 150px;
+    
 }
 
 .titulo{
@@ -114,6 +116,7 @@ h2{
 .desliz-clases-btns-e{
     margin-right: 10px;
     width: 23%;
+    min-width: 220px;
     display: flex;
     flex-flow: column;
 }
@@ -130,12 +133,6 @@ h2{
     font-weight: bolder;
     background-color: rgb(179, 243, 179);
     color: #217f21;
-}
-
-.desliz-clase-renglon{
-    display: flex;
-    justify-content: space-between;
-
 }
 
 .desliz-clase-renglon span:nth-child(2){

@@ -1,13 +1,11 @@
 <?php
 
 session_start();
-// $usu_id = $_SESSION['userId'];
-$usu_id = 2;
-
+$usu_id = $_SESSION['userId'];
 
 ?>
 <?php
-// if(isset($_SESSION['username'])){
+if(isset($_SESSION['userId'])){
 ?>
 
 
@@ -117,8 +115,8 @@ $usu_id = 2;
 </body>
 </html>
 
-<?php //}  
-// else{
-//     echo "no iniciaste sesion, redirigiendo...";
-//     header('refresh:3; url= login.html');
-// } ?>
+<?php }  
+else{
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+} ?>

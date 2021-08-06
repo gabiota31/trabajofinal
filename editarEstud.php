@@ -3,8 +3,7 @@
 include 'conn.php';
 session_start();
 
-// $usu_id = $_SESSION['userId'];
-$usu_id = 2;
+$usu_id = $_SESSION['userId'];
 
 if(isset($_GET['id'])){
     $idEstud = $_GET['id'];
@@ -19,7 +18,7 @@ $row = mysqli_fetch_array($query);
 
 ?>
 <?php
-// if(isset($_SESSION['username'])){
+if(isset($_SESSION['userId'])){
 ?>
 
 <!DOCTYPE html>
@@ -113,14 +112,14 @@ $row = mysqli_fetch_array($query);
     </main>
        
     <?php include 'footer.php' ?>    
-    <script src="js/validateEstud.js"></script>
+    <!-- <script src="js/validateEstud.js"></script> -->
 
 
 </body>
 </html>
 
-<?php //}  
-// else{
-//     echo "no iniciaste sesion, redirigiendo...";
-//     header('refresh:3; url= login.html');
-// } ?>
+<?php }  
+else{
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+} ?>

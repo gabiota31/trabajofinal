@@ -3,10 +3,7 @@
 include 'conn.php';
 session_start();
 
-// $usu_id = $_SESSION['userId'];
-$usu_id = 2;
-
-//$consulta1 = mysqli_query($conexion, "select * from usuario");
+$usu_id = $_SESSION['userId'];
 
 $sql="select * from estudiante where estudiante.usu_id = $usu_id";
 $result=mysqli_query($conexion, $sql);
@@ -14,7 +11,7 @@ $result=mysqli_query($conexion, $sql);
 ?>
 
 <?php
-// if(isset($_SESSION['username'])){
+if(isset($_SESSION['userId'])){
 ?>
 
 <!DOCTYPE html>
@@ -35,9 +32,9 @@ $result=mysqli_query($conexion, $sql);
 </head>
 <body>
 
-    <div>
+    <header>
         <?php include 'nav.php' ?>    
-    </div>
+    </header>
     <main>
 
 
@@ -104,14 +101,19 @@ $result=mysqli_query($conexion, $sql);
                         <div class="desliz-clases-btns-e">
                             <div class="desliz-clase">
                                 <div class="desliz-clase-renglon">
-                                    <span><?php echo date("d/m", strtotime($mostrar3['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3['hora'])) ?></span> <span><?php echo $mostrar3['temaClase'] ?></span>
+                                    <div>
+                                        <?php echo date("d/m", strtotime($mostrar3['fecha'])) ?> - <?php echo date("H:i", strtotime($mostrar3['hora'])) ?>
+                                    </div>
+                                    <div>
+                                        <?php echo $mostrar3['temaClase'] ?>
+                                    </div>
                                 </div>
                                 <div class="renglon-pago">
                                     <div class="pago-e">
                                         Precio: $<?php echo $mostrar3['precioClase'] ?>
                                     </div>
                                     <div class="pagoBD-e">
-                                        ¿paga? <?php echo $mostrar3['pago'] ?>
+                                        ¿clase abonada?: <?php echo $mostrar3['pago'] ?>
                                     </div>
                                 </div>
                                 <div class="coment-clase">
@@ -158,8 +160,7 @@ $result=mysqli_query($conexion, $sql);
 </body>
 </html>
 
-<?php //}  
-// else{
-//     echo "no iniciaste sesion, redirigiendo...";
-//     header('refresh:3; url= login.html');
-// } ?>
+<?php } else {
+    echo "no iniciaste sesion, redirigiendo...";
+    header('refresh:3; url= login.html');
+ } ?>

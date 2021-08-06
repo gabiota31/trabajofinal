@@ -19,8 +19,6 @@
     }
 </style>
 
-<!-- https://es.stackoverflow.com/questions/25743/c%C3%B3mo-crear-un-footer-que-se-adapte-en-la-parte-inferior -->
-
 <footer>
     <div>Sitio propiedad de Gabriela Peláez</div>
     <div>Verguenza es robar 👀</div>
