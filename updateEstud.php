@@ -14,7 +14,7 @@ $upd = "update estudiante set nomEstud ='$nombreE', apeEstud = '$apellidoE', cor
 
 if(isset($_POST['deLaPagPrin'])){
     if (mysqli_query($conexion, $upd)) {
-        header('location: pag_principal.php');
+        header('location: index.php');
     } else {
         echo "Error: " . $upd . "<br>" . mysqli_error($conexion);
     }

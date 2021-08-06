@@ -21,7 +21,7 @@ $consulta=mysqli_query($conexion, $sql);
             <?php
             while($mostrar=mysqli_fetch_array($consulta)){
             ?>
-            <a href="pag_principal.php?idCardsClases=<?php echo $mostrar['id_clase']?>">
+            <a href="index.php?idCardsClases=<?php echo $mostrar['id_clase']?>">
                 
                 <div class="card-n " id="<?php echo $mostrar['id_clase']?>">
                     <div class="cards-cont-izq">
@@ -87,14 +87,14 @@ $consulta=mysqli_query($conexion, $sql);
                         </div>
 
                         <div class="desliz-btns">
-                            <div class="deliz-icono" id="borde"><a id="editar-btn" href="pag_principal.php?idEdit=<?php echo $idClase?>"> <i class="fi-rr-edit"></i> </a></div>
+                            <div class="deliz-icono" id="borde"><a id="editar-btn" href="index.php?idEdit=<?php echo $idClase?>"> <i class="fi-rr-edit"></i> </a></div>
                             <!-- <div class="deliz-icono "><a id="borrar" href="deleteClase.php?id=<?php echo $idClase?>"><i class="fi-rr-file-delete"></i> </a></div> -->
                         </div>
                     </div>
                 </div> <!--cierre "desliz-info" -->
             </div> <!--cierre "desliz" -->
             <div class="cruz">
-                <a href="pag_principal.php">X</a>
+                <a href="index.php">X</a>
             </div>
         <?php
         } };
@@ -149,7 +149,7 @@ $consulta=mysqli_query($conexion, $sql);
                 </div> <!--cierre "editar-info" -->
             </div> <!--cierre "editar" -->
             <div class="cruz">
-                <a href="pag_principal.php">X</a>
+                <a href="index.php">X</a>
             </div>
         <?php
         } ;

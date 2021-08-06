@@ -24,14 +24,14 @@ if($array = mysqli_fetch_array($query)){
         }else {
             echo "las contraseñas no son iguales" . "<br>";
             echo "redirigiendo..." ;
-            header('refresh:2; url = iluso.php');
+            header('refresh:2; url = editarContra.php');
 
         };
     }
 }else{
     echo "No hay ninguna cuenta con ese correo" . "<br>";
     echo "redirigiendo..." ;
-    header('refresh:2; url = iluso.php');
+    header('refresh:2; url = editarContra.php');
     mysqli_close($conexion);
 
 };

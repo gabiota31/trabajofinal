@@ -22,7 +22,7 @@ if( isset($correo) && !empty($correo) && isset($pass) && !empty($pass)){
             $_SESSION['correo'] = $correo;
             $_SESSION['nombre'] = $sesion['nombre'];
             $_SESSION['userId'] = $sesion['id_usu'];
-            header('location: pag_principal.php');
+            header('location: index.php');
         } else {
             echo "datos erroneos, redirigiendo...";
             header('refresh:2; url= login.html');

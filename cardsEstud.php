@@ -21,7 +21,7 @@ $consulta=mysqli_query($conexion, $sql);
             <?php
             while($mostrar=mysqli_fetch_array($consulta)){
             ?>
-            <a href="pag_principal.php?id=<?php echo $mostrar['id_estud']?>">
+            <a href="index.php?id=<?php echo $mostrar['id_estud']?>">
                 <div class="card-n-e " id="<?php echo $mostrar['id_estud']?>">
                     <div class="card-borde-l">
                         
@@ -118,7 +118,7 @@ $consulta=mysqli_query($conexion, $sql);
                 </div> <!--cierre "desliz-info-e"-->
             </div> <!-- cierre "desliz-e" -->
             <div id="cruz-e" class="cruz-e">
-                <a href="pag_principal.php">X</a>
+                <a href="index.php">X</a>
             </div>
         <?php
         } //cierre del if(isset) que pone la tarjeta en pantalla

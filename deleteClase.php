@@ -10,7 +10,7 @@ if(isset($_GET['idIndex'])){
     $query = mysqli_query($conexion, $sql);
 
     if($query){
-        header('location: pag_principal.php');
+        header('location: index.php');
     } else {
         echo "Error: " . $upd . "<br>" . mysqli_error($conexion);
     };

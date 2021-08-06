@@ -10,11 +10,11 @@
     
     <div class="contenedor-nav">
         <div>
-            <a href="pag_principal.php"> <img src="img/logo.png" alt="logo organiza tus clases" class="logo"> </a>
+            <a href="index.php"> <img src="img/logo.png" alt="logo organiza tus clases" class="logo"> </a>
         </div>
             <nav>
                 <ul>
-                    <li><a class="b-nav" href="pag_principal.php">INICIO</a></li>
+                    <li><a class="b-nav" href="index.php">INICIO</a></li>
                     <li><a class="b-nav" href="nuevEstud.php"> NUEVO ESTUDIANTE </a></li>
                     <li><a class="b-nav" href="nuevClase.php"> NUEVA CLASE </a></li>
                     <li><a class="b-nav" href="datos.php">TODOS TUS ESTUDIANTES</a></li>
