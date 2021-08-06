@@ -1,29 +1,44 @@
 const form = document.getElementById('form')
 const inputs = document.querySelectorAll('#form input')
 
-//expresiones regulares que dicen que tiene que tener los campos, si letras, numeros etc
+
 const expresiones = {
-	tema: /^[a-zA-Z0-9\_\-]{1,16}$/, // Letras, numeros, guion y guion_bajo
-    fecha: /^(?:3[01]|[12][0-9]|0?[1-9])([\-/.])(0?[1-9]|1[1-2])\1\d{4}$/, //fechas 31.12.3013 01/01/2013 5-3-2013 15.03.2013
-	precio: /^\d{1,14}$/ // 1 a 14 numeros.
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
 
-//campos que tiene que estar llenos para enviar el form
 const campos = {
-    id_estud: false,
-	tema: false,
-    precio: false 
+    usuario: false,
+	nombre: false,
+	apellido: false,
+	correo: false,
+    pass: false,
+    tel: false 
 }
 
 const validarForm = (e) => {
     switch (e.target.name) {
-        case "tema":
-            validarCampo(expresiones.tema, e.target, 'tema');
+        case "usuario":
+            validarCampo(expresiones.usuario, e.target, 'usuario');
         break;
-        case "precio":
-            validarCampo(expresiones.precio, e.target, 'precio');
+        case "nombre":
+            validarCampo(expresiones.nombre, e.target, 'nombre');
         break;
-    };
+        case "apellido":
+            validarCampo(expresiones.nombre, e.target, 'apellido');
+        break;
+        case "correo":
+            validarCampo(expresiones.correo, e.target, 'correo');
+        break;
+        case "tel":
+            validarCampo(expresiones.telefono, e.target, 'tel');
+        break;
+        case "pass":
+            validarCampo(expresiones.password, e.target, 'pass');
+        break;};
 };
 
 const validarCampo = (expresion, input, campo) => {
@@ -44,21 +59,13 @@ const validarCampo = (expresion, input, campo) => {
     }
 }
 
-function validar(){
-    if(document.form.id_estud.value == 0 || document.form.id_estud.value== ""){
-        console.log("Selecciona Una opción");
-        document.form.id_estud.focus();
-    }
-}
-
-
 inputs.forEach((inputs) => {
     inputs.addEventListener('keyup', validarForm);
     inputs.addEventListener('blur', validarForm);
 });
 
 form.addEventListener("submit", e=>{
-    if(campos.tema && campos.precio){
+    if(campos.usuario && campos.nombre && campos.apellido && campos.correo && campos.pass && campos.tel){
         console.log('todo ok');
         document.getElementById('msjError').classList.remove('msjError-activo');
     } else {

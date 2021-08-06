@@ -44,14 +44,14 @@ $_SESSION['nombre']="Marilia";
 
             <div class="cont-cards-clases">
                 <?php
-                include '1cardsClases.php'
+                include 'cardsClases.php'
                 ?>
             </div>
 
 
             <div class="cont-cards-estud">
                 <?php
-                include '1cardsEstud.php'
+                include 'cardsEstud.php'
                 ?>
             </div>
         </section>

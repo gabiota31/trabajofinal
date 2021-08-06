@@ -42,8 +42,8 @@ $usu_id = 2;
             <form id="form" action="insertNuevEstud.php" method="POST">
                 <input type="hidden" name="usu_id" value="<?php echo $usu_id ?>">
                 <div class="caja-insert">
-                    <div class="caja-1">
-                        <div class="grupo " id="grupo__nombre">
+                    <div class="caja-1"> <!-- nombre y apellido -->
+                        <div class="grupo" id="grupo__nombre"> <!-- nombre -->
                             <label class="etiqueta">Nombre</label>
                             <div class="grupo-input">
                                 <input type="text" class="input" id="nombre" name="nombre" >
@@ -52,7 +52,7 @@ $usu_id = 2;
                             <p class="input-error">El nombre no puede tener numeros o simbolos</p>
                         </div>        
                     
-                        <div class="grupo" id="grupo__apellido">
+                        <div class="grupo" id="grupo__apellido"> <!-- apellido -->
                             <label class="etiqueta">Apellido</label> 
                             <div class="grupo-input">   
                                 <input type="text" class="input" id="apellido" name="apellido" >
@@ -62,8 +62,8 @@ $usu_id = 2;
                         </div>
                     </div>
 
-                    <div class="caja-1" >
-                        <div class="grupo" id="grupo__correo">
+                    <div class="caja-1" > <!-- correo y telefono-->
+                        <div class="grupo" id="grupo__correo"> <!-- correo-->
                             <label class="etiqueta">Correo</label>
                             <div class="grupo-input">   
                                 <input type="email" class="input" id="correo" name="correo" >
@@ -72,7 +72,7 @@ $usu_id = 2;
                             <p class="input-error">Ingrese un correo válido</p>
                         </div>
                     
-                        <div class="grupo" id="grupo__tel">
+                        <div class="grupo" id="grupo__tel"> <!-- telefono-->
                             <label class="etiqueta">Telefono</label>
                             <div class="grupo-input">   
                                 <input type="tel"  class="input" id="tel" name="tel" >
@@ -112,7 +112,7 @@ $usu_id = 2;
        
     <?php include 'footer.php' ?>    
 
-    <script src="js/validateNuevEstud.js"></script>
+    <script src="js/validateEstud.js"></script>
 
 </body>
 </html>

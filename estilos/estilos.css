@@ -96,11 +96,73 @@ input {
     background-color: #f9ff8f;
 }
 
-
-
-
 .submit:hover {
     background-color: #217f21;
     color: blanchedalmond;
+}
+
+
+/* nuevo para la validación */
+
+.correo, .pass {
+    width: 100%;
+}
+
+.validacion-estado {
+    position: relative;
+    left: 209px;
+    bottom: 28px;
+    z-index: 100;
+    opacity: 0;
+
+}
+
+.input-error{
+    display: none;
+    font-size: small;
+    margin-top: 5px ;
+}
+
+.input-error {
+    width: 230px;
+}
+
+.input-error-activo{
+    display: block;
+}
+
+.msjError{
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    width: 234px;
+    color: white;
+    background-color: #e40834c9;
+    border-radius: 10px;
+}
+
+.msjError-activo{
+    display: block;
+}
+
+/* ----Estilos validacion------ */
+
+.grupo-correcto .validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.grupo-incorrecto .etiqueta{
+    color: #fd1010;
+    opacity: 1;
+}
+
+.grupo-incorrecto .validacion-estado{
+    color: #fd1010;
+    opacity: 1;
+}
+
+.grupo-incorrecto .input {
+    border: 3px solid #fd1010;
 }
 

@@ -192,10 +192,10 @@ input {
     opacity: 1;
 }
 
-.grupo-incorrecto .etiqueta{
+/* .grupo-incorrecto .etiqueta{
     color: #fd1010;
     opacity: 1;
-}
+} */
 
 .grupo-incorrecto .validacion-estado{
     color: #fd1010;

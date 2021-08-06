@@ -13,7 +13,7 @@ $apellido = $_POST['apellido'];
 $correo = $_POST['correo'];
 $pass = $_POST['pass'];
 $telefono = $_POST['tel'];
-$avatar = $_POST['avatar'];
+$avatar = $_POST['usuario'];
 
 // var_dump($nombre);
 // var_dump($apellido);

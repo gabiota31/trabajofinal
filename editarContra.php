@@ -25,17 +25,17 @@ include 'conn.php';
             <h2 class="title"> Cambia la contraseña </h2>
             <form action="updateContra.php" method="POST">
                 <div class="usuario">
-                    <div class="caja-input animate__animated animate__fadeInLeft " id="caja-input">
-                        <label for="correo"> Ingresa tu correo electrónico</label>
-                        <input class="correo" type="email" name="correo" required>
+                    <div class="grupo caja-input animate__animated animate__fadeInLeft " id="caja-input">
+                        <label > Ingresa tu correo electrónico</label>
+                        <input type="email" name="correo" required>
                     </div>
 
-                    <div class="caja-input animate__animated animate__fadeInLeft " id="caja-input">
+                    <div class="grupo caja-input animate__animated animate__fadeInLeft " id="caja-input">
                         <label for=""> Ingresa la contraseña nueva</label>
                         <input type="password" name="passNueva1" required>
                     </div>
 
-                    <div class="caja-input animate__animated animate__fadeInLeft " id="caja-input">
+                    <div class="grupo caja-input animate__animated animate__fadeInLeft " id="caja-input">
                         <label for=""> Ingrésala nuevamente </label>
                         <input type="password" name="passNueva2" required>
                     </div>

@@ -43,7 +43,8 @@ $row = mysqli_fetch_array($query);
     <main>
         <h2>Ingresa los datos nuevos</h2>
         <div class="contenedor">
-            <form action="updateEstud.php" method="POST">
+            <form id="form" action="updateEstud.php" method="POST">
+                <input type="hidden" name="id_estud" value="<?php echo $row['id_estud'] ?>"> 
                 <?php
                 if(isset($_GET['id'])){ ?>
                     <input type="hidden" name="deLaPagPrin" value="deLaPagPrin">
@@ -53,39 +54,56 @@ $row = mysqli_fetch_array($query);
                 }
                 ?>
                 <div class="caja-insert">
-                    <div class="caja-1">
-                        <input type="hidden" name="id_estud" value="<?php echo $row['id_estud'] ?>"> 
-                        <div class="grupo">
+                    <div class="caja-1"> <!-- nombre y apellido -->
+                        <div class="grupo" id="grupo__nombre"> <!-- nombre -->
                             <label class="etiqueta">Nombre</label>
-                            <input type="text" name="nombre" value="<?php echo $row['nomEstud'] ?>" required>
+                            <div class="grupo-input">
+                                <input type="text" class="input" id="nombre" name="nombre" value="<?php echo $row['nomEstud'] ?>">
+                                <i class="validacion-estado far fa-times-circle"></i>
+                            </div>
+                            <p class="input-error">El nombre no puede tener numeros o simbolos</p>
                         </div>        
                     
-                        <div class="grupo">
-                            <label class="etiqueta">Apellido</label> 
-                            <input type="text" name="apellido" value="<?php echo $row['apeEstud'] ?>" required>
-                        </div>
+                        <div class="grupo" id="grupo__apellido"> <!-- apellido -->
+                            <label class="etiqueta">Apellido</label>
+                            <div class="grupo-input">
+                                <input type="text" class="input" id="apellido" name="apellido" value="<?php echo $row['apeEstud'] ?>">
+                                <i class="validacion-estado far fa-times-circle"></i>
+                            </div>
+                            <p class="input-error">El apellido no puede tener numeros o simbolos</p></div>
                     </div>
 
-                    <div class="caja-1">
-                        <div class="grupo">
+                    <div class="caja-1"><!-- correo y telefono-->
+                        <div class="grupo" id="grupo__correo"><!-- correo -->
                             <label class="etiqueta">Correo</label>
-                            <input type="email" name="correo" value="<?php echo $row['correoEstud'] ?>" required>
+                            <div class="grupo-input">
+                                <input type="email" class="input" id="correo" name="correo" value="<?php echo $row['correoEstud'] ?>">
+                                <i class="validacion-estado far fa-times-circle"></i>
+                            </div>
+                            <p class="input-error">Ingrese un correo válido</p>
                         </div>
                     
-                        <div class="grupo">
+                        <div class="grupo" id="grupo__tel"> <!-- telefono-->
                             <label class="etiqueta">Telefono</label>
-                            <input type="tel" name="tel" value="<?php echo $row['telEstud'] ?>" required>
+                            <div class="grupo-input">
+                                <input type="tel" class="input" id="tel" name="tel" value="<?php echo $row['telEstud'] ?>">
+                                <i class="validacion-estado far fa-times-circle"></i>
+                            </div>
                         </div>
+                        <p class="input-error">El número de telefono tiene que tener un mínimo de 7 y un máximo de 14 cifras y no puede tener letras</p>
                     </div>
 
-                    <div class="caja-3">
-                        <div class="grupo">
-                            <label class="etiqueta">Comentarios</label>
-                            <input type="text" name="coment" value="<?php echo $row['comentEstud'] ?>">
-                        </div>
-                
+                    <div class="grupo coment">
+                        <label class="etiqueta">Comentarios</label>
+                        <input type="textarea" class="input" name="coment">
                     </div>
                 </div>
+                
+                <div class="msjError" id="msjError">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b> Error: Por favor llena el formulario correctamente </b> </p>
+
+                </div>
+
                 <div class="caja-submit">
                     <input class="submit" type="submit" value="Listo">
                 </div>
@@ -95,6 +113,7 @@ $row = mysqli_fetch_array($query);
     </main>
        
     <?php include 'footer.php' ?>    
+    <script src="js/validateEstud.js"></script>
 
 
 </body>

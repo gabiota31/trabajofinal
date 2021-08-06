@@ -2,8 +2,8 @@
 
 include 'conn.php';
 
-if(isset($_GET['id'])){
-    $idClase = $_GET['id'];
+if(isset($_GET['idIndex'])){
+    $idClase = $_GET['idIndex'];
 
     $sql = "delete from clase where id_clase = '$idClase' ";
 

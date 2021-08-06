@@ -194,6 +194,7 @@ h2{
 .cont-editar{
     display: flex;
     flex-flow: row;
+    margin-right: 30px;
 }
 
 .cont-editar input {
@@ -285,4 +286,38 @@ h2{
     color: #2b8526;
     transform: translateY(-1.5px) translateX(1.5px);
 
+}
+
+/* -----------ventana de alerta de borrado--------- */
+
+.alerta {
+    padding-bottom: 4px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-right: 15px;
+    text-align: center;
+    border: solid white 3px;
+    border-radius: 10px;
+    background-color: gray;
+    color: white;
+    width: max-content;
+
+    position: fixed;
+    left: 30%;
+    top: 27%;
+}
+
+.alerta p{
+    margin: 20px auto;
+}
+
+.alerta a{
+    text-decoration: none;
+    padding: 5px;
+    size: 100%;
+    color: white;
+    background-color: #217f21;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-left: 15px;
 }

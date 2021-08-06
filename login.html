@@ -8,28 +8,42 @@
 
     <link rel="stylesheet" href="estilos/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/ea0d59954b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
 
         <div class="login animate__animated animate__fadeIn">
             <h2 class="title animate__animated animate__fadeIn">Inicia Sesión</h2>
-            <form action="verify.php" method="POST">
+            <form id="form" action="verify.php" method="POST">
                 <div class="usuario">
-                    <div class="caja-input animate__animated animate__fadeInLeft "> <!--animate__delay-0.5s-->
-                        <input type="text" placeholder="Correo electronico" name="usu" required>
+                    <div class="grupo caja-input animate__animated animate__fadeInLeft " id="grupo__correo"> <!--animate__delay-0.5s-->
+                        <div class="grupo-input">
+                            <input type="email" class="input correo" id="correo" placeholder="Correo electronico" name="correo">
+                            <i class="validacion-estado far fa-times-circle"></i>
+                        </div>
+                        <p class="input-error">Ingrese un correo válido</p>
                     </div>
 
-                    <div class="caja-input animate__animated animate__fadeInLeft ">
-                        <input type="password" placeholder="Contraseña" name="pass" required>
+                    <div class="grupo caja-input animate__animated animate__fadeInLeft " id="grupo__pass" >
+                        <div class="grupo-input">
+                            <input type="password" class="input pass" id="pass" placeholder="Contraseña" name="pass">
+                            <i class="validacion-estado far fa-times-circle"></i>
+                        </div>
+                        <p class="input-error">La contraseña tiene que tener mínimo 4 y máximo 12 caracteres</p>
                     </div>
                 </div>
                 <div class="anclas animate__animated animate__fadeInLeft">
-                    <a href="iluso.php">¿Olvidaste tu contraseña?</a>
+                    <a href="editarContra.php">¿Olvidaste tu contraseña?</a>
                     <a href="nuevUsu.php">¿No tenes una cuenta? ¡Crea una!</a>
                 </div>
 
+                <div class="msjError" id="msjError">
+                    <p><i class="fas fa-exclamation-triangle"></i> Error: Llene el formulario correctamente </p>
+                </div>
+
                 <div class="caja-submit caja-input animate__animated animate__fadeInLeft">
+                    <!-- <button class="submit" type="submit">Iniciar Sesión</button> -->
                     <input class="submit" type="submit" value="Iniciar Sesión">
                 </div>
             </form>
@@ -41,6 +55,7 @@
     </main>
 
 
+    <script src="js/validateLogin.js"></script>
 
 
 
